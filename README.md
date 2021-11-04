@@ -1,4 +1,3 @@
-[Go to full documentation](https://htmlpreview.github.io/?https://github.com/maelstrom-research/harmonizR-doc/blob/master/index.html)
 
 --------------------------------------------------------------------------------
 
