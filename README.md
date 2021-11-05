@@ -1,7 +1,105 @@
+#  **Coming soon**:
+
+  * download_files_from_opal(): does not allow to download a file. Only a folder. this
+  will be corrected.
+  * upload_tables_to_opal(): This function will soon handle the maelstrom taxonomy if the
+  datadictionary is not in Opal format.
+  * replace in index the relative path to the absolute path
 
 --------------------------------------------------------------------------------
 
-#  **latest version**: 1.00 update 9.13
+# **latest version**: 2.00 update 01.01 - 1 Nov 2021
+
+*This version includes*
+
+Updates: Update of all functions to fit with new Maelstrom standards. The package
+version 1.00 has been archived.
+
+1. **Naming standardization**
+
+| OLD                              |  NEW                             |
+|:---------------------------------|:---------------------------------|
+| harmonization project            |               =                  |
+| project                          |               =                  |
+| version                          |               =                  |
+| dd             (R variable name) | data_dict                        |
+| datadictionary (plain English)   | data dictionary                  |
+| harmorule (plain English)        | data processing elements         |
+| harmorule (long acronym)         | data_processing_elements         |
+| harmorule (R variable name)      | data_proc_elem                   |
+| original study (plain English)   | individual study                 |
+| study specific (plain English)   | individual study                 |
+| dataschema (plain English)       | DataSchema                       |
+| rank (in data_proc_elem)         | index                            |
+
+2. **Mandatory standardization**
+
+`label:en` is no longer mandatory. `label:` is instead.
+
+`description:en` is no longer mandatory. 
+
+
+3. **Testing**
+
+| Function                                     |  Tested                        |
+|:---------------------------------------------|:-------------------------------|
+| project_envir_create                         |                                |
+| harmonizR_help                               |                                |
+| mlstr_file_index_create                      |                                |
+| mlstr_file_index_read                        |                                |
+| mlstr_file_index_search                      |                                |
+| create_data_dict                             |                                |
+| shape_dictionary_mlstr_format                |                                |
+| mlstr_all_na_column                          |                                |
+| mlstr_count_tag                              |                                |
+| generate_harmonized_study_bookdown_report    |                                |
+| generate_individual_study_bookdown_report    |                                |
+| create_markdown_template                     |                                |
+| mlstr_identify_plot_type                     |                                |
+| mlstr_identify_viz_type                      |                                |
+| mlstr_plot_bar                               |                                |
+| mlstr_plot_box                               |                                |
+| mlstr_plot_date                              |                                |
+| mlstr_plot_density                           |                                |
+| mlstr_plot_histogram                         |                                |
+| mlstr_plot_main_word                         |                                |
+| mlstr_plot_pie                               |                                |
+| mlstr_plot_pie_valid_value                   |                                |
+| mlstr_process_harmonization                  |                                |
+| mlstr_summary_category                       |                                |
+| mlstr_summary_numerical                      |                                |
+| mlstr_summary_text                           |                                |
+| summarize_harmonization                      |                                |
+| harmo_parse_process_rule                     |                                |
+| rename_process_rule_columns                  |                                |
+| harmo_process_add_variable                   |                                |
+| harmo_process_case_when                      |                                |
+| harmo_process_direct_mapping                 |                                |
+| harmo_process_function                       |                                |
+| harmo_process_id_creation                    |                                |
+| harmo_process_impossible                     |                                |
+| harmo_process_merge_variable                 |                                |
+| harmo_process_operation                      |                                |
+| harmo_process_other                          |                                |
+| harmo_process_paste                          |                                |
+| harmo_process_recode                         |                                |
+| harmo_process_rename                         |                                |
+| harmo_process_undetermined                   |                                |
+| create_project_in_opal                       |                                |
+| download_files_from_opal                     |                                |
+| download_tables_from_opal                    |                                |
+| upload_files_to_opal                         |                                |
+| upload_tables_to_opal                        |                                |
+| message_on_prompt                            |                                |
+| parceval                                     |                                |
+| read_csv_sans_echec                          |                                |
+| read_excel_allsheets                         |                                |
+| silently_run                                 |                                |
+| as.mlstr_date                                |                                |
+
+--------------------------------------------------------------------------------
+
+# **version**: 1.00 update 10.01 - 30 oct 2021
 
 *This version includes*
 
@@ -80,7 +178,7 @@
 
 --------------------------------------------------------------------------------
 
-#  **version**: 1.00 update 8.01
+# **version**: 1.00 update 8.01 - 1 oct 2021
 
 *This version includes*
 
@@ -112,7 +210,7 @@
 
 --------------------------------------------------------------------------------
 
-#  **version**: 1.00 update 7.11
+# **version**: 1.00 update 7.11 - 1 july 2021
 *This version includes*
 
 * Bug correction:

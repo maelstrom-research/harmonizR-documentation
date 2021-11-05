@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.00</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.00</span>
       </span>
     </div>
 
@@ -73,10 +73,313 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<hr>
-<div id="latest-version-100-update-913" class="section level1">
+<div id="coming-soon" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#latest-version-100-update-913" class="anchor"></a><strong>latest version</strong>: 1.00 update 9.13</h1></div>
+<a href="#coming-soon" class="anchor"></a><strong>Coming soon</strong>:</h1></div>
+<ul>
+<li>download_files_from_opal(): does not allow to download a file. Only a folder. this will be corrected.</li>
+<li>upload_tables_to_opal(): This function will soon handle the maelstrom taxonomy if the datadictionary is not in Opal format.</li>
+<li>replace in index the relative path to the absolute path</li>
+</ul>
+<hr>
+</div>
+<div id="latest-version-200-update-0101---1-nov-2021" class="section level1">
+<h1 class="hasAnchor">
+<a href="#latest-version-200-update-0101---1-nov-2021" class="anchor"></a><strong>latest version</strong>: 2.00 update 01.01 - 1 Nov 2021</h1>
+<p><em>This version includes</em></p>
+<p>Updates: Update of all functions to fit with new Maelstrom standards. The package version 1.00 has been archived.</p>
+<ol>
+<li><strong>Naming standardization</strong></li>
+</ol>
+<table class="table">
+<thead><tr class="header">
+<th align="left">OLD</th>
+<th align="left">NEW</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">harmonization project</td>
+<td align="left">=</td>
+</tr>
+<tr class="even">
+<td align="left">project</td>
+<td align="left">=</td>
+</tr>
+<tr class="odd">
+<td align="left">version</td>
+<td align="left">=</td>
+</tr>
+<tr class="even">
+<td align="left">dd (R variable name)</td>
+<td align="left">data_dict</td>
+</tr>
+<tr class="odd">
+<td align="left">datadictionary (plain English)</td>
+<td align="left">data dictionary</td>
+</tr>
+<tr class="even">
+<td align="left">harmorule (plain English)</td>
+<td align="left">data processing elements</td>
+</tr>
+<tr class="odd">
+<td align="left">harmorule (long acronym)</td>
+<td align="left">data_processing_elements</td>
+</tr>
+<tr class="even">
+<td align="left">harmorule (R variable name)</td>
+<td align="left">data_proc_elem</td>
+</tr>
+<tr class="odd">
+<td align="left">original study (plain English)</td>
+<td align="left">individual study</td>
+</tr>
+<tr class="even">
+<td align="left">study specific (plain English)</td>
+<td align="left">individual study</td>
+</tr>
+<tr class="odd">
+<td align="left">dataschema (plain English)</td>
+<td align="left">DataSchema</td>
+</tr>
+<tr class="even">
+<td align="left">rank (in data_proc_elem)</td>
+<td align="left">index</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Mandatory standardization</strong></li>
+</ol>
+<p><code>label:en</code> is no longer mandatory. <code>label:</code> is instead.</p>
+<p><code>description:en</code> is no longer mandatory.</p>
+<ol>
+<li><strong>Testing</strong></li>
+</ol>
+<table class="table">
+<thead><tr class="header">
+<th align="left">Function</th>
+<th align="left">Tested</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">project_envir_create</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">harmonizR_help</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">mlstr_file_index_create</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">mlstr_file_index_read</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">mlstr_file_index_search</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">create_data_dict</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">shape_dictionary_mlstr_format</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">mlstr_all_na_column</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">mlstr_count_tag</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">generate_harmonized_study_bookdown_report</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">generate_individual_study_bookdown_report</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">create_markdown_template</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">mlstr_identify_plot_type</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">mlstr_identify_viz_type</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">mlstr_plot_bar</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">mlstr_plot_box</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">mlstr_plot_date</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">mlstr_plot_density</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">mlstr_plot_histogram</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">mlstr_plot_main_word</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">mlstr_plot_pie</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">mlstr_plot_pie_valid_value</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">mlstr_process_harmonization</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">mlstr_summary_category</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">mlstr_summary_numerical</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">mlstr_summary_text</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">summarize_harmonization</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">harmo_parse_process_rule</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">rename_process_rule_columns</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">harmo_process_add_variable</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">harmo_process_case_when</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">harmo_process_direct_mapping</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">harmo_process_function</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">harmo_process_id_creation</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">harmo_process_impossible</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">harmo_process_merge_variable</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">harmo_process_operation</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">harmo_process_other</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">harmo_process_paste</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">harmo_process_recode</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">harmo_process_rename</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">harmo_process_undetermined</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">create_project_in_opal</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">download_files_from_opal</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">download_tables_from_opal</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">upload_files_to_opal</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">upload_tables_to_opal</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">message_on_prompt</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">parceval</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">read_csv_sans_echec</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">read_excel_allsheets</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">silently_run</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">as.mlstr_date</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+<div id="version-100-update-1001---30-oct-2021" class="section level1">
+<h1 class="hasAnchor">
+<a href="#version-100-update-1001---30-oct-2021" class="anchor"></a><strong>version</strong>: 1.00 update 10.01 - 30 oct 2021</h1>
 <p><em>This version includes</em></p>
 <ul>
 <li>Bug correction:</li>
@@ -190,9 +493,9 @@
 </ul>
 <hr>
 </div>
-<div id="version-100-update-801" class="section level1">
+<div id="version-100-update-801---1-oct-2021" class="section level1">
 <h1 class="hasAnchor">
-<a href="#version-100-update-801" class="anchor"></a><strong>version</strong>: 1.00 update 8.01</h1>
+<a href="#version-100-update-801---1-oct-2021" class="anchor"></a><strong>version</strong>: 1.00 update 8.01 - 1 oct 2021</h1>
 <p><em>This version includes</em></p>
 <ul>
 <li>Bug correction:
@@ -243,9 +546,9 @@ in the harmorule</li>
 </ul>
 <hr>
 </div>
-<div id="version-100-update-711" class="section level1">
+<div id="version-100-update-711---1-july-2021" class="section level1">
 <h1 class="hasAnchor">
-<a href="#version-100-update-711" class="anchor"></a><strong>version</strong>: 1.00 update 7.11</h1>
+<a href="#version-100-update-711---1-july-2021" class="anchor"></a><strong>version</strong>: 1.00 update 7.11 - 1 july 2021</h1>
 <p><em>This version includes</em></p>
 <ul>
 <li>Bug correction:

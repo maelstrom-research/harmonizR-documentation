@@ -45,7 +45,7 @@ showing descriptive statistics for each variable in a harmonized dataset to faci
 assessment of harmonized data. Statistics and figures are generated according to
 four types of variables: numerical, text, categorical, and dual (numerical variables
 with categories, e.g., “Do not know”, “Do not want to answer”). The variable type
-is automatically detected from the dataset and its datadictionary.
+is automatically detected from the dataset and its data dictionary.
 The output can be editable (using plotly library) or static (using ggplot2 library)." />
 
 
@@ -78,7 +78,7 @@ The output can be editable (using plotly library) or static (using ggplot2 libra
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.00</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.00</span>
       </span>
     </div>
 
@@ -132,13 +132,13 @@ showing descriptive statistics for each variable in a harmonized dataset to faci
 assessment of harmonized data. Statistics and figures are generated according to
 four types of variables: numerical, text, categorical, and dual (numerical variables
 with categories, e.g., “Do not know”, “Do not want to answer”). The variable type
-is automatically detected from the dataset and its datadictionary.
+is automatically detected from the dataset and its data dictionary.
 The output can be editable (using plotly library) or static (using ggplot2 library).</p>
     </div>
 
     <pre class="usage"><span class='fu'>generate_harmonized_study_bookdown_report</span><span class='op'>(</span>
   <span class='va'>dataschema</span>,
-  <span class='va'>harmorule</span>,
+  <span class='va'>data_proc_elem</span>,
   <span class='va'>harmonized_dataset</span>,
   group_by <span class='op'>=</span> <span class='st'>"adm_study"</span>,
   to <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"bookdown_report/"</span>, <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>harmonized_dataset</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>,
@@ -154,8 +154,9 @@ The output can be editable (using plotly library) or static (using ggplot2 libra
       <td><p>A tibble identifying the DataSchema to use for harmonization</p></td>
     </tr>
     <tr>
-      <th>harmorule</th>
-      <td><p>A character string or tibble R object identifying the (annotated) harmorule.</p></td>
+      <th>data_proc_elem</th>
+      <td><p>A character string or tibble R object identifying the (annotated)
+data processing elements file</p></td>
     </tr>
     <tr>
       <th>harmonized_dataset</th>
@@ -197,7 +198,7 @@ can be either 'ggplot2' or 'plotly'. gglot2 renders static plots, plotly dynamic
 <span class='r-in'><span class='fu'>generate_harmonized_study_bookdown_report</span><span class='op'>(</span></span>
 <span class='r-in'>  harmonized_dataset <span class='op'>=</span> <span class='va'>harmonized_study_DEMO_table_DEMO</span>,</span>
 <span class='r-in'>  dataschema <span class='op'>=</span> <span class='va'>Harmo_dataschema</span>,</span>
-<span class='r-in'>  harmorule <span class='op'>=</span> <span class='va'>annotated_harmorule</span>,</span>
+<span class='r-in'>  data_proc_elem <span class='op'>=</span> <span class='va'>annotated_data_proc_elem</span>,</span>
 <span class='r-in'>  to <span class='op'>=</span> <span class='st'>"demo_files/reports"</span>,</span>
 <span class='r-in'>  <span class='co'># group_by = "adm_study"</span></span>
 <span class='r-in'><span class='op'>)</span></span>

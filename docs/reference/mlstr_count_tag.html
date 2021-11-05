@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Count tags in a datadictionary. — mlstr_count_tag • harmonizR</title>
+<title>Count tags in a data dictionary. — mlstr_count_tag • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Count tags in a datadictionary. — mlstr_count_tag" />
+<meta property="og:title" content="Count tags in a data dictionary. — mlstr_count_tag" />
 <meta property="og:description" content="This helper function provides for each tag the number of variables assignated" />
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.00</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.00</span>
       </span>
     </div>
 
@@ -115,7 +115,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Count tags in a datadictionary.</h1>
+    <h1>Count tags in a data dictionary.</h1>
     
     <div class="hidden name"><code>mlstr_count_tag.Rd</code></div>
     </div>
@@ -124,14 +124,14 @@
     <p>This helper function provides for each tag the number of variables assignated</p>
     </div>
 
-    <pre class="usage"><span class='fu'>mlstr_count_tag</span><span class='op'>(</span><span class='va'>dd_tagged</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>mlstr_count_tag</span><span class='op'>(</span><span class='va'>data_dict_tagged</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dd_tagged</th>
-      <td><p>tibble of the datadictionary (automatically generated if not provided)</p></td>
+      <th>data_dict_tagged</th>
+      <td><p>tibble of the data dictionary (automatically generated if not provided)</p></td>
     </tr>
     </table>
 
@@ -144,8 +144,8 @@ matching the tag.</p>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'><span class='co'># Example 1: count the number of tags in a tagged dataset.</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='va'>dd_tagged</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_excel_allsheets.html'>read_excel_allsheets</a></span><span class='op'>(</span><span class='st'>"dd_TOKYO_format_maelstrom_tagged.xlsx"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>mlstr_count_tag</span><span class='op'>(</span><span class='va'>dd_tagged</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>data_dict_tagged</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_excel_allsheets.html'>read_excel_allsheets</a></span><span class='op'>(</span><span class='st'>"dd_TOKYO_format_maelstrom_tagged.xlsx"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>mlstr_count_tag</span><span class='op'>(</span><span class='va'>data_dict_tagged</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>

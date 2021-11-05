@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Automatize identification of visual type based on value type of the variable. — mlstr_identify_viz_type" />
-<meta property="og:description" content="This helper function analyses the content of a dataset and it datadictionary
+<meta property="og:description" content="This helper function analyses the content of a dataset and it data dictionary
 to extract the type of visualisation to generate in a report. This function can
 be used manually to personalize the report parameters before editing." />
 
@@ -74,7 +74,7 @@ be used manually to personalize the report parameters before editing." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.00</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.00</span>
       </span>
     </div>
 
@@ -123,12 +123,12 @@ be used manually to personalize the report parameters before editing." />
     </div>
 
     <div class="ref-description">
-    <p>This helper function analyses the content of a dataset and it datadictionary
+    <p>This helper function analyses the content of a dataset and it data dictionary
 to extract the type of visualisation to generate in a report. This function can
 be used manually to personalize the report parameters before editing.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>mlstr_identify_viz_type</span><span class='op'>(</span><span class='va'>dataset</span>, dd <span class='op'>=</span> <span class='fu'><a href='create_dd.html'>create_dd</a></span><span class='op'>(</span><span class='va'>dataset</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>mlstr_identify_viz_type</span><span class='op'>(</span><span class='va'>dataset</span>, data_dict <span class='op'>=</span> <span class='fu'><a href='create_data_dict.html'>create_data_dict</a></span><span class='op'>(</span><span class='va'>dataset</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -138,14 +138,14 @@ be used manually to personalize the report parameters before editing.</p>
       <td><p>A character string or tibble of the dataset</p></td>
     </tr>
     <tr>
-      <th>dd</th>
-      <td><p>tibble of the datadictionary (automatically generated if not provided)</p></td>
+      <th>data_dict</th>
+      <td><p>tibble of the data dictionary (automatically generated if not provided)</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list of two tibbles which is the datadictionary where a column viz_type
+    <p>A list of two tibbles which is the data dictionary where a column viz_type
 has been added to the datadictionary provided as an input.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

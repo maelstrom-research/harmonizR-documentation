@@ -45,7 +45,7 @@ showing descriptive statistics for each variable in a study-specific dataset to
 facilitate assessment of input data. Statistics and figures are generated according
 to four types of variables: numerical, text, categorical, and dual (numerical variables
 with categories, e.g., “Do not know”, “Do not want to answer”). The variable type
-is automatically detected from the dataset and its datadictionary.
+is automatically detected from the dataset and its data dictionary.
 The output can be editable (using plotly library) or static (using ggplot2 library)." />
 
 
@@ -78,7 +78,7 @@ The output can be editable (using plotly library) or static (using ggplot2 libra
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.00</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.00</span>
       </span>
     </div>
 
@@ -132,13 +132,13 @@ showing descriptive statistics for each variable in a study-specific dataset to
 facilitate assessment of input data. Statistics and figures are generated according
 to four types of variables: numerical, text, categorical, and dual (numerical variables
 with categories, e.g., “Do not know”, “Do not want to answer”). The variable type
-is automatically detected from the dataset and its datadictionary.
+is automatically detected from the dataset and its data dictionary.
 The output can be editable (using plotly library) or static (using ggplot2 library).</p>
     </div>
 
     <pre class="usage"><span class='fu'>generate_original_study_bookdown_report</span><span class='op'>(</span>
   <span class='va'>dataset</span>,
-  <span class='va'>dd</span>,
+  <span class='va'>data_dict</span>,
   group_by <span class='op'>=</span> <span class='cn'>NULL</span>,
   to <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"bookdown_report/"</span>, <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>dataset</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>,
   out <span class='op'>=</span> <span class='st'>"plotly"</span>,
@@ -155,7 +155,7 @@ The output can be editable (using plotly library) or static (using ggplot2 libra
 ID as the first column.</p></td>
     </tr>
     <tr>
-      <th>dd</th>
+      <th>data_dict</th>
       <td><p>A tibble identifying the data dictionary (in Maelstrom format) associated
 with the dataset. Automatically generated if not provided.</p></td>
     </tr>
@@ -187,7 +187,7 @@ can be either 'ggplot2' or 'plotly'. gglot2 renders static plots, plotly dynamic
 (current folder/docs by default). To open the file in browser, open "index.html"</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Must provide dataset and data dictionary in Maelstrom formats. If the datadictionary
+    <p>Must provide dataset and data dictionary in Maelstrom formats. If the data dictionary
 is not provided, a basic one is being created during the process.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -201,13 +201,13 @@ is not provided, a basic one is being created during the process.</p>
 <span class='r-in'><span class='co'># use case 1: report of demo dataset TOKYO</span></span>
 <span class='r-in'><span class='fu'>generate_original_study_bookdown_report</span><span class='op'>(</span></span>
 <span class='r-in'>  dataset <span class='op'>=</span> <span class='va'>study_TOKYO</span>,</span>
-<span class='r-in'>  dd <span class='op'>=</span> <span class='va'>dd_TOKYO_format_maelstrom_tagged</span>,</span>
+<span class='r-in'>  data_dict <span class='op'>=</span> <span class='va'>dd_TOKYO_format_maelstrom_tagged</span>,</span>
 <span class='r-in'>  to <span class='op'>=</span> <span class='st'>"demo_files/reports"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># use case 2: report of demo dataset TOKYO, grouped by gndr</span></span>
 <span class='r-in'><span class='fu'>generate_original_study_bookdown_report</span><span class='op'>(</span></span>
 <span class='r-in'>  dataset <span class='op'>=</span> <span class='va'>study_TOKYO</span>,</span>
-<span class='r-in'>  dd <span class='op'>=</span> <span class='va'>dd_TOKYO_format_maelstrom_tagged</span>,</span>
+<span class='r-in'>  data_dict <span class='op'>=</span> <span class='va'>dd_TOKYO_format_maelstrom_tagged</span>,</span>
 <span class='r-in'>  to <span class='op'>=</span> <span class='st'>"demo_files/reports"</span>,group_by <span class='op'>=</span> <span class='st'>"gndr"</span>,out <span class='op'>=</span> <span class='st'>"ggplot2"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='op'>}</span></span>

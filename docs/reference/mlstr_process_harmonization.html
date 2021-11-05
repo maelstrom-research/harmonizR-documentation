@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Generate harmonized dataset(s) and annotated harmorule — mlstr_process_harmonization • harmonizR</title>
+<title>Generate harmonized dataset(s) and annotated data processing elements file — mlstr_process_harmonization • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,21 +39,22 @@
 
 
 
-<meta property="og:title" content="Generate harmonized dataset(s) and annotated harmorule — mlstr_process_harmonization" />
-<meta property="og:description" content="Reads dataschema and harmorule objects to generate harmonized dataset(s) and
-annotated harmorule with harmonization statuses and errors. The dataschema
-is the list of target harmonized variables to generate from each input study
-dataset and must be in Maelstrom data dictionary format (with Variables and
-Categories tibbles and standard descriptors for each). The harmorule contains
-the processing instructions for the harmonization project to generate harmonized
-datasets, in a standard Maelstrom format. The function uses dataschema and harmorule
-specifications to process input study variables into harmonized variables.
-Documentation of each processing action is generated in the console to support
-the identification of errors and correction of the harmorule file and objects,
-as needed. An annotated harmorule object is also produced providing harmonization
-statuses (complete/impossible) for each DataSchema variable in each study dataset,
-which can be used to create a summary of harmonization potential of DataSchema
-variables across study datasets." />
+<meta property="og:title" content="Generate harmonized dataset(s) and annotated data processing elements file — mlstr_process_harmonization" />
+<meta property="og:description" content="Reads DataSchema and data processing elements files to generate harmonized
+dataset(s) and annotated data processing elements file with harmonization statuses
+and errors. The DataSchema is the list of target harmonized variables to generate
+from each input study dataset and must be in Maelstrom data dictionary format
+(with Variables and Categories tibbles and standard descriptors for each). The
+data processing elements file contains the processing instructions for the harmonization
+project to generate harmonized datasets, in a standard Maelstrom format. The
+function uses DataSchema and data processing elements specifications to process
+input study variables into harmonized variables. Documentation of each processing
+action is generated in the console to support the identification of errors and
+correction of the data processing elements file and objects, as needed. An annotated
+data processing elements file is also produced providing harmonization statuses
+(complete/impossible) for each DataSchema variable in each study dataset, which
+can be used to create a summary of harmonization potential of DataSchema variables
+across study datasets." />
 
 
 
@@ -85,7 +86,7 @@ variables across study datasets." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.00</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.00</span>
       </span>
     </div>
 
@@ -128,31 +129,32 @@ variables across study datasets." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Generate harmonized dataset(s) and annotated harmorule</h1>
+    <h1>Generate harmonized dataset(s) and annotated data processing elements file</h1>
     
     <div class="hidden name"><code>mlstr_process_harmonization.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Reads dataschema and harmorule objects to generate harmonized dataset(s) and
-annotated harmorule with harmonization statuses and errors. The dataschema
-is the list of target harmonized variables to generate from each input study
-dataset and must be in Maelstrom data dictionary format (with Variables and
-Categories tibbles and standard descriptors for each). The harmorule contains
-the processing instructions for the harmonization project to generate harmonized
-datasets, in a standard Maelstrom format. The function uses dataschema and harmorule
-specifications to process input study variables into harmonized variables.
-Documentation of each processing action is generated in the console to support
-the identification of errors and correction of the harmorule file and objects,
-as needed. An annotated harmorule object is also produced providing harmonization
-statuses (complete/impossible) for each DataSchema variable in each study dataset,
-which can be used to create a summary of harmonization potential of DataSchema
-variables across study datasets.</p>
+    <p>Reads DataSchema and data processing elements files to generate harmonized
+dataset(s) and annotated data processing elements file with harmonization statuses
+and errors. The DataSchema is the list of target harmonized variables to generate
+from each input study dataset and must be in Maelstrom data dictionary format
+(with Variables and Categories tibbles and standard descriptors for each). The
+data processing elements file contains the processing instructions for the harmonization
+project to generate harmonized datasets, in a standard Maelstrom format. The
+function uses DataSchema and data processing elements specifications to process
+input study variables into harmonized variables. Documentation of each processing
+action is generated in the console to support the identification of errors and
+correction of the data processing elements file and objects, as needed. An annotated
+data processing elements file is also produced providing harmonization statuses
+(complete/impossible) for each DataSchema variable in each study dataset, which
+can be used to create a summary of harmonization potential of DataSchema variables
+across study datasets.</p>
     </div>
 
     <pre class="usage"><span class='fu'>mlstr_process_harmonization</span><span class='op'>(</span>
   dataschema <span class='op'>=</span> <span class='cn'>NULL</span>,
-  <span class='va'>harmorule</span>,
+  <span class='va'>data_proc_elem</span>,
   pooled_harmo_table_name <span class='op'>=</span> <span class='cn'>NA_character_</span>,
   output_csv_folder <span class='op'>=</span> <span class='cn'>NA_character_</span>
 <span class='op'>)</span></pre>
@@ -166,8 +168,9 @@ variables across study datasets.</p>
 identifying the DataSchema.</p></td>
     </tr>
     <tr>
-      <th>harmorule</th>
-      <td><p>A character string or tibble R object identifying the harmorule.</p></td>
+      <th>data_proc_elem</th>
+      <td><p>A character string or tibble R object identifying the data
+processing elements file.</p></td>
     </tr>
     <tr>
       <th>pooled_harmo_table_name</th>
@@ -177,42 +180,45 @@ pooled harmonized dataset.</p></td>
     <tr>
       <th>output_csv_folder</th>
       <td><p>A character string specifying the folder path where
-the output harmonized dataset(s) and annotated harmorule files will be saved.</p></td>
+the output harmonized dataset(s) and annotated data processing elements files
+will be saved.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A csv file for each study-specific harmonized dataset, a csv file with
-the pooled harmonized dataset, and a csv file with the annotated harmorule, saved
-in the specified output folder.</p>
+    <p>A csv file for each individual study dataset that has been harmonized,
+a csv file with the pooled harmonized dataset, and a csv file with the annotated
+data processing elements, saved in the specified output folder.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Must provide harmorule, DataSchema, and original datasets in the environment.</p>
+    <p>Must provide data processing elements, DataSchema, and individual study datasets
+in the environment.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'><span class='co'># Read the files</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, files_path <span class='op'>=</span> <span class='st'>"study_specific_datasets"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, files_path <span class='op'>=</span> <span class='st'>"individual_study_datasets"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># Example 1: all the process of harmonization with harmorule with errors</span></span>
+<span class='r-in'><span class='co'># Example 1: all the process of harmonization with data processing elements with errors</span></span>
 <span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_name <span class='op'>=</span> <span class='st'>"Harmo_rule_with_error"</span><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'>mlstr_process_harmonization</span><span class='op'>(</span></span>
 <span class='r-in'>  dataschema <span class='op'>=</span> <span class='va'>Harmo_dataschema</span>,</span>
-<span class='r-in'>  harmorule <span class='op'>=</span> <span class='va'>Harmo_rule_with_error</span>,</span>
+<span class='r-in'>  data_proc_elem <span class='op'>=</span> <span class='va'>Harmo_rule_with_error</span>,</span>
 <span class='r-in'>  pooled_harmo_table_name <span class='op'>=</span> <span class='st'>"harmonized_study_DEMO_table_DEMO"</span>,</span>
 <span class='r-in'>  output_csv_folder <span class='op'>=</span> <span class='st'>"demo_files/harmonized_datasets"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># Example 2: use the function check error directly to access the errors. In your</span></span>
 <span class='r-in'><span class='co'># environment you will find a report attached to harmonization and the date of it.</span></span>
-<span class='r-in'><span class='fu'>summarize_harmonization</span><span class='op'>(</span><span class='va'>annotated_harmorule</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>annotated_harmorule</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>summarize_harmonization</span><span class='op'>(</span><span class='va'>annotated_data_proc_elem</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>annotated_data_proc_elem</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># After correction, re-run all the process of harmonization with the corrected harmorule.</span></span>
+<span class='r-in'><span class='co'># After correction, re-run all the process of harmonization with the corrected</span></span>
+<span class='r-in'><span class='co'># data processing elements file.</span></span>
 <span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_name <span class='op'>=</span> <span class='st'>"Harmo_rule"</span><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'>mlstr_process_harmonization</span><span class='op'>(</span></span>
 <span class='r-in'>  dataschema <span class='op'>=</span> <span class='va'>Harmo_dataschema</span>,</span>
-<span class='r-in'>  harmorule <span class='op'>=</span> <span class='va'>Harmo_rule</span>,</span>
+<span class='r-in'>  data_proc_elem <span class='op'>=</span> <span class='va'>Harmo_rule</span>,</span>
 <span class='r-in'>  pooled_harmo_table_name <span class='op'>=</span> <span class='st'>"harmonized_study_DEMO_table_DEMO"</span>,</span>
 <span class='r-in'>  output_csv_folder <span class='op'>=</span> <span class='st'>"demo_files/harmonized_datasets"</span><span class='op'>)</span></span>
 <span class='r-in'><span class='op'>}</span></span>

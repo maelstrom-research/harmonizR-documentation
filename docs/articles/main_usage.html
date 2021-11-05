@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.00</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.00</span>
       </span>
     </div>
 
@@ -74,7 +74,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>main_usage</h1>
             
-            <h4 class="date">2021-11-04</h4>
+            <h4 class="date">2021-11-05</h4>
       
       
       <div class="hidden name"><code>main_usage.Rmd</code></div>
@@ -103,15 +103,15 @@
 <ul>
 <li>Create an R environment where you can place files in an organized structure</li>
 <li>Identify the location and content of files in your environment</li>
-<li>Generate bookdown reports of study-specific (input) variables</li>
-<li>Read and interpret the harmorules (data processing rules) and generate harmonized tables</li>
+<li>Generate bookdown reports of individual study (input) variables</li>
+<li>Read and interpret the data processing elements (harmonization rules) and generate harmonized tables</li>
 <li>Generate bookdown reports of harmonized variables</li>
 </ul>
 </div>
 <div id="set-up-your-harmonization-environment" class="section level2">
 <h2 class="hasAnchor">
 <a href="#set-up-your-harmonization-environment" class="anchor"></a>Set up your harmonization environment</h2>
-<p><strong>Create an organized environment</strong> to place your files correctly and control versions of your project. Creating a well-organized structure for your project will facilitate the harmonization work and avoid confusion among different versions of project files (e.g., different versions of datasets, data dictionaries, DataSchema, and harmorules).</p>
+<p><strong>Create an organized environment</strong> to place your files correctly and control versions of your project. Creating a well-organized structure for your project will facilitate the harmonization work and avoid confusion among different versions of project files (e.g., different versions of datasets, data dictionaries, DataSchema, and data processing elements).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># use case 1: create folder without version</span>
 <span class="fu"><a href="../reference/project_envir_create.html">project_envir_create</a></span><span class="op">(</span>project <span class="op">=</span> <span class="st">"TEST_1"</span><span class="op">)</span>
@@ -140,13 +140,13 @@
 <span class="va">index_demo_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/mlstr_file_index_create.html">mlstr_file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"demo_files"</span>, pattern <span class="op">=</span> <span class="st">"html"</span>, negate <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="co"># use case 3: subset index matching a specific file_path query</span>
-<span class="fu"><a href="../reference/mlstr_file_index_search.html">mlstr_file_index_search</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, files_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/mlstr_file_index_search.html">mlstr_file_index_search</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, files_path <span class="op">=</span> <span class="st">"individual_study_datasets"</span><span class="op">)</span>
 
 <span class="co"># use case 4: subset index matching a specific file_type query</span>
 <span class="fu"><a href="../reference/mlstr_file_index_search.html">mlstr_file_index_search</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_type <span class="op">=</span> <span class="st">"data dictionary"</span><span class="op">)</span>
 
 <span class="co"># use case 5: read and download files indexed matching a specific file_path query</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_path <span class="op">=</span> <span class="st">"individual_study_datasets"</span><span class="op">)</span>
 
 <span class="co"># use case 6: read and download files indexed matching a specific file_name query</span>
 <span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_name <span class="op">=</span> <span class="st">"Harmo_dataschema"</span><span class="op">)</span>
@@ -158,13 +158,13 @@
 <h2 class="hasAnchor">
 <a href="#handle-data-dictionaries-to-comply-with-maelstrom-format" class="anchor"></a>Handle data dictionaries to comply with Maelstrom format</h2>
 <p>Create a data dictionary in Maelstrom format (with standard columns and separate Variables and Categories tables) from any dataset. The columns are filled with existing metadata, if any, or left blank to be filled manually.</p>
-<p>The user can use create_dd() to create a data dictionary for a dataset that has a data dictionary in a different format and/or to create the basic structure of a data dictionary if none exists. If the dataset already has associated metadata, create_dd() incorporates them into the data dictionary as additional columns. Columns with categorical variables can be specified. The category labels can be explicitly identified or read automatically from all values of the variable.</p>
+<p>The user can use create_data_dict() to create a data dictionary for a dataset that has a data dictionary in a different format and/or to create the basic structure of a data dictionary if none exists. If the dataset already has associated metadata, create_data_dict() incorporates them into the data dictionary as additional columns. Columns with categorical variables can be specified. The category labels can be explicitly identified or read automatically from all values of the variable.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># use case 1: create a datadictionnary from any dataset</span>
-<span class="fu"><a href="../reference/create_dd.html">create_dd</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span>
+<code class="sourceCode R"><span class="co"># use case 1: create a data dictionary from any dataset</span>
+<span class="fu"><a href="../reference/create_data_dict.html">create_data_dict</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span>
 
-<span class="co"># use case 2: create a datadictionnary with project and categorical variables</span>
-<span class="fu"><a href="../reference/create_dd.html">create_dd</a></span><span class="op">(</span>
+<span class="co"># use case 2: create a data dictionary with project and categorical variables</span>
+<span class="fu"><a href="../reference/create_data_dict.html">create_data_dict</a></span><span class="op">(</span>
   tbl_name <span class="op">=</span> <span class="va">iris</span>, 
   project <span class="op">=</span> <span class="st">"iris"</span>, 
   categories <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Sepal.Length{-888 = none ; -7 = PNA} , Species"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
@@ -177,17 +177,17 @@
 <span class="co"># use case 1: turn a pre-processed format data dictionary into Maelstrom format</span>
 <span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_name <span class="op">=</span> <span class="st">"dd_PARIS_format_preprocessed"</span><span class="op">)</span>
 <span class="fu"><a href="../reference/shape_dictionary_mlstr_format.html">shape_dictionary_mlstr_format</a></span><span class="op">(</span>
-  dd <span class="op">=</span> <span class="va">dd_PARIS_format_preprocessed</span><span class="op">)</span>
+  data_dict <span class="op">=</span> <span class="va">dd_PARIS_format_preprocessed</span><span class="op">)</span>
 
 <span class="co"># use case 2: take a data dictionary in Maelstrom format with extra columns placed at the end</span>
 <span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_name <span class="op">=</span> <span class="st">"dd_PARIS_format_maelstrom"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/shape_dictionary_mlstr_format.html">shape_dictionary_mlstr_format</a></span><span class="op">(</span>dd <span class="op">=</span> <span class="va">dd_PARIS_format_maelstrom</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="../reference/shape_dictionary_mlstr_format.html">shape_dictionary_mlstr_format</a></span><span class="op">(</span>data_dict <span class="op">=</span> <span class="va">dd_PARIS_format_maelstrom</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="generate-bookdown-reports-of-the-study-specific-variables" class="section level2">
+<div id="generate-bookdown-reports-of-the-individual-study-variables" class="section level2">
 <h2 class="hasAnchor">
-<a href="#generate-bookdown-reports-of-the-study-specific-variables" class="anchor"></a>Generate bookdown reports of the study-specific variables</h2>
-<p><strong>Generate QA reports for study-specific datasets</strong> and help in the assessment of the study-specific datasets</p>
-<p>During the assessment of datasets, the user can generate bookdown report (html-based) showing summary statistics for each study-specific variable. The statistics generated are determined by the variable format, which can be one of four types: numerical, text, categorical, or dual (numerical variables having also categories). The user can specify a data dictionary, a variable to group statistics by, and the output folder (the current folder by default).</p>
+<a href="#generate-bookdown-reports-of-the-individual-study-variables" class="anchor"></a>Generate bookdown reports of the individual study variables</h2>
+<p><strong>Generate QA reports for individual study datasets</strong> and help in the assessment of the each individual study</p>
+<p>During the assessment of datasets, the user can generate bookdown report (html-based) showing summary statistics for each individual study variable. The statistics generated are determined by the variable format, which can be one of four types: numerical, text, categorical, or dual (numerical variables having also categories). The user can specify a data dictionary, a variable to group statistics by, and the output folder (the current folder by default).</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="co"># Create index of files in one folder and read the files</span>
@@ -196,44 +196,45 @@
 <span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_name <span class="op">=</span> <span class="st">"dd_TOKYO"</span><span class="op">)</span>
 
 <span class="co"># use case 1: report of demo dataset TOKYO</span>
-<span class="fu"><a href="../reference/generate_original_study_bookdown_report.html">generate_original_study_bookdown_report</a></span><span class="op">(</span>
+<span class="fu"><a href="../reference/generate_individual_study_bookdown_report.html">generate_individual_study_bookdown_report</a></span><span class="op">(</span>
   dataset <span class="op">=</span> <span class="va">study_TOKYO</span>,
-  dd <span class="op">=</span> <span class="va">dd_TOKYO_format_maelstrom_tagged</span>,
+  data_dict <span class="op">=</span> <span class="va">dd_TOKYO_format_maelstrom_tagged</span>,
   to <span class="op">=</span> <span class="st">"demo_files/reports"</span>,out <span class="op">=</span> <span class="st">"ggplot2"</span> <span class="op">)</span>
 
 <span class="co"># use case 2: report of demo dataset TOKYO, grouped by gndr</span>
-<span class="fu"><a href="../reference/generate_original_study_bookdown_report.html">generate_original_study_bookdown_report</a></span><span class="op">(</span>
+<span class="fu"><a href="../reference/generate_individual_study_bookdown_report.html">generate_individual_study_bookdown_report</a></span><span class="op">(</span>
   dataset <span class="op">=</span> <span class="va">study_TOKYO</span>,
-  dd <span class="op">=</span> <span class="va">dd_TOKYO_format_maelstrom_tagged</span>,
+  data_dict <span class="op">=</span> <span class="va">dd_TOKYO_format_maelstrom_tagged</span>,
   to <span class="op">=</span> <span class="st">"demo_files/reports"</span>,group_by <span class="op">=</span> <span class="st">"gndr"</span>,out <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="read-and-run-the-data-processing-rules-and-generate-the-harmonized-dataset" class="section level2">
 <h2 class="hasAnchor">
 <a href="#read-and-run-the-data-processing-rules-and-generate-the-harmonized-dataset" class="anchor"></a>Read and run the data processing rules and generate the harmonized dataset</h2>
-<p><strong>Read and run the harmorule tibble</strong> line by line or as a whole and create the study-specific harmonized dataset. Error messages are generated automatically to help identify sources of errors in the harmorule. Separate scripts for pre-processing datasets before harmonization or post-processing after harmonization can be integrated into the process.</p>
+<p><strong>Read and run the data processing elements file</strong> line by line or as a whole and harmonize each study specific dataset. Error messages are generated automatically to help identify sources of errors in the data processing elements. Separate scripts for pre-processing datasets before harmonization or post-processing after harmonization can be integrated into the process.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="co"># Read the files</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span><span class="va">index_demo_files</span>, files_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span><span class="va">index_demo_files</span>, files_path <span class="op">=</span> <span class="st">"individual_study_datasets"</span><span class="op">)</span>
 
-<span class="co"># Example 1: all the process of harmonization with harmorule with errors</span>
+<span class="co"># Example 1: all the process of harmonization with data processing elements with errors</span>
 <span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span><span class="va">index_demo_files</span>, file_name <span class="op">=</span> <span class="st">"Harmo_rule_with_error"</span><span class="op">)</span>
 <span class="fu"><a href="../reference/mlstr_process_harmonization.html">mlstr_process_harmonization</a></span><span class="op">(</span>
   dataschema <span class="op">=</span> <span class="va">Harmo_dataschema</span>,
-  harmorule <span class="op">=</span> <span class="va">Harmo_rule_with_error</span>,
+  data_proc_elem <span class="op">=</span> <span class="va">Harmo_rule_with_error</span>,
   pooled_harmo_table_name <span class="op">=</span> <span class="st">"harmonized_study_DEMO_table_DEMO"</span>,
   output_csv_folder <span class="op">=</span> <span class="st">"demo_files/harmonized_datasets"</span><span class="op">)</span>
 
 <span class="co"># Example 2: use the function check error directly to access the errors. In your</span>
 <span class="co"># environment you will find a report attached to harmonization and the date of it.</span>
-<span class="fu">summarize_harmonization</span><span class="op">(</span><span class="va">annotated_harmorule</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">annotated_harmorule</span><span class="op">)</span>
+<span class="fu">summarize_harmonization</span><span class="op">(</span><span class="va">annotated_data_proc_elem</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">annotated_data_proc_elem</span><span class="op">)</span>
 
-<span class="co"># After correction, re-run all the process of harmonization with the corrected harmorule.</span>
+<span class="co"># After correction, re-run all the process of harmonization with the corrected </span>
+<span class="co"># data processing elements.</span>
 <span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span><span class="va">index_demo_files</span>, file_name <span class="op">=</span> <span class="st">"Harmo_rule"</span><span class="op">)</span>
 <span class="fu"><a href="../reference/mlstr_process_harmonization.html">mlstr_process_harmonization</a></span><span class="op">(</span>
   dataschema <span class="op">=</span> <span class="va">Harmo_dataschema</span>,
-  harmorule <span class="op">=</span> <span class="va">Harmo_rule</span>,
+  data_proc_elem <span class="op">=</span> <span class="va">Harmo_rule</span>,
   pooled_harmo_table_name <span class="op">=</span> <span class="st">"harmonized_study_DEMO_table_DEMO"</span>,
   output_csv_folder <span class="op">=</span> <span class="st">"demo_files/harmonized_datasets"</span><span class="op">)</span></code></pre></div>
 </div>
@@ -246,13 +247,13 @@
 <code class="sourceCode R">
 <span class="co"># Read the files</span>
 <span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_name <span class="op">=</span> <span class="st">"Harmo_dataschema"</span><span class="op">)</span>
-<span class="va">annotated_harmorule</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/get.html">get</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"annotated_harmorule"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">annotated_data_proc_elem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/get.html">get</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"annotated_data_proc_elem"</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co"># use case 1: report of harmonized_study_DEMO_table_DEMO.</span>
 <span class="fu"><a href="../reference/generate_harmonized_study_bookdown_report.html">generate_harmonized_study_bookdown_report</a></span><span class="op">(</span>
   harmonized_dataset <span class="op">=</span> <span class="va">harmonized_study_DEMO_table_DEMO</span>,
   dataschema <span class="op">=</span> <span class="va">Harmo_dataschema</span>,
-  harmorule <span class="op">=</span> <span class="va">annotated_harmorule</span>,
+  data_proc_elem <span class="op">=</span> <span class="va">annotated_data_proc_elem</span>,
   to <span class="op">=</span> <span class="st">"demo_files/reports"</span>
   <span class="co"># group_by = "adm_study"</span>
 <span class="op">)</span></code></pre></div>

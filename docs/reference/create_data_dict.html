@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Generate R script of plots based on viz type of the variable. — mlstr_identify_plot_type • harmonizR</title>
+<title>Create a data dictionary in Maelstrom basic format from a dataset — create_data_dict • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,11 +39,14 @@
 
 
 
-<meta property="og:title" content="Generate R script of plots based on viz type of the variable. — mlstr_identify_plot_type" />
-<meta property="og:description" content="This helper function use the viz type attributed to a variable in a data dictionary
-to generate R script providing plots in a report. This function can
-be used manually to personalize the report parameters before editing. The plots
-can use an additional variable to group each variable shown by the grouping variable." />
+<meta property="og:title" content="Create a data dictionary in Maelstrom basic format from a dataset — create_data_dict" />
+<meta property="og:description" content="Creates a data dictionary in Maelstrom basic format (with Variables and Categories
+in separate tibbles and standard columns each) from any dataset in tibble format.
+If the input dataset has no associated metadata, a minimal data dictionary is
+created from the column (variable) names to create the data dictionary structure
+required for harmonizR (all columns except variable names will be blank). If
+the variables (columns) in the input dataset have associated metadata, create_data_dict
+incorporates them all by creating corresponding columns in the output data dictionary." />
 
 
 
@@ -118,59 +121,65 @@ can use an additional variable to group each variable shown by the grouping vari
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Generate R script of plots based on viz type of the variable.</h1>
+    <h1>Create a data dictionary in Maelstrom basic format from a dataset</h1>
     
-    <div class="hidden name"><code>mlstr_identify_plot_type.Rd</code></div>
+    <div class="hidden name"><code>create_data_dict.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This helper function use the viz type attributed to a variable in a data dictionary
-to generate R script providing plots in a report. This function can
-be used manually to personalize the report parameters before editing. The plots
-can use an additional variable to group each variable shown by the grouping variable.</p>
+    <p>Creates a data dictionary in Maelstrom basic format (with Variables and Categories
+in separate tibbles and standard columns each) from any dataset in tibble format.
+If the input dataset has no associated metadata, a minimal data dictionary is
+created from the column (variable) names to create the data dictionary structure
+required for harmonizR (all columns except variable names will be blank). If
+the variables (columns) in the input dataset have associated metadata, create_data_dict
+incorporates them all by creating corresponding columns in the output data dictionary.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>mlstr_identify_plot_type</span><span class='op'>(</span>
-  dataset <span class='op'>=</span> <span class='cn'>NULL</span>,
-  <span class='va'>data_dict</span>,
-  group_by <span class='op'>=</span> <span class='cn'>NULL</span>,
-  out <span class='op'>=</span> <span class='st'>"plotly"</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>create_data_dict</span><span class='op'>(</span><span class='va'>tbl_name</span>, project <span class='op'>=</span> <span class='cn'>NA_character_</span>, categories <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dataset</th>
-      <td><p>A character string or tibble of the dataset</p></td>
+      <th>tbl_name</th>
+      <td><p>A character string or tibble R object identifying the input dataset.</p></td>
     </tr>
     <tr>
-      <th>data_dict</th>
-      <td><p>tibble of the data dictionary (automatically generated if not provided)</p></td>
+      <th>project</th>
+      <td><p>A character string identifying the associated project (if any).</p></td>
     </tr>
     <tr>
-      <th>group_by</th>
-      <td><p>A character string of one column in the dataset that can be
-taken as a grouping column. the vizual element will be grouped and displayed
-by this column.</p></td>
+      <th>categories</th>
+      <td><p>A character vector in a specific structure identifying the
+columns that contain categorical variables (if any) and the associated category names.
+c("variableAname1 = label1 ; name2 = label2, variableB") means that the variableA
+has 2 labels and names associated, and variableB has all of its values as categories.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list of two tibbles which is the data dictionary where columns plots
-and summary have been added to the data dictionary provided as an input.</p>
+    <p>A list of two tibbles: Variables and Categories. Variables has all the
+variable names extracted from the dataset column names as rows and Maelstrom
+standard descriptors of variables as columns. Categories has all the category
+names extracted from the “categories” argument as rows and Maelstrom standard
+descriptors of categories as columns.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The user must run mlstr_identify_viz_type first to run this function.</p>
+    <p>Must provide an input data dictionary in tibble format, with or without metadata
+in addition to column names.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
-<span class='r-in'><span class='co'># Example 1: plot R stripts for iris variables.</span></span>
-<span class='r-in'><span class='fu'><a href='create_data_dict.html'>create_data_dict</a></span><span class='op'>(</span><span class='va'>iris</span>, categories <span class='op'>=</span> <span class='st'>"Species"</span><span class='op'>)</span> <span class='op'>%&gt;%</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_identify_viz_type.html'>mlstr_identify_viz_type</a></span><span class='op'>(</span>data_dict <span class='op'>=</span> <span class='va'>.</span>, dataset <span class='op'>=</span> <span class='va'>iris</span><span class='op'>)</span> <span class='op'>%&gt;%</span></span>
-<span class='r-in'>  <span class='fu'>mlstr_identify_plot_type</span><span class='op'>(</span>data_dict <span class='op'>=</span> <span class='va'>.</span>, dataset <span class='op'>=</span> <span class='va'>iris</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='va'>.</span><span class='op'>$</span><span class='va'>Variables</span> <span class='op'>%&gt;%</span></span>
-<span class='r-in'>  <span class='fu'>select</span><span class='op'>(</span><span class='va'>name</span>,<span class='va'>viz_type</span>, <span class='fu'>contains</span><span class='op'>(</span><span class='st'>"plot"</span><span class='op'>)</span>,<span class='fu'>contains</span><span class='op'>(</span><span class='st'>"summary"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># use case 1: create a data dictionary from any dataset</span></span>
+<span class='r-in'><span class='fu'>create_data_dict</span><span class='op'>(</span><span class='va'>iris</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># use case 2: create a data dictionary with project and categorical variables</span></span>
+<span class='r-in'><span class='fu'>create_data_dict</span><span class='op'>(</span></span>
+<span class='r-in'>  tbl_name <span class='op'>=</span> <span class='va'>iris</span>,</span>
+<span class='r-in'>  project <span class='op'>=</span> <span class='st'>"iris"</span>,</span>
+<span class='r-in'>  categories <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Sepal.Length{-888 = none ; -7 = PNA} , Species"</span><span class='op'>)</span><span class='op'>)</span></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>
 </pre>
