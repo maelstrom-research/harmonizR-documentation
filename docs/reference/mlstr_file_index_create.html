@@ -78,7 +78,7 @@ R objects)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.00</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
 
@@ -101,7 +101,7 @@ R objects)." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/main_usage.html">main_usage</a>
+      <a href="../articles/main_usage.html">Main usage of harmonizR</a>
     </li>
   </ul>
 </li>
@@ -159,7 +159,7 @@ Can be useful for excluding certain folders from indexing (matching by regex is 
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with folder_path, files_path, file_name, extension, file_type
+    <p>A tibble with folder_path, file_path, file_name, extension, file_type
 columns and a last column to_eval which is R code in a character vector to read
 the file into the environment.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -171,9 +171,9 @@ the file into the environment.</p>
 <span class='r-in'><span class='co'># use case 1: create index of files in one folder</span></span>
 <span class='r-in'><span class='va'>index_demo_files</span> <span class='op'>&lt;-</span> <span class='fu'>mlstr_file_index_create</span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"demo_files"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># use case 2: create index of files in one folder, excluding matching query</span></span>
-<span class='r-in'><span class='co'># that can be an folder, a file name, an extention)</span></span>
-<span class='r-in'><span class='va'>index_demo_files</span> <span class='op'>&lt;-</span> <span class='fu'>mlstr_file_index_create</span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"demo_files"</span>, pattern <span class='op'>=</span> <span class='st'>"html"</span>, negate <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># use case 2: create index of files in one folder excluding study_specific_datasets subfolder</span></span>
+<span class='r-in'><span class='va'>index_demo_files</span> <span class='op'>&lt;-</span></span>
+<span class='r-in'>  <span class='fu'>mlstr_file_index_create</span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"demo_files"</span>, pattern <span class='op'>=</span> <span class='st'>"study_specific_datasets"</span>, negate <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>

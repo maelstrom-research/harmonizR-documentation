@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Allows the user to create an Opal project — create_project_in_opal • harmonizR</title>
+<title>Create an Opal project — create_project_in_opal • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Allows the user to create an Opal project — create_project_in_opal" />
-<meta property="og:description" content="Those functions are wrappers of functions present in opalr. For further
+<meta property="og:title" content="Create an Opal project — create_project_in_opal" />
+<meta property="og:description" content="Those Opal functions are wrappers of functions present in opalr. For further
 information, please refer to Opal documentation." />
 
 
@@ -73,7 +73,7 @@ information, please refer to Opal documentation." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.00</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
 
@@ -96,7 +96,7 @@ information, please refer to Opal documentation." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/main_usage.html">main_usage</a>
+      <a href="../articles/main_usage.html">Main usage of harmonizR</a>
     </li>
   </ul>
 </li>
@@ -116,13 +116,13 @@ information, please refer to Opal documentation." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Allows the user to create an Opal project</h1>
+    <h1>Create an Opal project</h1>
     
     <div class="hidden name"><code>create_project_in_opal.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Those functions are wrappers of functions present in opalr. For further
+    <p>Those Opal functions are wrappers of functions present in opalr. For further
 information, please refer to Opal documentation.</p>
     </div>
 
@@ -140,7 +140,7 @@ information, please refer to Opal documentation.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>opal</th>
-      <td><p>opal login attributes (asked on prompt if empty)</p></td>
+      <td><p>Opal login attributes (asked on prompt if empty)</p></td>
     </tr>
     <tr>
       <th>project</th>
@@ -165,18 +165,8 @@ Errors associated to the handler or the rights to write in Opal.</p>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'><span class='co'># use case 1: create a project in Opal (assigning a random name to avoid problems between testers)</span></span>
 <span class='r-in'><span class='va'>random_name</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"DEMO_"</span>,<span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>100000</span>, <span class='fl'>1</span>, replace<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span><span class='op'>(</span><span class='st'>"Your project in Opal will be called "</span>,<span class='va'>random_name</span><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'>create_project_in_opal</span><span class='op'>(</span>project <span class='op'>=</span> <span class='va'>random_name</span> ,tag <span class='op'>=</span> <span class='st'>"demo_files"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span><span class='op'>(</span><span class='st'>"Please connect to Opal and verify the project: "</span>,<span class='va'>random_name</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># use case 2: provide the opal attributes and create a project in Opal</span></span>
-<span class='r-in'><span class='va'>o</span> <span class='op'>&lt;-</span> <span class='fu'>opalr</span><span class='fu'>::</span><span class='fu'><a href='https://www.obiba.org/opalr/reference/opal.login.html'>opal.login</a></span><span class='op'>(</span></span>
-<span class='r-in'>  url <span class='op'>=</span> <span class='st'>"https://opal-demo.maelstrom-research.org/"</span>,</span>
-<span class='r-in'>  username <span class='op'>=</span> <span class='st'>"administrator"</span>,</span>
-<span class='r-in'>  password <span class='op'>=</span> <span class='st'>"password"</span><span class='op'>)</span></span>
-<span class='r-in'></span>
-<span class='r-in'><span class='va'>random_name</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"DEMO_"</span>,<span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>100000</span>, <span class='fl'>1</span>, replace<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>create_project_in_opal</span><span class='op'>(</span>opal <span class='op'>=</span> <span class='va'>o</span>, project <span class='op'>=</span> <span class='va'>random_name</span> ,tag <span class='op'>=</span> <span class='st'>"demo_files"</span><span class='op'>)</span></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>
 </pre>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Upload files to an Opal environment. — upload_files_to_opal • harmonizR</title>
+<title>Generate data processing elements summary using annotated data processing elements R object — summarize_harmonization • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,11 @@
 
 
 
-<meta property="og:title" content="Upload files to an Opal environment. — upload_files_to_opal" />
-<meta property="og:description" content="Those Opal functions are wrappers of functions present in opalr. For further
-information, please refer to Opal documentation." />
+<meta property="og:title" content="Generate data processing elements summary using annotated data processing elements R object — summarize_harmonization" />
+<meta property="og:description" content="Reads data processing elements annotations to list processes, errors, and an
+overview of each rule of harmonization. The user can take this summary to help
+them in the correction of their data processing elements file and re run the
+process of harmonization." />
 
 
 
@@ -116,61 +118,46 @@ information, please refer to Opal documentation." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Upload files to an Opal environment.</h1>
+    <h1>Generate data processing elements summary using annotated data processing elements R object</h1>
     
-    <div class="hidden name"><code>upload_files_to_opal.Rd</code></div>
+    <div class="hidden name"><code>summarize_harmonization.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Those Opal functions are wrappers of functions present in opalr. For further
-information, please refer to Opal documentation.</p>
+    <p>Reads data processing elements annotations to list processes, errors, and an
+overview of each rule of harmonization. The user can take this summary to help
+them in the correction of their data processing elements file and re run the
+process of harmonization.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>upload_files_to_opal</span><span class='op'>(</span>
-  opal <span class='op'>=</span> <span class='fu'>opal.login</span><span class='op'>(</span>url <span class='op'>=</span> <span class='fu'>getPass</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/getPass/man/getPass.html'>getPass</a></span><span class='op'>(</span><span class='st'>"Enter the url: "</span><span class='op'>)</span>, username <span class='op'>=</span>
-    <span class='fu'>getPass</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/getPass/man/getPass.html'>getPass</a></span><span class='op'>(</span><span class='st'>"Enter the username: "</span><span class='op'>)</span>, password <span class='op'>=</span>
-    <span class='fu'>getPass</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/getPass/man/getPass.html'>getPass</a></span><span class='op'>(</span><span class='st'>"Enter the password: "</span><span class='op'>)</span><span class='op'>)</span>,
-  <span class='va'>from</span>,
-  <span class='va'>to</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>summarize_harmonization</span><span class='op'>(</span><span class='va'>report</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>opal</th>
-      <td><p>Opal login attributes (asked on prompt if empty)</p></td>
-    </tr>
-    <tr>
-      <th>from</th>
-      <td><p>character string of a path where the files will be taken from in R</p></td>
-    </tr>
-    <tr>
-      <th>to</th>
-      <td><p>haracter string of a path where the files will be placed to in Opal</p></td>
+      <th>report</th>
+      <td><p>A tibble of the data processing elements annotated.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Folder(s) containing files coming from your R environment in Opal.
-The path to Opal needs to be pasted with Opal absolute path.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>The user must be allowed to interact with their Opal</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'><span class='co'># Read the files</span></span>
+<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_path <span class='op'>=</span> <span class='st'>"individual_study_datasets"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># use case 1: place all files in a project (assigning a random name for security)</span></span>
-<span class='r-in'><span class='va'>random_name</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"DEMO_"</span>,<span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>100000</span>, <span class='fl'>1</span>, replace<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='create_project_in_opal.html'>create_project_in_opal</a></span><span class='op'>(</span>project <span class='op'>=</span> <span class='va'>random_name</span> ,tag <span class='op'>=</span> <span class='st'>"demo_files"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='va'>path_to_opal</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"/projects/"</span>,<span class='va'>random_name</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>upload_files_to_opal</span><span class='op'>(</span>from <span class='op'>=</span> <span class='st'>"demo_files/individual_study_datasets"</span>,to <span class='op'>=</span> <span class='va'>path_to_opal</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># Example 1: all the process of harmonization with data processing elements with errors</span></span>
+<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_name <span class='op'>=</span> <span class='st'>"Harmo_rule_with_error"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='mlstr_process_harmonization.html'>mlstr_process_harmonization</a></span><span class='op'>(</span></span>
+<span class='r-in'>  dataschema <span class='op'>=</span> <span class='va'>Harmo_dataschema</span>,</span>
+<span class='r-in'>  data_proc_elem <span class='op'>=</span> <span class='va'>Harmo_rule_with_error</span>,</span>
+<span class='r-in'>  output_harmo_folder <span class='op'>=</span> <span class='st'>"demo_files/harmonized_datasets"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># use case 2: place all files in a specific user folder</span></span>
-<span class='r-in'><span class='va'>path_to_opal</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"/home/administrator/"</span>,<span class='va'>random_name</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>upload_files_to_opal</span><span class='op'>(</span>from <span class='op'>=</span> <span class='st'>"demo_files/dataschema"</span>,to <span class='op'>=</span> <span class='va'>path_to_opal</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># Example 2: use the function summarize_harmonization directly to access the</span></span>
+<span class='r-in'><span class='co'># errors. In your environment you will find a report attached to harmonization</span></span>
+<span class='r-in'><span class='co'># and the date of it.</span></span>
+<span class='r-in'><span class='fu'>summarize_harmonization</span><span class='op'>(</span><span class='va'>annotated_data_proc_elem</span><span class='op'>)</span></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>
 </pre>

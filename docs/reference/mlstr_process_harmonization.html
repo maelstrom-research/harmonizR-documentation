@@ -86,7 +86,7 @@ across study datasets." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.00</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
 
@@ -109,7 +109,7 @@ across study datasets." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/main_usage.html">main_usage</a>
+      <a href="../articles/main_usage.html">Main usage of harmonizR</a>
     </li>
   </ul>
 </li>
@@ -153,10 +153,10 @@ across study datasets.</p>
     </div>
 
     <pre class="usage"><span class='fu'>mlstr_process_harmonization</span><span class='op'>(</span>
-  dataschema <span class='op'>=</span> <span class='cn'>NULL</span>,
+  <span class='va'>dataschema</span>,
   <span class='va'>data_proc_elem</span>,
-  pooled_harmo_table_name <span class='op'>=</span> <span class='cn'>NA_character_</span>,
-  output_csv_folder <span class='op'>=</span> <span class='cn'>NA_character_</span>
+  output_harmo_folder <span class='op'>=</span> <span class='st'>"harmonized_datasets"</span>,
+  name_report <span class='op'>=</span> <span class='st'>"annotated_data_proc_elem"</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -173,12 +173,7 @@ identifying the DataSchema.</p></td>
 processing elements file.</p></td>
     </tr>
     <tr>
-      <th>pooled_harmo_table_name</th>
-      <td><p>A character string specifying the name of the
-pooled harmonized dataset.</p></td>
-    </tr>
-    <tr>
-      <th>output_csv_folder</th>
+      <th>output_harmo_folder</th>
       <td><p>A character string specifying the folder path where
 the output harmonized dataset(s) and annotated data processing elements files
 will be saved.</p></td>
@@ -187,9 +182,14 @@ will be saved.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A csv file for each individual study dataset that has been harmonized,
-a csv file with the pooled harmonized dataset, and a csv file with the annotated
-data processing elements, saved in the specified output folder.</p>
+    <p>A tibble and a csv file for each individual study dataset that has been
+harmonized saved in the specified output folder.
+If the harmonization process contains errors, the tibbles and csv files will not
+be generated to avoid any version confusion. The user can correct their data
+processing element file and re-run the process.
+If the user identified errors and want to correct them later, they can specify
+'undetermined' in the column 'harmo_rule' of their problematic data processing
+element(s). Such data processing element will not be processed.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Must provide data processing elements, DataSchema, and individual study datasets
@@ -198,29 +198,29 @@ in the environment.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'><span class='co'># Read the files</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, files_path <span class='op'>=</span> <span class='st'>"individual_study_datasets"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>index_demo_files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='mlstr_file_index_create.html'>mlstr_file_index_create</a></span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"demo_files"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_path <span class='op'>=</span> <span class='st'>"individual_study_datasets"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_path <span class='op'>=</span> <span class='st'>"dataschema"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_path <span class='op'>=</span> <span class='st'>"data_processing_elements"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># Example 1: all the process of harmonization with data processing elements with errors</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_name <span class='op'>=</span> <span class='st'>"Harmo_rule_with_error"</span><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'>mlstr_process_harmonization</span><span class='op'>(</span></span>
-<span class='r-in'>  dataschema <span class='op'>=</span> <span class='va'>Harmo_dataschema</span>,</span>
-<span class='r-in'>  data_proc_elem <span class='op'>=</span> <span class='va'>Harmo_rule_with_error</span>,</span>
-<span class='r-in'>  pooled_harmo_table_name <span class='op'>=</span> <span class='st'>"harmonized_study_DEMO_table_DEMO"</span>,</span>
-<span class='r-in'>  output_csv_folder <span class='op'>=</span> <span class='st'>"demo_files/harmonized_datasets"</span><span class='op'>)</span></span>
+<span class='r-in'>  dataschema <span class='op'>=</span> <span class='va'>DEMO_dataschema</span>,</span>
+<span class='r-in'>  data_proc_elem <span class='op'>=</span> <span class='va'>`DEMO_data_processing_elements - with error`</span>,</span>
+<span class='r-in'>  output_harmo_folder <span class='op'>=</span> <span class='st'>"demo_files/harmonized_datasets"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># Example 2: use the function check error directly to access the errors. In your</span></span>
+<span class='r-in'><span class='co'># use the function summarize_harmonization directly to access the errors. In your</span></span>
 <span class='r-in'><span class='co'># environment you will find a report attached to harmonization and the date of it.</span></span>
-<span class='r-in'><span class='fu'>summarize_harmonization</span><span class='op'>(</span><span class='va'>annotated_data_proc_elem</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='summarize_harmonization.html'>summarize_harmonization</a></span><span class='op'>(</span><span class='va'>annotated_data_proc_elem</span><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>annotated_data_proc_elem</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># After correction, re-run all the process of harmonization with the corrected</span></span>
-<span class='r-in'><span class='co'># data processing elements file.</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_name <span class='op'>=</span> <span class='st'>"Harmo_rule"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># data processing elements.</span></span>
 <span class='r-in'><span class='fu'>mlstr_process_harmonization</span><span class='op'>(</span></span>
-<span class='r-in'>  dataschema <span class='op'>=</span> <span class='va'>Harmo_dataschema</span>,</span>
-<span class='r-in'>  data_proc_elem <span class='op'>=</span> <span class='va'>Harmo_rule</span>,</span>
-<span class='r-in'>  pooled_harmo_table_name <span class='op'>=</span> <span class='st'>"harmonized_study_DEMO_table_DEMO"</span>,</span>
-<span class='r-in'>  output_csv_folder <span class='op'>=</span> <span class='st'>"demo_files/harmonized_datasets"</span><span class='op'>)</span></span>
+<span class='r-in'>  dataschema <span class='op'>=</span> <span class='va'>DEMO_dataschema</span>,</span>
+<span class='r-in'>  data_proc_elem <span class='op'>=</span> <span class='va'>`DEMO_data_processing_elements - final`</span>,</span>
+<span class='r-in'>  name_report <span class='op'>=</span> <span class='st'>"final_report"</span>,</span>
+<span class='r-in'>  output_harmo_folder <span class='op'>=</span> <span class='st'>"demo_files/harmonized_datasets"</span><span class='op'>)</span></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>
 </pre>

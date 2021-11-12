@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Upload one tibble and its data dictionary from R environment in Opal environment as tables in project. — upload_tables_to_opal • harmonizR</title>
+<title>Upload one tibble from R environment in Opal environment as tables in project. — upload_tables_to_opal • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Upload one tibble and its data dictionary from R environment in Opal environment as tables in project. — upload_tables_to_opal" />
-<meta property="og:description" content="Those functions are wrappers of functions present in opalr. For further
+<meta property="og:title" content="Upload one tibble from R environment in Opal environment as tables in project. — upload_tables_to_opal" />
+<meta property="og:description" content="Those Opal functions are wrappers of functions present in opalr. For further
 information, please refer to Opal documentation." />
 
 
@@ -73,7 +73,7 @@ information, please refer to Opal documentation." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.00</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
 
@@ -96,7 +96,7 @@ information, please refer to Opal documentation." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/main_usage.html">main_usage</a>
+      <a href="../articles/main_usage.html">Main usage of harmonizR</a>
     </li>
   </ul>
 </li>
@@ -116,13 +116,13 @@ information, please refer to Opal documentation." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Upload one tibble and its data dictionary from R environment in Opal environment as tables in project.</h1>
+    <h1>Upload one tibble from R environment in Opal environment as tables in project.</h1>
     
     <div class="hidden name"><code>upload_tables_to_opal.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Those functions are wrappers of functions present in opalr. For further
+    <p>Those Opal functions are wrappers of functions present in opalr. For further
 information, please refer to Opal documentation.</p>
     </div>
 
@@ -132,7 +132,7 @@ information, please refer to Opal documentation.</p>
     <span class='fu'>getPass</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/getPass/man/getPass.html'>getPass</a></span><span class='op'>(</span><span class='st'>"Enter the password: "</span><span class='op'>)</span><span class='op'>)</span>,
   <span class='va'>project</span>,
   <span class='va'>table</span>,
-  data_dict <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>Variables <span class='op'>=</span> <span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span><span class='op'>)</span>, Categories <span class='op'>=</span> <span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+  data_dict <span class='op'>=</span> <span class='cn'>NULL</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -140,7 +140,7 @@ information, please refer to Opal documentation.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>opal</th>
-      <td><p>opal login attributes (asked on prompt if empty)</p></td>
+      <td><p>Opal login attributes (asked on prompt if empty)</p></td>
     </tr>
     <tr>
       <th>project</th>
@@ -161,27 +161,22 @@ information, please refer to Opal documentation.</p>
     <p>A table in Opal.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The user must be allowed to interact with their Opal.</p>
+    <p>The user must be allowed to interact with their Opal</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
-<span class='r-in'><span class='co'># use case 1: send to Opal an annotated (opal format) dataset</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span>index <span class='op'>=</span> <span class='va'>index_demo_files</span>, filter <span class='op'>=</span> <span class='st'>"individual_study_datasets"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
+<span class='r-in'><span class='co'># create index of files and read files of interest</span></span>
+<span class='r-in'><span class='va'>index_demo_files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='mlstr_file_index_create.html'>mlstr_file_index_create</a></span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"demo_files"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span>index <span class='op'>=</span> <span class='va'>index_demo_files</span>, file_path <span class='op'>=</span> <span class='st'>"individual_study_datasets"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># use case: send to Opal your tables with the data dictionary (not mandatory)</span></span>
 <span class='r-in'><span class='fu'>upload_tables_to_opal</span><span class='op'>(</span></span>
 <span class='r-in'>  opal <span class='op'>=</span> <span class='va'>o</span>,</span>
 <span class='r-in'>  project <span class='op'>=</span> <span class='va'>random_name</span>,</span>
-<span class='r-in'>  table <span class='op'>=</span> <span class='va'>study_TOKYO</span>,</span>
-<span class='r-in'>  data_dict <span class='op'>=</span> <span class='va'>dd_TOKYO_format_opal_tagged</span><span class='op'>)</span></span>
+<span class='r-in'>  table <span class='op'>=</span> <span class='va'>study_PARIS</span>,</span>
+<span class='r-in'>  data_dict <span class='op'>=</span> <span class='va'>dd_PARIS_format_maelstrom</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># use case 2: send to Opal any dataset</span></span>
-<span class='r-in'><span class='va'>iris</span> <span class='op'>&lt;-</span> <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span><span class='va'>iris</span><span class='op'>)</span></span>
-<span class='r-in'><span class='va'>dd_iris</span> <span class='op'>&lt;-</span> <span class='fu'><a href='create_data_dict.html'>create_data_dict</a></span><span class='op'>(</span>tbl_name <span class='op'>=</span> <span class='va'>iris</span>, project <span class='op'>=</span> <span class='va'>random_name</span>, categories <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Sepal.Length{-888 = none ; -7 = PNA} , Species"</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>upload_tables_to_opal</span><span class='op'>(</span></span>
-<span class='r-in'>  opal <span class='op'>=</span> <span class='va'>o</span>,</span>
-<span class='r-in'>  project <span class='op'>=</span> <span class='va'>random_name</span>,</span>
-<span class='r-in'>  table <span class='op'>=</span> <span class='va'>iris</span>,</span>
-<span class='r-in'>  data_dict <span class='op'>=</span> <span class='va'>dd_iris</span><span class='op'>)</span></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>
 </pre>
