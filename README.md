@@ -12,8 +12,13 @@
 
 *This version includes*
 
-Updates: Update of all functions to fit with new Maelstrom standards. The package
-version 1.00 has been archived.
+* Updates:
+
+  * [MAJOR UPDATE]: Update of all functions to fit with new Maelstrom standards. 
+  The package version 1.00 has been archived.
+  * **generate_original_study_bookdown_report()**: All new bookdown (html-based) 
+  to get a summary of your original dataset (with the possibility to group by a 
+
 
 ## **Naming standardization**
 
