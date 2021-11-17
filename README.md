@@ -8,7 +8,7 @@
 
 --------------------------------------------------------------------------------
 
-# **latest version**: 2.0.0 update 01.01 - 1 Nov 2021
+# **latest version**: 2.0.1 update 01.01 - 1 Nov 2021
 
 *This version includes*
 
