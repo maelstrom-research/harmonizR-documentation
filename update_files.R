@@ -1,3 +1,4 @@
+library(harmonizR)
 library(tidyverse)
 library(fs)
 
@@ -18,4 +19,6 @@ dir_copy(
   "/staff/gfabre/ownDir/in_development/harmonizR-documentation/docs",
   overwrite = TRUE
 )
+
+
 
