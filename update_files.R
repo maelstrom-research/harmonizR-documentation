@@ -7,8 +7,15 @@ file_copy(
   overwrite = TRUE
 )
 
+file_copy(
+  "/staff/gfabre/ownDir/in_development/harmonizR/DESCRIPTION",
+  "/staff/gfabre/ownDir/in_development/harmonizR-documentation/DESCRIPTION",
+  overwrite = TRUE
+)
+
 dir_copy(
   "/staff/gfabre/ownDir/in_development/harmonizR/docs",
   "/staff/gfabre/ownDir/in_development/harmonizR-documentation/docs",
   overwrite = TRUE
 )
+
