@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
       </span>
     </div>
 
@@ -81,7 +81,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Main usage of harmonizR</h1>
             
-            <h4 class="date">2021-11-17</h4>
+            <h4 class="date">2021-11-24</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/harmonizR/blob/master/vignettes/main_usage.Rmd"><code>vignettes/main_usage.Rmd</code></a></small>
       <div class="hidden name"><code>main_usage.Rmd</code></div>
@@ -93,163 +93,138 @@
 <div id="get-started" class="section level2">
 <h2 class="hasAnchor">
 <a href="#get-started" class="anchor"></a>Get started</h2>
-<p>The easiest way to get started with harmonizR is using this vignette as a demo with the current <strong>git Rpackage version</strong> on GitHub. You must <a href="https://www.maelstrom-research.org/contact" target="_blank">contact Maelstrom</a> to get access to the current version of the package. You will receive an authorization token (in the format “ghp_xxx”) to install the package. You can then install and load harmonizR. The demo files are included with the package.</p>
+<p>The easiest way to get started with <strong>harmonizR</strong> is using this vignette as a a demo with the current version on GitHub. To get access to the most recent version of the package, please contact Maelstrom Research on the <a href="https://www.maelstrom-research.org/contact" target="_blank">following link</a> and complete the form. You will the receive an authorization token (in the format “ghp_xxx”) to install the package and load the library <strong>harmonizR</strong>. Please note that all the demo files mentioned below are downloadable on an Opal demo environment.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="co"># To update the R package in your environment you may need to remove it, quit() </span>
-<span class="co"># your session and then re-install the R package</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/remove.packages.html">remove.packages</a></span><span class="op">(</span><span class="st">"harmonizR"</span><span class="op">)</span>
-<span class="co"># terminate R</span>
-<span class="fu"><a href="https://rdrr.io/r/base/quit.html">quit</a></span><span class="op">(</span><span class="op">)</span>
-
+<span class="co"># To update the R package in your R environment you may need first to remove it, </span>
+<span class="co"># and use the exit command quit() to terminate the current R session.</span>
+<span class="co"># Use the script below to install the R package</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span>
   repo <span class="op">=</span> <span class="st">"https://github.com/maelstrom-research/harmonizR"</span>,
   auth_token <span class="op">=</span> <span class="st">"ghp_xxx"</span>,
   force <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/harmonizR/">harmonizR</a></span><span class="op">)</span>
+
+<span class="co"># additional packages needed in the demonstration</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/obiba/opalr/">opalr</a></span><span class="op">)</span>
+
 <span class="fu"><a href="../reference/harmonizR_help.html">harmonizR_help</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
-<p>The goal of this vignette is to walk through the process of harmonization using harmonizR, illustrating its main functions, which allow you to:</p>
+<p>The aim of this vignette is to walk you through the harmonization process using the library <strong>harmonizR</strong>, and illustrate its main functions. <strong>harmonizR</strong> allows you to:</p>
 <ul>
 <li>Create an R environment where you can place files in an organized structure</li>
 <li>Identify the location and content of files in your environment</li>
-<li>Generate bookdown reports of individual study (input) variables</li>
-<li>Read and interpret the data processing elements (harmonization rules) and generate harmonized tables</li>
+<li>Generate bookdown reports of study-specific variables (input)</li>
+<li>Read and interpret the data processing elements (harmonization potential and data processing rules) and generate harmonized dataset(s) (output)</li>
 <li>Generate bookdown reports of harmonized variables</li>
 </ul>
 </div>
-<div id="demonstration-files" class="section level2">
+<div id="set-up-your-harmonization-r-environment" class="section level2">
 <h2 class="hasAnchor">
-<a href="#demonstration-files" class="anchor"></a>Demonstration files</h2>
-<p>To test and use the package, the user can get access to demo files that are downloadable in our Opal demo repo. To download them, make sure you have Opal credentials. Do not hesitate to contact us.</p>
+<a href="#set-up-your-harmonization-r-environment" class="anchor"></a>Set up your harmonization R environment</h2>
+<p><strong>Create an organized environment</strong> to place your files correctly and control versions of your project. A well-organized structure for your project will facilitate the harmonization work and avoid confusion between different versions of project files (e.g., different versions of datasets, data dictionaries, DataSchema, and data processing elements).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
-<span class="va">path_from_opal</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"/home/administrator/demo_files"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/download_files_from_opal.html">download_files_from_opal</a></span><span class="op">(</span>from <span class="op">=</span> <span class="va">path_from_opal</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="co"># use case 1: create folder without versioning</span>
+<span class="fu"><a href="../reference/harmo_env_create.html">harmo_env_create</a></span><span class="op">(</span>project <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="set-up-your-harmonization-environment" class="section level2">
+<div id="import-the-demonstration-files" class="section level2">
 <h2 class="hasAnchor">
-<a href="#set-up-your-harmonization-environment" class="anchor"></a>Set up your harmonization environment</h2>
-<p><strong>Create an organized environment</strong> to place your files correctly and control versions of your project. Creating a well-organized structure for your project will facilitate the harmonization work and avoid confusion among different versions of project files (e.g., different versions of datasets, data dictionaries, DataSchema, and data processing elements).</p>
+<a href="#import-the-demonstration-files" class="anchor"></a>Import the demonstration files</h2>
+<p>To test and use the library <strong>harmonizR</strong>, you can get access to demo files that are downloadable in our <a href="https://opal-demo.maelstrom-research.org/">Opal demo site</a>. Do not hesitate to contact us using the form previously mentioned above.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># use case 1: create folder without version</span>
-<span class="fu"><a href="../reference/project_envir_create.html">project_envir_create</a></span><span class="op">(</span>project <span class="op">=</span> <span class="st">"TEST_3"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">o</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://www.obiba.org/opalr/reference/opal.login.html">opal.login</a></span><span class="op">(</span>username <span class="op">=</span> <span class="st">'administrator'</span>,
+                password <span class="op">=</span> <span class="st">'password'</span>,
+                url <span class="op">=</span> <span class="st">'https://opal-demo.maelstrom-research.org/'</span><span class="op">)</span>
 
-<span class="co"># use case 2: create folder with a version</span>
-<span class="fu"><a href="../reference/project_envir_create.html">project_envir_create</a></span><span class="op">(</span>
-  project <span class="op">=</span> <span class="st">"TEST_3"</span>,
-  version <span class="op">=</span> <span class="st">""</span><span class="op">)</span>
-
-<span class="co"># use case 3: copy a version in the same project</span>
-<span class="fu"><a href="../reference/project_envir_create.html">project_envir_create</a></span><span class="op">(</span>
-  project <span class="op">=</span> <span class="st">"TEST_3"</span>,
-  version <span class="op">=</span> <span class="st">"version_1"</span> ,
-  copy_from <span class="op">=</span> <span class="st">"version_3"</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="../reference/opal_files_pull.html">opal_files_pull</a></span><span class="op">(</span><span class="va">o</span>, from <span class="op">=</span> <span class="st">"/home/administrator/DEMO/data_processing_elements"</span>, to <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/opal_files_pull.html">opal_files_pull</a></span><span class="op">(</span><span class="va">o</span>, from <span class="op">=</span> <span class="st">"/home/administrator/DEMO/dataschema"</span>,               to <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/opal_files_pull.html">opal_files_pull</a></span><span class="op">(</span><span class="va">o</span>, from <span class="op">=</span> <span class="st">"/home/administrator/DEMO/study_specific_datasets"</span>,  to <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="index-the-files-in-your-harmonization-environment" class="section level2">
+<div id="index-the-files-in-your-harmonization-r-environment" class="section level2">
 <h2 class="hasAnchor">
-<a href="#index-the-files-in-your-harmonization-environment" class="anchor"></a>Index the files in your harmonization environment</h2>
-<p>Create a tibble listing all files in a folder (recursively) with some useful metadata. You can add a filter to your query to exclude folders from indexing. This tibble can also be used to quickly search for the location of a file. Finally, you can read the indexed files and generate objects in the R environment.</p>
+<a href="#index-the-files-in-your-harmonization-r-environment" class="anchor"></a>Index the files in your harmonization R environment</h2>
+<p>Create a <a href="https://tibble.tidyverse.org/">tibble</a> listing all files in a folder (recursively) with some useful metadata. You can add a filter to your query to exclude folders from indexing. This tibble can also be used to quickly search for the location of a file. Finally, you can read the indexed files and generate objects in the R environment.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="co"># use case 1: create index of files in one folder</span>
-<span class="va">index_demo_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/mlstr_file_index_create.html">mlstr_file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"demo_files"</span><span class="op">)</span>
+<span class="co"># create index of files that are in a  folder</span>
+<span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/file_index_create.html">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span>
 
-<span class="co"># use case 2: create index of files in one folder excluding data_processing_elements subfolder</span>
-<span class="va">index_demo_files</span> <span class="op">&lt;-</span> 
-  <span class="fu"><a href="../reference/mlstr_file_index_create.html">mlstr_file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"demo_files"</span>, pattern <span class="op">=</span> <span class="st">"data_processing_elements"</span>, negate <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co"># search index for files matching a specific file path query</span>
+<span class="fu"><a href="../reference/file_index_search.html">file_index_search</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span>
 
-<span class="co"># use case 3: subset index matching a specific file_path query</span>
-<span class="fu"><a href="../reference/mlstr_file_index_search.html">mlstr_file_index_search</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span>
-
-<span class="co"># use case 4: subset index matching a specific file_type query</span>
-<span class="fu"><a href="../reference/mlstr_file_index_search.html">mlstr_file_index_search</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_name <span class="op">=</span> <span class="st">"study_MELBOURNE_1"</span><span class="op">)</span>
-
-<span class="co"># use case 5: read a file indexed matching a specific file_name query (assign = FALSE)</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_name <span class="op">=</span> <span class="st">"study_MELBOURNE_1"</span>,assign <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-
-<span class="co"># use case 6: read and download files indexed matching a specific file_name query (assign = TRUE)</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span> ,file_name <span class="op">=</span> <span class="st">"study_MELBOURNE_1"</span>,assign <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<span class="co"># read the files</span>
+<span class="fu"><a href="../reference/file_index_read.html">file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="generate-bookdown-reports-of-the-individual-study-variables" class="section level2">
+<div id="generate-visual-reports-of-the-study-specific-variables" class="section level2">
 <h2 class="hasAnchor">
-<a href="#generate-bookdown-reports-of-the-individual-study-variables" class="anchor"></a>Generate bookdown reports of the individual study variables</h2>
-<p><strong>Generate QA reports for individual study datasets</strong> and help in the assessment of the each individual study</p>
-<p>During the assessment of datasets, the user can generate bookdown report (html-based) showing summary statistics for each individual study variable. The statistics generated are determined by the variable format, which can be one of four types: numerical, text, categorical, or dual (numerical variables having also categories). The user can specify a data dictionary, a variable to group statistics by, and the output folder (the current folder by default).</p>
+<a href="#generate-visual-reports-of-the-study-specific-variables" class="anchor"></a>Generate visual report(s) of the study-specific variables</h2>
+<p>You can <strong>Generate quality assessment (QA) reports for study datasets</strong>. To facilitate the assessment of study-specific datasets, you can generate html bookdown report showing summary statistics for each study-specific variable. The summary statistics and figures are generated according to their valueTypes. The variable valueTypes is automatically detected from the dataset and its data dictionary. You can specify a data dictionary, a grouping variable to get summary statistics by group, and the output folder (If not specified, the current folder is the default).</p>
+<p>See <a href="https://ggplot2.tidyverse.org/">ggplot2</a>, <a href="and%20https://plotly.com/r/">plotly</a> and <a href="https://rstudio.github.io/DT/">DT</a> for further documentation about graphics and tables generated in the report.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="co"># Create index of files in one folder and read the files</span>
-<span class="va">index_demo_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/mlstr_file_index_create.html">mlstr_file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"demo_files"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_name <span class="op">=</span> <span class="st">"study_TOKYO"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_name <span class="op">=</span> <span class="st">"dd_TOKYO"</span><span class="op">)</span>
-
 <span class="co"># use case 1: report of demo dataset TOKYO</span>
-<span class="fu"><a href="../reference/generate_individual_study_bookdown_report.html">generate_individual_study_bookdown_report</a></span><span class="op">(</span>
+<span class="fu"><a href="../reference/study_visual_report.html">study_visual_report</a></span><span class="op">(</span>
   dataset <span class="op">=</span> <span class="va">study_TOKYO</span>,
   data_dict <span class="op">=</span> <span class="va">dd_TOKYO_format_maelstrom_tagged</span>,
-  to <span class="op">=</span> <span class="st">"demo_files/reports/TOKYO"</span><span class="op">)</span>
+  to <span class="op">=</span> <span class="st">"DEMO/reports/TOKYO"</span><span class="op">)</span>
 
 <span class="co"># use case 2: report of demo dataset TOKYO, grouped by gndr</span>
-<span class="fu"><a href="../reference/generate_individual_study_bookdown_report.html">generate_individual_study_bookdown_report</a></span><span class="op">(</span>
+<span class="fu"><a href="../reference/study_visual_report.html">study_visual_report</a></span><span class="op">(</span>
   dataset <span class="op">=</span> <span class="va">study_TOKYO</span>,
   data_dict <span class="op">=</span> <span class="va">dd_TOKYO_format_maelstrom_tagged</span>,
-  to <span class="op">=</span> <span class="st">"demo_files/reports/TOKYO_gndr"</span>,group_by <span class="op">=</span> <span class="st">"gndr"</span>,out <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span>
+  to <span class="op">=</span> <span class="st">"DEMO/reports/TOKYO_gndr"</span>,group_by <span class="op">=</span> <span class="st">"gndr"</span>,out <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span>
 
 <span class="co"># re-index your files to include new files created</span>
-<span class="va">index_demo_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/mlstr_file_index_create.html">mlstr_file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"demo_files"</span><span class="op">)</span>
+<span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/file_index_create.html">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span>
 
 <span class="co"># read the book down</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span><span class="va">index_demo_files</span>,file_path <span class="op">=</span> <span class="st">"demo_files/reports/TOKYO_gndr/docs/index.html"</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="../reference/file_index_read.html">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>,file_path <span class="op">=</span> <span class="st">"DEMO/reports/TOKYO_gndr/docs/index.html"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="read-and-run-the-data-processing-rules-and-generate-the-harmonized-dataset" class="section level2">
 <h2 class="hasAnchor">
 <a href="#read-and-run-the-data-processing-rules-and-generate-the-harmonized-dataset" class="anchor"></a>Read and run the data processing rules and generate the harmonized dataset</h2>
-<p><strong>Read and run the data processing elements file</strong> line by line or as a whole and harmonize each study specific dataset. Error messages are generated automatically to help identify sources of errors in the data processing elements. Separate scripts for pre-processing datasets before harmonization or post-processing after harmonization can be integrated into the process.</p>
+<p><strong>Read and run the data processing elements file</strong> line by line or as a whole and harmonize each study-specific dataset. Error messages are generated automatically to help identifying sources sources of errors in the data processing elements. Separate scripts for pre-processing datasets (before harmonization) or post-processing (after harmonization) can be integrated into the process.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="co"># Read the files</span>
-<span class="va">index_demo_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/mlstr_file_index_create.html">mlstr_file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"demo_files"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span><span class="va">index_demo_files</span>, file_path <span class="op">=</span> <span class="st">"individual_study_datasets"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span><span class="va">index_demo_files</span>, file_path <span class="op">=</span> <span class="st">"dataschema"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span><span class="va">index_demo_files</span>, file_path <span class="op">=</span> <span class="st">"data_processing_elements"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/file_index_read.html">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/file_index_read.html">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"dataschema"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/file_index_read.html">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"data_processing_elements"</span><span class="op">)</span>
 
-<span class="co"># Example 1: all the process of harmonization with data processing elements with errors</span>
-<span class="fu"><a href="../reference/mlstr_process_harmonization.html">mlstr_process_harmonization</a></span><span class="op">(</span>
+<span class="co"># Example 1: run the process of harmonization with data processing elements containing errors</span>
+<span class="fu"><a href="../reference/harmo_process.html">harmo_process</a></span><span class="op">(</span>
   dataschema <span class="op">=</span> <span class="va">DEMO_dataschema</span>,
   data_proc_elem <span class="op">=</span> <span class="va">`DEMO_data_processing_elements - with error`</span>,
-  output_harmo_folder <span class="op">=</span> <span class="st">"demo_files/harmonized_datasets"</span><span class="op">)</span>
+  output_harmo_folder <span class="op">=</span> <span class="st">"DEMO/harmonized_datasets"</span>,
+  name_report <span class="op">=</span> <span class="st">"harmo_report"</span><span class="op">)</span>
 
-<span class="co"># Example 2: use the function check error directly to access the errors. In your</span>
-<span class="co"># environment you will find a report attached to harmonization and the date of it.</span>
-<span class="fu"><a href="../reference/summarize_harmonization.html">summarize_harmonization</a></span><span class="op">(</span><span class="va">annotated_data_proc_elem</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">annotated_data_proc_elem</span><span class="op">)</span>
+<span class="co"># Example 2: use the function harmo_summary() to access the errors. </span>
+<span class="co"># In your environment, you will find a report attached to harmonization process.</span>
+<span class="fu"><a href="../reference/harmo_summary.html">harmo_summary</a></span><span class="op">(</span><span class="va">harmo_report</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">harmo_report</span><span class="op">)</span>
 
-<span class="co"># After correction, re-run all the process of harmonization with the corrected </span>
-<span class="co"># data processing elements.</span>
-<span class="fu"><a href="../reference/mlstr_process_harmonization.html">mlstr_process_harmonization</a></span><span class="op">(</span>
+<span class="co"># After correction, re-run the process of harmonization with the corrected data </span>
+<span class="co"># processing elements.</span>
+<span class="fu"><a href="../reference/harmo_process.html">harmo_process</a></span><span class="op">(</span>
   dataschema <span class="op">=</span> <span class="va">DEMO_dataschema</span>,
   data_proc_elem <span class="op">=</span> <span class="va">`DEMO_data_processing_elements - final`</span>,
   name_report <span class="op">=</span> <span class="st">"final_report"</span>,
-  output_harmo_folder <span class="op">=</span> <span class="st">"demo_files/harmonized_datasets"</span><span class="op">)</span></code></pre></div>
+  output_harmo_folder <span class="op">=</span> <span class="st">"DEMO/harmonized_datasets"</span><span class="op">)</span>
+
+<span class="co"># re-index your files to include new files created</span>
+<span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/file_index_create.html">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="generate-bookdown-reports-of-the-harmonized-variables" class="section level2">
+<div id="generate-visual-report-of-the-harmonized-variables" class="section level2">
 <h2 class="hasAnchor">
-<a href="#generate-bookdown-reports-of-the-harmonized-variables" class="anchor"></a>Generate bookdown reports of the harmonized variables</h2>
-<p>Generate <strong>QA reports for the harmonized dataset(s)</strong> to help in the assessment of harmonization</p>
-<p>A bookdown report (html-based) is generated showing summary statistics for each harmonized variable. The statistics generated for each variable are determined by the variable format, which is one of three types: numerical, text, or categorical. Statistics are shown for the pooled harmonized dataset as well as by study. The DataSchema must be specified. The user can specify the output folder (the current folder by default).</p>
+<a href="#generate-visual-report-of-the-harmonized-variables" class="anchor"></a>Generate visual report of the harmonized variables</h2>
+<p>Generate <strong>QA reports for the harmonized dataset(s)</strong> to facilitate in the assessment of the harmonized dataset. A html bookdown report is generated showing summary statistics for each harmonized variable. The statistics generated for each variable are determined by the variable format, which is one of three types: numerical, text, or categorical. Statistics are shown for the pooled harmonized dataset as well as by study. The DataSchema must be specified. You can specify the output folder (If not specified, the current folder is the default).</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="co"># Read the files. Make sure the harmonization has been processed.</span>
-<span class="va">index_demo_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/mlstr_file_index_create.html">mlstr_file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"demo_files"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_demo_files</span>, file_path <span class="op">=</span> <span class="st">"dataschema"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/mlstr_file_index_search.html">mlstr_file_index_search</a></span><span class="op">(</span><span class="va">index_demo_files</span>, file_path <span class="op">=</span> <span class="st">"data_processing_elements"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span><span class="va">index_demo_files</span>, file_path <span class="op">=</span> <span class="st">"harmonized_datasets"</span><span class="op">)</span>
-
 <span class="co"># pool your data in one tibble</span>
 <span class="va">harmonized_study_DEMO_table_DEMO</span> <span class="op">&lt;-</span>
   <span class="va">harmonized_study_MELBOURNE_table_MELBOURNE</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
@@ -257,19 +232,19 @@
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html">bind_rows</a></span><span class="op">(</span><span class="va">harmonized_study_TOKYO_table_TOKYO</span><span class="op">)</span>
 
 <span class="co"># use case 1: report of harmonized_study_DEMO_table_DEMO.</span>
-<span class="fu"><a href="../reference/generate_harmonized_study_bookdown_report.html">generate_harmonized_study_bookdown_report</a></span><span class="op">(</span>
+<span class="fu"><a href="../reference/harmo_visual_report.html">harmo_visual_report</a></span><span class="op">(</span>
   harmonized_dataset <span class="op">=</span> <span class="va">harmonized_study_DEMO_table_DEMO</span>,
   dataschema <span class="op">=</span> <span class="va">DEMO_dataschema</span>,
   data_proc_elem <span class="op">=</span> <span class="va">`DEMO_data_processing_elements - work in progress`</span>,
-  to <span class="op">=</span> <span class="st">"demo_files/reports/harmonized_DEMO"</span>
+  to <span class="op">=</span> <span class="st">"DEMO/reports/harmonized_DEMO"</span>
   <span class="co"># group_by = "adm_study"</span>
 <span class="op">)</span>
 
 <span class="co"># re-index your files to include new files created</span>
-<span class="va">index_demo_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/mlstr_file_index_create.html">mlstr_file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"demo_files"</span><span class="op">)</span>
+<span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/file_index_create.html">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span>
 
-<span class="co"># read the book down (or open in your browser the file named 'index')</span>
-<span class="fu"><a href="../reference/mlstr_file_index_read.html">mlstr_file_index_read</a></span><span class="op">(</span><span class="va">index_demo_files</span>,file_path <span class="op">=</span> <span class="st">"demo_files/reports/harmonized_DEMO/docs/index.html"</span><span class="op">)</span></code></pre></div>
+<span class="co"># read the book down (or open the file named 'index.html' in your browser)</span>
+<span class="fu"><a href="../reference/file_index_read.html">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>,file_path <span class="op">=</span> <span class="st">"DEMO/reports/harmonized_DEMO/docs/index.html"</span><span class="op">)</span></code></pre></div>
 </div>
   </div>
 

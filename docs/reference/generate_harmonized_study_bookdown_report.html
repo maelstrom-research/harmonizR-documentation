@@ -40,13 +40,12 @@
 
 
 <meta property="og:title" content="Generate a summary report for a harmonized dataset — generate_harmonized_study_bookdown_report" />
-<meta property="og:description" content="This function generates a summary report in an bookdown (html-based) document
-showing descriptive statistics for each variable in a harmonized dataset to facilitate
+<meta property="og:description" content="This function generates a summary report in a html bookdown document
+showing descriptive statistics for each harmonized variable to facilitate
 assessment of harmonized data. Statistics and figures are generated according to
-four types of variables: numerical, text, categorical, and dual (numerical variables
-with categories, e.g., “Do not know”, “Do not want to answer”). The variable type
-is automatically detected from the dataset and its data dictionary.
-The output can be editable (using plotly library) or static (using ggplot2 library)." />
+their valueTypes. The variable valueTypes is automatically detected from the dataset
+and its data dictionary. The output can be editable (using plotly library) or
+static (using ggplot2 library)." />
 
 
 
@@ -132,13 +131,12 @@ The output can be editable (using plotly library) or static (using ggplot2 libra
     </div>
 
     <div class="ref-description">
-    <p>This function generates a summary report in an bookdown (html-based) document
-showing descriptive statistics for each variable in a harmonized dataset to facilitate
+    <p>This function generates a summary report in a html bookdown document
+showing descriptive statistics for each harmonized variable to facilitate
 assessment of harmonized data. Statistics and figures are generated according to
-four types of variables: numerical, text, categorical, and dual (numerical variables
-with categories, e.g., “Do not know”, “Do not want to answer”). The variable type
-is automatically detected from the dataset and its data dictionary.
-The output can be editable (using plotly library) or static (using ggplot2 library).</p>
+their valueTypes. The variable valueTypes is automatically detected from the dataset
+and its data dictionary. The output can be editable (using plotly library) or
+static (using ggplot2 library).</p>
     </div>
 
     <pre class="usage"><span class='fu'>generate_harmonized_study_bookdown_report</span><span class='op'>(</span>
@@ -170,7 +168,7 @@ data processing elements file</p></td>
     <tr>
       <th>group_by</th>
       <td><p>A character string of one column in the dataset that can be
-taken as a grouping column. the vizual element will be grouped and displayed
+taken as a grouping column. the visual element will be grouped and displayed
 by this column. Default is “adm_study” (following Maelstrom standard naming).</p></td>
     </tr>
     <tr>
@@ -195,15 +193,15 @@ can be either 'ggplot2' or 'plotly'. gglot2 renders static plots, plotly dynamic
 (current folder/docs by default). To open the file in browser, open "index.html"</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Must provide a harmonized dataset and DataSchema in Maelstrom formats.</p>
+    <p>Must provide a harmonized dataset and DataSchema in the Maelstrom Research formats.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'><span class='co'># Read the files. Make sure the harmonization has been processed.</span></span>
-<span class='r-in'><span class='va'>index_demo_files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='mlstr_file_index_create.html'>mlstr_file_index_create</a></span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"demo_files"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span>index <span class='op'>=</span> <span class='va'>index_demo_files</span>, file_path <span class='op'>=</span> <span class='st'>"dataschema"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_search.html'>mlstr_file_index_search</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_path <span class='op'>=</span> <span class='st'>"data_processing_elements"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_path <span class='op'>=</span> <span class='st'>"harmonized_datasets"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>index_DEMO</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_index_create.html'>file_index_create</a></span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"DEMO"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='file_index_read.html'>file_index_read</a></span><span class='op'>(</span>index <span class='op'>=</span> <span class='va'>index_DEMO</span>, file_path <span class='op'>=</span> <span class='st'>"dataschema"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='file_index_search.html'>file_index_search</a></span><span class='op'>(</span><span class='va'>index_DEMO</span>, file_path <span class='op'>=</span> <span class='st'>"data_processing_elements"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='file_index_read.html'>file_index_read</a></span><span class='op'>(</span><span class='va'>index_DEMO</span>, file_path <span class='op'>=</span> <span class='st'>"harmonized_datasets"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># pool your data in one tibble</span></span>
 <span class='r-in'><span class='va'>harmonized_study_DEMO_table_DEMO</span> <span class='op'>&lt;-</span></span>
@@ -216,15 +214,15 @@ can be either 'ggplot2' or 'plotly'. gglot2 renders static plots, plotly dynamic
 <span class='r-in'>  harmonized_dataset <span class='op'>=</span> <span class='va'>harmonized_study_DEMO_table_DEMO</span>,</span>
 <span class='r-in'>  dataschema <span class='op'>=</span> <span class='va'>DEMO_dataschema</span>,</span>
 <span class='r-in'>  data_proc_elem <span class='op'>=</span> <span class='va'>`DEMO_data_processing_elements - work in progress`</span>,</span>
-<span class='r-in'>  to <span class='op'>=</span> <span class='st'>"demo_files/reports/harmonized_DEMO"</span></span>
+<span class='r-in'>  to <span class='op'>=</span> <span class='st'>"DEMO/reports/harmonized_DEMO"</span></span>
 <span class='r-in'>  <span class='co'># group_by = "adm_study"</span></span>
 <span class='r-in'><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># re-index your files to include new files created</span></span>
-<span class='r-in'><span class='va'>index_demo_files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='mlstr_file_index_create.html'>mlstr_file_index_create</a></span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"demo_files"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>index_DEMO</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_index_create.html'>file_index_create</a></span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"DEMO"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># read the book down (or open in your browser the file named 'index')</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>,file_path <span class='op'>=</span> <span class='st'>"demo_files/reports/harmonized_DEMO/docs/index.html"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='file_index_read.html'>file_index_read</a></span><span class='op'>(</span><span class='va'>index_DEMO</span>,file_path <span class='op'>=</span> <span class='st'>"DEMO/reports/harmonized_DEMO/docs/index.html"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>

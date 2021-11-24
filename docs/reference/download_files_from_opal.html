@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Download files from Opal in R environment — download_files_from_opal • harmonizR</title>
+<title>Download files from an Opal environment into the R environment — opal_files_pull • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,9 @@
 
 
 
-<meta property="og:title" content="Download files from Opal in R environment — download_files_from_opal" />
-<meta property="og:description" content="Those Opal functions are wrappers of functions present in opalr. For further
-information, please refer to Opal documentation." />
+<meta property="og:title" content="Download files from an Opal environment into the R environment — opal_files_pull" />
+<meta property="og:description" content="These Opal functions are wrappers of functions present in opalr. For further
+information, please refer to Opal documentation. https://www.obiba.org/opalr/index.html" />
 
 
 
@@ -121,17 +121,17 @@ information, please refer to Opal documentation." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Download files from Opal in R environment</h1>
+    <h1>Download files from an Opal environment into the R environment</h1>
     <small class="dont-index">Source: <a href='https://github.com/maelstrom-research/harmonizR/blob/master/R/07-mlstr_opal_functions.R'><code>R/07-mlstr_opal_functions.R</code></a></small>
-    <div class="hidden name"><code>download_files_from_opal.Rd</code></div>
+    <div class="hidden name"><code>opal_files_pull.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Those Opal functions are wrappers of functions present in opalr. For further
-information, please refer to Opal documentation.</p>
+    <p>These Opal functions are wrappers of functions present in opalr. For further
+information, please refer to Opal documentation. https://www.obiba.org/opalr/index.html</p>
     </div>
 
-    <pre class="usage"><span class='fu'>download_files_from_opal</span><span class='op'>(</span>
+    <pre class="usage"><span class='fu'>opal_files_pull</span><span class='op'>(</span>
   opal <span class='op'>=</span> <span class='fu'>opal.login</span><span class='op'>(</span>url <span class='op'>=</span> <span class='fu'>getPass</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/getPass/man/getPass.html'>getPass</a></span><span class='op'>(</span><span class='st'>"Enter the url: "</span><span class='op'>)</span>, username <span class='op'>=</span>
     <span class='fu'>getPass</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/getPass/man/getPass.html'>getPass</a></span><span class='op'>(</span><span class='st'>"Enter the username: "</span><span class='op'>)</span>, password <span class='op'>=</span>
     <span class='fu'>getPass</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/getPass/man/getPass.html'>getPass</a></span><span class='op'>(</span><span class='st'>"Enter the password: "</span><span class='op'>)</span><span class='op'>)</span>,
@@ -166,17 +166,17 @@ information, please refer to Opal documentation.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># use case 1: download all files from a project.</span></span>
-<span class='r-in'><span class='va'>path_from_opal</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"/projects/"</span>,<span class='va'>random_name</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>download_files_from_opal</span><span class='op'>(</span>opal <span class='op'>=</span> <span class='va'>o</span>,from <span class='op'>=</span> <span class='va'>path_from_opal</span>,to <span class='op'>=</span> <span class='st'>"demo_files/opal"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># use case 1: download all files from a project folder ("home/project/") or a user's folder ("home/administrator/").</span></span>
+<span class='r-in'><span class='fu'>opal_files_pull</span><span class='op'>(</span></span>
+<span class='r-in'>  opal <span class='op'>=</span> <span class='va'>o</span>,</span>
+<span class='r-in'>  from <span class='op'>=</span> <span class='st'>"/home/administrator/DEMO/data_processing_elements"</span>,</span>
+<span class='r-in'>  to <span class='op'>=</span> <span class='st'>"DEMO"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># use case 2: download specific file from an Opal folder.</span></span>
-<span class='r-in'><span class='va'>path_from_opal</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"/home/administrator/DEMO_15168/dataschema/DEMO_dataschema.xlsx"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>download_files_from_opal</span><span class='op'>(</span>opal <span class='op'>=</span> <span class='va'>o</span>,from <span class='op'>=</span> <span class='va'>path_from_opal</span>,to <span class='op'>=</span> <span class='st'>"demo_files/opal_2/"</span><span class='op'>)</span></span>
-<span class='r-in'></span>
-<span class='r-in'><span class='co'>#' # use case 3: download specific file from an Opal folder and rename it.</span></span>
-<span class='r-in'><span class='va'>path_from_opal</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"/home/administrator/DEMO_15168/dataschema/DEMO_dataschema.xlsx"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'>download_files_from_opal</span><span class='op'>(</span>opal <span class='op'>=</span> <span class='va'>o</span>,from <span class='op'>=</span> <span class='va'>path_from_opal</span>,to <span class='op'>=</span> <span class='st'>"demo_files/opal_2/dataschema.xlsx"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># use case 2: download specific file from an Opal folder and rename it.</span></span>
+<span class='r-in'><span class='fu'>opal_files_pull</span><span class='op'>(</span></span>
+<span class='r-in'>  opal <span class='op'>=</span> <span class='va'>o</span>,</span>
+<span class='r-in'>  from <span class='op'>=</span> <span class='st'>"/home/administrator/DEMO/dataschema/DEMO_dataschema.xlsx"</span>,</span>
+<span class='r-in'>  to <span class='op'>=</span> <span class='st'>"DEMO/dataschema/MY_dataschema.xlsx"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>

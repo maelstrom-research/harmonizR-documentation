@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a data dictionary in Maelstrom basic format from a dataset — create_data_dict • harmonizR</title>
+<title>Create a data dictionary in the Maelstrom Research formats from a dataset — create_data_dict • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,12 +39,13 @@
 
 
 
-<meta property="og:title" content="Create a data dictionary in Maelstrom basic format from a dataset — create_data_dict" />
-<meta property="og:description" content="Creates a data dictionary in Maelstrom basic format (with Variables and Categories
-in separate tibbles and standard columns each) from any dataset in tibble format.
-If the input dataset has no associated metadata, a minimal data dictionary is
-created from the column (variable) names to create the data dictionary structure
-required for harmonizR (all columns except variable names will be blank)." />
+<meta property="og:title" content="Create a data dictionary in the Maelstrom Research formats from a dataset — create_data_dict" />
+<meta property="og:description" content="Creates a data dictionary in the Maelstrom Research formats (with &quot;Variables&quot; and &quot;Categories&quot;
+in separate tibbles and standard columns in each) from any dataset in tibble format.
+If the input dataset has no associated metadata, a data dictionary with a minimal
+of information is created from the column (variable) names to create the data
+dictionary structure required for harmonizR (all columns except variable names
+will be blank)." />
 
 
 
@@ -124,17 +125,18 @@ required for harmonizR (all columns except variable names will be blank)." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a data dictionary in Maelstrom basic format from a dataset</h1>
+    <h1>Create a data dictionary in the Maelstrom Research formats from a dataset</h1>
     <small class="dont-index">Source: <a href='https://github.com/maelstrom-research/harmonizR/blob/master/R/03-mlstr_dictionary_functions.R'><code>R/03-mlstr_dictionary_functions.R</code></a></small>
     <div class="hidden name"><code>create_data_dict.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates a data dictionary in Maelstrom basic format (with Variables and Categories
-in separate tibbles and standard columns each) from any dataset in tibble format.
-If the input dataset has no associated metadata, a minimal data dictionary is
-created from the column (variable) names to create the data dictionary structure
-required for harmonizR (all columns except variable names will be blank).</p>
+    <p>Creates a data dictionary in the Maelstrom Research formats (with "Variables" and "Categories"
+in separate tibbles and standard columns in each) from any dataset in tibble format.
+If the input dataset has no associated metadata, a data dictionary with a minimal
+of information is created from the column (variable) names to create the data
+dictionary structure required for harmonizR (all columns except variable names
+will be blank).</p>
     </div>
 
     <pre class="usage"><span class='fu'>create_data_dict</span><span class='op'>(</span>
@@ -160,7 +162,7 @@ required for harmonizR (all columns except variable names will be blank).</p>
       <td><p>A character vector in a specific structure identifying the
 columns that contain categorical variables (if any) and the associated category names.
 c("variableAname1 = label1 ; name2 = label2, variableB") means that the variableA
-has 2 labels and names associated, and variableB has all of its values as categories.</p></td>
+has two labels and names associated, and variableB has all of its values as categories.</p></td>
     </tr>
     <tr>
       <th>lang</th>

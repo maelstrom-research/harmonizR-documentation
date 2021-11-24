@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create an index of files in a folder — mlstr_file_index_create • harmonizR</title>
+<title>Create an index of files in a folder — file_index_create • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Create an index of files in a folder — mlstr_file_index_create" />
+<meta property="og:title" content="Create an index of files in a folder — file_index_create" />
 <meta property="og:description" content="Creates a tibble listing files in a specified folder (recursively) with file
 path name and other useful metadata. This index can be used to quickly find
 files in the environment. The index also generates script to read files as
@@ -128,7 +128,7 @@ R objects)." />
     <div class="page-header">
     <h1>Create an index of files in a folder</h1>
     <small class="dont-index">Source: <a href='https://github.com/maelstrom-research/harmonizR/blob/master/R/02-mlstr_file_index.R'><code>R/02-mlstr_file_index.R</code></a></small>
-    <div class="hidden name"><code>mlstr_file_index_create.Rd</code></div>
+    <div class="hidden name"><code>file_index_create.Rd</code></div>
     </div>
 
     <div class="ref-description">
@@ -141,7 +141,7 @@ generated and stored in the column to_eval, ready to be evaluated and generate
 R objects).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>mlstr_file_index_create</span><span class='op'>(</span>folder <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span><span class='op'>(</span><span class='op'>)</span>, pattern <span class='op'>=</span> <span class='st'>""</span>, negate <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>file_index_create</span><span class='op'>(</span>folder <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span><span class='op'>(</span><span class='op'>)</span>, pattern <span class='op'>=</span> <span class='st'>""</span>, negate <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -174,11 +174,11 @@ the file into the environment.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'><span class='co'># use case 1: create index of files in one folder</span></span>
-<span class='r-in'><span class='va'>index_demo_files</span> <span class='op'>&lt;-</span> <span class='fu'>mlstr_file_index_create</span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"demo_files"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>index_DEMO</span> <span class='op'>&lt;-</span> <span class='fu'>file_index_create</span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"TEST_demo"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># use case 2: create index of files in one folder excluding study_specific_datasets subfolder</span></span>
-<span class='r-in'><span class='va'>index_demo_files</span> <span class='op'>&lt;-</span></span>
-<span class='r-in'>  <span class='fu'>mlstr_file_index_create</span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"demo_files"</span>, pattern <span class='op'>=</span> <span class='st'>"study_specific_datasets"</span>, negate <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>index_DEMO</span> <span class='op'>&lt;-</span></span>
+<span class='r-in'>  <span class='fu'>file_index_create</span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"TEST_demo"</span>, pattern <span class='op'>=</span> <span class='st'>"study_specific_datasets"</span>, negate <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>

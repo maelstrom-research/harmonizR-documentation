@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Draw histogram plot of one (possibly grouped) column in a dataset — mlstr_plot_histogram • harmonizR</title>
+<title>Draw histogram plot of one (possibly grouped) column in a dataset. — mlstr_plot_histogram • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,11 +39,11 @@
 
 
 
-<meta property="og:title" content="Draw histogram plot of one (possibly grouped) column in a dataset — mlstr_plot_histogram" />
-<meta property="og:description" content="This function draws a histogram plot of the values of variable 'col'.
-Missing values can be given in input to separate non-valid from valid values,
-or grouped by another variable. The output can be editable (using plotly library)
-or static (using ggplot2 library). The R-code is also editable for refined purpose." />
+<meta property="og:title" content="Draw histogram plot of one (possibly grouped) column in a dataset. — mlstr_plot_histogram" />
+<meta property="og:description" content="This function draws a histogram plot of the values of a column.
+Missing values can be given as input to non-valid and valid values separately, or
+grouped by another column. The output can be editable (using plotly library) or static
+(using ggplot2 library). The R-code is also editable for coding recycling purpose." />
 
 
 
@@ -123,16 +123,16 @@ or static (using ggplot2 library). The R-code is also editable for refined purpo
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Draw histogram plot of one (possibly grouped) column in a dataset</h1>
+    <h1>Draw histogram plot of one (possibly grouped) column in a dataset.</h1>
     <small class="dont-index">Source: <a href='https://github.com/maelstrom-research/harmonizR/blob/master/R/05-harmo_vizualize.R'><code>R/05-harmo_vizualize.R</code></a></small>
     <div class="hidden name"><code>mlstr_plot_histogram.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function draws a histogram plot of the values of variable 'col'.
-Missing values can be given in input to separate non-valid from valid values,
-or grouped by another variable. The output can be editable (using plotly library)
-or static (using ggplot2 library). The R-code is also editable for refined purpose.</p>
+    <p>This function draws a histogram plot of the values of a column.
+Missing values can be given as input to non-valid and valid values separately, or
+grouped by another column. The output can be editable (using plotly library) or static
+(using ggplot2 library). The R-code is also editable for coding recycling purpose.</p>
     </div>
 
     <pre class="usage"><span class='fu'>mlstr_plot_histogram</span><span class='op'>(</span>
@@ -150,17 +150,17 @@ or static (using ggplot2 library). The R-code is also editable for refined purpo
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dataset</th>
-      <td><p>A character string or tibble of the dataset</p></td>
+      <td><p>A character string or tibble specifying the input dataset</p></td>
     </tr>
     <tr>
       <th>col</th>
-      <td><p>A character string of a column of interest</p></td>
+      <td><p>A character string specifying a column of interest</p></td>
     </tr>
     <tr>
       <th>filter</th>
-      <td><p>A character string to subset the rows, applying the expressions in ...
-to the column values to determine which rows should be retained. It can be applied
-to both grouped and ungrouped data.</p></td>
+      <td><p>A character string specifying the values to filter. (equivalent of 'values in')
+This determines which values should be retained. It can be applied to both grouped
+and ungrouped data.</p></td>
     </tr>
     <tr>
       <th>negate</th>
@@ -168,8 +168,8 @@ to both grouped and ungrouped data.</p></td>
     </tr>
     <tr>
       <th>missing_values</th>
-      <td><p>vector listing values to exclude from valid values. Those
-values will not be exclud from counting, but will be separated from valid values.</p></td>
+      <td><p>Vector listing values to exclude from valid values. These
+values will not be excluded from counting - but will be displayed separately from valid values.</p></td>
     </tr>
     <tr>
       <th>out</th>
@@ -182,7 +182,7 @@ console.</p></td>
     <tr>
       <th>group_by</th>
       <td><p>A character string of one column in the dataset that can be
-taken as a grouping column. the vizual element will be grouped and displayed
+taken as a grouping column. The visual element will be grouped and displayed
 by this column.</p></td>
     </tr>
     </table>

@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
       </span>
     </div>
 
@@ -145,45 +145,69 @@
       <tr>
         
         <td>
-          <p><code><a href="create_data_dict.html">create_data_dict()</a></code> </p>
+          <p><code><a href="apply_valueType.html">apply_valueType()</a></code> </p>
         </td>
-        <td><p>Create a data dictionary in Maelstrom basic format from a dataset</p></td>
+        <td><p>Apply valueType of a datadictionnary to a dataset</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="create_markdown_template.html">create_markdown_template()</a></code> </p>
+          <p><code><a href="count_tag.html">count_tag()</a></code> </p>
         </td>
-        <td><p>Create a template for the visual report bookdown.</p></td>
+        <td><p>Count tags in a data dictionary.</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="create_project_in_opal.html">create_project_in_opal()</a></code> </p>
+          <p><code><a href="data_dictionary_create.html">data_dictionary_create()</a></code> </p>
         </td>
-        <td><p>Create an Opal project</p></td>
+        <td><p>Create a data dictionary in the Maelstrom Research formats from a dataset</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="download_files_from_opal.html">download_files_from_opal()</a></code> </p>
+          <p><code><a href="file_index_create.html">file_index_create()</a></code> </p>
         </td>
-        <td><p>Download files from Opal in R environment</p></td>
+        <td><p>Create an index of files in a folder</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="download_tables_from_opal.html">download_tables_from_opal()</a></code> </p>
+          <p><code><a href="file_index_read.html">file_index_read()</a></code> </p>
         </td>
-        <td><p>Download tables and data dictionary from Opal in R environment</p></td>
+        <td><p>Read, source and open objects from in an index of files</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="generate_harmonized_study_bookdown_report.html">generate_harmonized_study_bookdown_report()</a></code> </p>
+          <p><code><a href="file_index_search.html">file_index_search()</a></code> </p>
         </td>
-        <td><p>Generate a summary report for a harmonized dataset</p></td>
+        <td><p>Search an index of files</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="generate_individual_study_bookdown_report.html">generate_individual_study_bookdown_report()</a></code> </p>
+          <p><code><a href="get_all_na_col.html">get_all_na_col()</a></code> </p>
         </td>
-        <td><p>Generate a summary report bookdown for a study dataset</p></td>
+        <td><p>Extract columns that are all 'NA' from a dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="harmo_env_create.html">harmo_env_create()</a></code> </p>
+        </td>
+        <td><p>Create folders for a harmonization project</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="harmo_process.html">harmo_process()</a></code> </p>
+        </td>
+        <td><p>Generate harmonized dataset(s) and annotated data processing elements file</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="harmo_summary.html">harmo_summary()</a></code> </p>
+        </td>
+        <td><p>Generate summary of data processing elements using annotated data processing elements R object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="harmo_visual_report.html">harmo_visual_report()</a></code> </p>
+        </td>
+        <td><p>Generate a visual report for a harmonized dataset</p></td>
       </tr><tr>
         
         <td>
@@ -193,153 +217,135 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="mlstr_all_na_column.html">mlstr_all_na_column()</a></code> </p>
+          <p><code><a href="identify_plot_type.html">identify_plot_type()</a></code> </p>
         </td>
-        <td><p>Extract 'all NA' columns in a dataset.</p></td>
+        <td><p>Generate R script of plots based on the 'viz_type' of the variable.</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="mlstr_count_tag.html">mlstr_count_tag()</a></code> </p>
+          <p><code><a href="identify_viz_type.html">identify_viz_type()</a></code> </p>
         </td>
-        <td><p>Count tags in a data dictionary.</p></td>
+        <td><p>Identify visual type of a variable based on value type.</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="mlstr_file_index_create.html">mlstr_file_index_create()</a></code> </p>
+          <p><code><a href="opal_files_pull.html">opal_files_pull()</a></code> </p>
         </td>
-        <td><p>Create an index of files in a folder</p></td>
+        <td><p>Download files from an Opal environment into the R environment</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="mlstr_file_index_read.html">mlstr_file_index_read()</a></code> </p>
-        </td>
-        <td><p>Read, source and open objects listed in an index of files in a folder</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_file_index_search.html">mlstr_file_index_search()</a></code> </p>
-        </td>
-        <td><p>Search in an index of files in a folder</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_identify_plot_type.html">mlstr_identify_plot_type()</a></code> </p>
-        </td>
-        <td><p>Generate R script of plots based on viz type of the variable.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_identify_viz_type.html">mlstr_identify_viz_type()</a></code> </p>
-        </td>
-        <td><p>Automatize identification of visual type based on value type of the variable.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_plot_bar.html">mlstr_plot_bar()</a></code> </p>
-        </td>
-        <td><p>Draw bar plot of one (possibly grouped) column in a dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_plot_box.html">mlstr_plot_box()</a></code> </p>
-        </td>
-        <td><p>Draw box plot of one (possibly grouped) column in a dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_plot_date.html">mlstr_plot_date()</a></code> </p>
-        </td>
-        <td><p>Draw lollipop plot of one (possibly grouped) time related column in a dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_plot_density.html">mlstr_plot_density()</a></code> </p>
-        </td>
-        <td><p>Draw density line plot of one (possibly grouped) column in a dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_plot_histogram.html">mlstr_plot_histogram()</a></code> </p>
-        </td>
-        <td><p>Draw histogram plot of one (possibly grouped) column in a dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_plot_main_word.html">mlstr_plot_main_word()</a></code> </p>
-        </td>
-        <td><p>Draw bar plot of one (possibly grouped) open text column in a dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_plot_pie.html">mlstr_plot_pie()</a></code> </p>
-        </td>
-        <td><p>Draw pie plot of one (possibly grouped) column in a dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_plot_pie_valid_value.html">mlstr_plot_pie_valid_value()</a></code> </p>
-        </td>
-        <td><p>Draw pie plot of one (possibly grouped) column in a dataset (valid, non-valid and missing values)</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_process_harmonization.html">mlstr_process_harmonization()</a></code> </p>
-        </td>
-        <td><p>Generate harmonized dataset(s) and annotated data processing elements file</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_summary_category.html">mlstr_summary_category()</a></code> </p>
-        </td>
-        <td><p>Create datatable of one (possibly grouped) category-type variable of a dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_summary_numerical.html">mlstr_summary_numerical()</a></code> </p>
-        </td>
-        <td><p>Create datatable of one (possibly grouped) numerical-type variable of a dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlstr_summary_text.html">mlstr_summary_text()</a></code> </p>
-        </td>
-        <td><p>Create datatable of one (possibly grouped) text-type variable of a dataset</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="project_envir_create.html">project_envir_create()</a></code> </p>
-        </td>
-        <td><p>Create folders for a harmonization project</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="read_csv_sans_echec.html">read_csv_sans_echec()</a></code> </p>
-        </td>
-        <td><p>Read all csv file using readr::read_csv and avoid errors</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="read_excel_allsheets.html">read_excel_allsheets()</a></code> </p>
-        </td>
-        <td><p>Read all excel sheets using readxl::read_excel recursively.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="summarize_harmonization.html">summarize_harmonization()</a></code> </p>
-        </td>
-        <td><p>Generate data processing elements summary using annotated data processing elements R object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="upload_files_to_opal.html">upload_files_to_opal()</a></code> </p>
+          <p><code><a href="opal_files_push.html">opal_files_push()</a></code> </p>
         </td>
         <td><p>Upload files to an Opal environment.</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="upload_tables_to_opal.html">upload_tables_to_opal()</a></code> </p>
+          <p><code><a href="opal_project_create.html">opal_project_create()</a></code> </p>
         </td>
-        <td><p>Upload one tibble from R environment in Opal environment as tables in project.</p></td>
+        <td><p>Create a project in an Opal environment</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="opal_tables_pull.html">opal_tables_pull()</a></code> </p>
+        </td>
+        <td><p>Download tables and data dictionaries from an Opal environment into the R environment</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="opal_tables_push.html">opal_tables_push()</a></code> </p>
+        </td>
+        <td><p>Upload a tibble from the R environment in an Opal environment as tables in an Opal project.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_bar.html">plot_bar()</a></code> </p>
+        </td>
+        <td><p>Draw bar plot of one (possibly grouped) column in a dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_box.html">plot_box()</a></code> </p>
+        </td>
+        <td><p>Draw box plot of one (possibly grouped) column in a dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_date.html">plot_date()</a></code> </p>
+        </td>
+        <td><p>Draw lollipop plot of one (possibly grouped) time related column in a dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_density.html">plot_density()</a></code> </p>
+        </td>
+        <td><p>Draw density line plot of one (possibly grouped) column in a dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_histogram.html">plot_histogram()</a></code> </p>
+        </td>
+        <td><p>Draw histogram plot of one (possibly grouped) column in a dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_main_word.html">plot_main_word()</a></code> </p>
+        </td>
+        <td><p>Draw bar plot of one (possibly grouped) open text column in a dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_pie.html">plot_pie()</a></code> </p>
+        </td>
+        <td><p>Draw pie plot of one (possibly grouped) column in a dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_pie_valid_value.html">plot_pie_valid_value()</a></code> </p>
+        </td>
+        <td><p>Draw pie plot of one (possibly grouped) column in a dataset. (valid, non-valid and missing values)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="read_csv_any_formats.html">read_csv_any_formats()</a></code> </p>
+        </td>
+        <td><p>Read all csv files using readr::read_csv and avoid errors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="read_excel_allsheets.html">read_excel_allsheets()</a></code> </p>
+        </td>
+        <td><p>Read all Excel sheets using readxl::read_excel recursively.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="study_visual_report.html">study_visual_report()</a></code> </p>
+        </td>
+        <td><p>Generate a visual report for a study-specific dataset</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="summary_category.html">summary_category()</a></code> </p>
+        </td>
+        <td><p>Create datatable of one (possibly grouped) category-type column in a dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="summary_numerical.html">summary_numerical()</a></code> </p>
+        </td>
+        <td><p>Create datatable of one (possibly grouped) numerical-type column in a dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="summary_text.html">summary_text()</a></code> </p>
+        </td>
+        <td><p>Create datatable of one (possibly grouped) text-type column in a dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="template_viz_report.html">template_viz_report()</a></code> </p>
+        </td>
+        <td><p>Create a bookdown. template for the visual report.</p></td>
       </tr>
     </tbody>
     </table>

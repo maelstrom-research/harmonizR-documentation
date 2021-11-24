@@ -5,22 +5,22 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Package to help in the harmonization process following Maelstrom standards  • harmonizR</title>
+<title>Package to help in the harmonization process following Maelstrom Reaseach standards  • harmonizR</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Package to help in the harmonization process following Maelstrom standards ">
+<script src="pkgdown.js"></script><meta property="og:title" content="Package to help in the harmonization process following Maelstrom Reaseach standards ">
 <meta property="og:description" content="More about what it does (maybe more than one line)
     The goal of this package is to help the user through the process of harmonization 
-    following Maelstrom standards. The user can:
-    - Create an R environment where they can place files in an organized structure
-    - Identify the location and content of files in your environment
-    - Generate bookdown reports of individual study (input) variables
-    - Read and interpret the data processing elements (harmonization rules) and generate 
-      harmonized tables
-    - Generate bookdown reports of harmonized variables">
+    following the Maelstrom Research standards. The user can:
+    - Create an R environment where the user can place files in an organized structure
+    - Identify the location and content of files in user's environment
+    - Generate bookdown reports of study-specific variables (input)
+    - Read and interpret the data processing elements (harmonization potential and 
+      data processing rules) and generate harmonized dataset(s) (output)
+    - Generate bookdown reports of harmonized variables    ">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
       </span>
     </div>
 
@@ -91,743 +91,93 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#coming-soon" class="anchor"></a><strong>Coming soon</strong>:</h1></div>
 <ul>
-<li>create_data_dict(): If the variables (columns): in the input dataset have associated metadata, create_data_dict incorporates them all by creating corresponding columns in the output data dictionary.</li>
 <li>new feature: update index</li>
-<li>new feature: QA functions for datasets and datadictionaries!</li>
+<li>new feature: apply data dictionnary valueType to a dataset</li>
+<li>new feature: QA functions for datasets and datadictionaries</li>
 </ul>
 <hr>
 </div>
-<div id="latest-version-201-update-0101---1-nov-2021" class="section level1">
+<div id="latest-version-210-update---23-nov-2021" class="section level1">
 <h1 class="hasAnchor">
-<a href="#latest-version-201-update-0101---1-nov-2021" class="anchor"></a><strong>latest version</strong>: 2.0.1 update 01.01 - 1 Nov 2021</h1>
+<a href="#latest-version-210-update---23-nov-2021" class="anchor"></a><strong>latest version</strong>: 2.1.0 update - 23 Nov 2021</h1>
 <p><em>This version includes</em></p>
 <ul>
 <li>
 <p>Updates:</p>
 <ul>
-<li>The package version 1.00 has been archived.</li>
-<li>
-<strong>generate_original_study_bookdown_report()</strong>: All new bookdown (html-based) to get a summary of your original dataset (with the possibility to group by a variable of interest)</li>
+<li>MAJOR UPDATE: Creation of all the documentation associated to the package, along with with the Maelstrom Research standards.</li>
 </ul>
-</li>
-</ul>
-<div id="naming-standardization" class="section level2">
-<h2 class="hasAnchor">
-<a href="#naming-standardization" class="anchor"></a><strong>Naming standardization</strong>
-</h2>
+<p>The name of each function has been standardized and replaced, following both R best practices and Maelstrom Research standards. The package version 1.00 has been archived.</p>
 <table class="table">
 <thead><tr class="header">
-<th align="left">OLD</th>
-<th align="left">NEW</th>
+<th align="left">Name functions in the latest version</th>
+<th align="left">Name functions in previous versions</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">harmonization project (plain Eng)</td>
-<td align="left">research initiative</td>
+<td align="left">file_index_create()</td>
+<td align="left">mlstr_file_index_create()</td>
 </tr>
 <tr class="even">
-<td align="left">harmo_project</td>
-<td align="left">research_initiative</td>
+<td align="left">file_index_read()</td>
+<td align="left">mlstr_file_index_read()</td>
 </tr>
 <tr class="odd">
-<td align="left">dd (R variable name)</td>
-<td align="left">data_dict</td>
+<td align="left">file_index_search()</td>
+<td align="left">mlstr_file_index_search()</td>
 </tr>
 <tr class="even">
-<td align="left">datadictionary (plain English)</td>
-<td align="left">data dictionary</td>
+<td align="left">harmo_env_create()</td>
+<td align="left">project_envir_create()</td>
 </tr>
 <tr class="odd">
-<td align="left">harmorule (plain English)</td>
-<td align="left">data processing elements</td>
+<td align="left">harmo_process()</td>
+<td align="left">mlstr_process_harmonization()</td>
 </tr>
 <tr class="even">
-<td align="left">harmorule (long acronym)</td>
-<td align="left">data_processing_elements</td>
+<td align="left">harmo_summary()</td>
+<td align="left">summarize_harmonization()</td>
 </tr>
 <tr class="odd">
-<td align="left">harmorule (R variable name)</td>
-<td align="left">data_proc_elem</td>
+<td align="left">harmo_visual_report()</td>
+<td align="left">generate_harmonized_study_bookdown_report()</td>
 </tr>
 <tr class="even">
-<td align="left">original study (plain English)</td>
-<td align="left">individual study</td>
+<td align="left">study_visual_report()</td>
+<td align="left">generate_study_specific_bookdown_report()</td>
 </tr>
 <tr class="odd">
-<td align="left">study specific (plain English)</td>
-<td align="left">individual study</td>
+<td align="left">opal_project_create()</td>
+<td align="left">create_project_in_opal()</td>
 </tr>
 <tr class="even">
-<td align="left">dataschema (plain English)</td>
-<td align="left">DataSchema</td>
+<td align="left">opal_files_pull()</td>
+<td align="left">download_files_from_opal()</td>
 </tr>
 <tr class="odd">
-<td align="left">rank (in data_proc_elem)</td>
-<td align="left">index</td>
+<td align="left">opal_tables_pull()</td>
+<td align="left">download_tables_from_opal()</td>
 </tr>
 <tr class="even">
-<td align="left">opal (in documentation)</td>
-<td align="left">Opal</td>
+<td align="left">opal_files_push()</td>
+<td align="left">upload_files_to_opal()</td>
+</tr>
+<tr class="odd">
+<td align="left">opal_tables_push()</td>
+<td align="left">upload_tables_to_opal()</td>
+</tr>
+<tr class="even">
+<td align="left">data_dictionary_create()</td>
+<td align="left">create_data_dict()</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div id="mandatory-standardization" class="section level2">
-<h2 class="hasAnchor">
-<a href="#mandatory-standardization" class="anchor"></a><strong>Mandatory standardization</strong>
-</h2>
-<p><code>label:en</code> is no longer mandatory. <code>label:</code> is instead.</p>
-<p><code>description:en</code> is no longer mandatory.</p>
-</div>
-<div id="testing-after-updating-to-standards" class="section level2">
-<h2 class="hasAnchor">
-<a href="#testing-after-updating-to-standards" class="anchor"></a><strong>Testing after updating to standards</strong>
-</h2>
-<table class="table">
-<thead><tr class="header">
-<th align="left">Function</th>
-<th align="left">func test</th>
-<th align="left">roxy</th>
-<th align="left">vigtt</th>
-<th align="left">reviewed</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">message_on_prompt</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">silently_run</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">parceval</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">read_csv_sans_echec</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">read_excel_allsheets</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">as.mlstr_date</td>
-<td align="left">suppr</td>
-<td align="left">suppr</td>
-<td align="left">suppr</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">harmonizR_help</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">project_envir_create</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">mlstr_file_index_create</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">mlstr_file_index_read</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">mlstr_file_index_search</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">create_data_dict</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">shape_dictionary_mlstr_format</td>
-<td align="left">suppr</td>
-<td align="left">suppr</td>
-<td align="left">suppr</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">mlstr_all_na_column</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">mlstr_count_tag</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">generate_individual_study_bookdown_report</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">generate_harmonized_study_bookdown_report</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">create_markdown_template</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">mlstr_identify_plot_type</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">mlstr_identify_viz_type</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">mlstr_plot_bar</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">mlstr_plot_box</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">mlstr_plot_date</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">mlstr_plot_density</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">mlstr_plot_histogram</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">mlstr_plot_main_word</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">mlstr_plot_pie</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">mlstr_plot_pie_valid_value</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">mlstr_process_harmonization</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">mlstr_summary_category</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">mlstr_summary_numerical</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">mlstr_summary_text</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">summarize_harmonization</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">harmo_parse_process_rule</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">rename_process_rule_columns</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">harmo_process_add_variable</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">harmo_process_case_when</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">harmo_process_direct_mapping</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">harmo_process_function</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">harmo_process_id_creation</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">harmo_process_impossible</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">harmo_process_merge_variable</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">harmo_process_operation</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">harmo_process_other</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">harmo_process_paste</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">harmo_process_recode</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">harmo_process_rename</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">harmo_process_undetermined</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">create_project_in_opal</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">download_files_from_opal</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">download_tables_from_opal</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">upload_files_to_opal</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">upload_tables_to_opal</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">apply_valueType</td>
-<td align="left">X</td>
-<td align="left">TO DO</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">map_data_dict_with_dataset</td>
-<td align="left">X</td>
-<td align="left">TO DO</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">mlstr_download_templates</td>
-<td align="left">X</td>
-<td align="left">TO DO</td>
-<td align="left">-</td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Suppression:
-<ul>
-<li>
-<strong>as.mlstr_date()</strong>: this function has been unpublished to correct it.</li>
-</ul>
 </li>
-</ul>
-<hr>
-</div>
-</div>
-<div id="version-100-update-1001---30-oct-2021" class="section level1">
-<h1 class="hasAnchor">
-<a href="#version-100-update-1001---30-oct-2021" class="anchor"></a><strong>version</strong>: 1.00 update 10.01 - 30 oct 2021</h1>
-<p><em>This version includes</em></p>
-<ul>
-<li>Bug correction:</li>
-<li>Updates:
-<ul>
-<li>
-<strong>generate_original_study_bookdown_report()</strong>: All new bookdown (html-based) to get a summary of your original dataset (with the possibility to group by a variable, have ggplot output, plotly output, downloadable CSV datasets)</li>
-<li>
-<strong>generate_harmonized_study_bookdown_report()</strong>: All new bookdown (html-based) to get a summary of your harmonized dataset (have ggplot output, plotly output, downloadable CSV datasets)</li>
-<li>
-<strong>create_markdown_template()</strong>: creates a template for the visual report bookdown</li>
-<li>
-<strong>mlstr_file_index_create()</strong>: provides the path of the tree associated to the folder</li>
-<li>
-<strong>mlstr_file_index_read()</strong>: this function can now open html files in user browser and any other type of file in the R studio environment. format</li>
-</ul>
-</li>
-<li>Suppression:
-<ul>
-<li>
-<strong>create_dd_opal_format()</strong>: this function has been unpublished to correct it.</li>
-</ul>
-</li>
-<li>New feature:
-<ul>
-<li>
-<strong>mlstr_identify_viz_type()</strong>: Automatize identification of visual type based on value type of the variable</li>
-<li>
-<strong>mlstr_identify_plot_type()</strong>: Generate R script of plots based on viz type of the variable.</li>
-<li>
-<strong>mlstr_count_tag()</strong>: Count tags in a datadictionary</li>
-<li>
-<strong>mlstr_all_na_column()</strong>: Extract ‘all NA’ columns in a dataset</li>
-<li>
-<strong>mlstr_plot_main_word()</strong>: Draws bar plot of one open text column in a dataset</li>
-<li>
-<strong>mlstr_plot_histogram()</strong>: Draws histogram plot of one column in a dataset</li>
-<li>
-<strong>mlstr_plot_box()</strong>: Draws box plot of one column in a dataset</li>
-<li>
-<strong>mlstr_plot_date()</strong>: Draws lollipop plot of one time related column in a dataset</li>
-<li>
-<strong>mlstr_plot_bar()</strong>: Draws bar plot of one column in a dataset</li>
-<li>
-<strong>mlstr_plot_density()</strong>: Draws density line plot of one column in a dataset</li>
-<li>
-<strong>mlstr_plot_pie()</strong>: Draws pie plot of one column in a dataset</li>
-<li>
-<strong>mlstr_plot_pie_valid_value()</strong>: Draws pie plot of one column in a dataset (valid, non-valid and missing values)</li>
-<li>
-<strong>mlstr_summary_text()</strong>: Create datatable of one (possibly grouped) text-type variable of a dataset</li>
-<li>
-<strong>mlstr_summary_numerical()</strong>: Create datatable of one (possibly grouped) numerical-type variable of a dataset</li>
-<li>
-<strong>mlstr_summary_category()</strong>: Create datatable of one (possibly grouped) category-type variable of a dataset</li>
-<li>
-<strong>as.mlstr_date()</strong>: xxx</li>
-</ul>
-</li>
-<li>Deprecation:
-<ul>
-<li>
-<strong>mlstr_harmo_vizual_report_get()</strong>: renamed to generate_harmonized_study_bookdown_report()</li>
-<li>
-<strong>mlstr_render_r_markdown()</strong>: renamed to create_markdown_template()</li>
-</ul>
-</li>
-<li>General:
-<ul>
-<li>Correction of typo</li>
-<li>Substantial update of documentation in help center for all functions except Opal functions</li>
-<li>Update of documentation for vignette</li>
-<li>Creation of the vignette for the main purpose of the documentation</li>
-<li>Documentation review:
-<ul>
-<li>project_envir_create()</li>
-<li>mlstr_file_index_create()</li>
-<li>mlstr_file_index_search()</li>
-<li>mlstr_file_index_read()</li>
-<li>create_dd()</li>
-<li>shape_dictionary_mlstr_format()</li>
-<li>generate_original_study_bookdown_report()</li>
-<li>generate_harmonized_study_bookdown_report()</li>
-<li>mlstr_plot_main_word()</li>
-<li>mlstr_plot_histogram()</li>
-<li>mlstr_plot_box()</li>
-<li>mlstr_plot_date()</li>
-<li>mlstr_plot_bar()</li>
-<li>mlstr_plot_density()</li>
-<li>mlstr_plot_pie()</li>
-<li>mlstr_plot_pie_valid_value()</li>
-<li>mlstr_identify_viz_type()</li>
-<li>mlstr_identify_plot_type()</li>
-<li>mlstr_count_tag()</li>
-<li>mlstr_all_na_column()</li>
-<li>mlstr_summary_text()</li>
-<li>mlstr_summary_numerical()</li>
-<li>mlstr_summary_category()</li>
-<li>create_markdown_template()</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Coming soon
-<ul>
-<li>download_files_from_opal(): does not allow to download a file. Only a folder. this will be corrected.</li>
-<li>upload_tables_to_opal(): This function will soon handle the maelstrom taxonomy if the datadictionary is not in Opal format.</li>
-<li>replace in index the relative path to the absolute path</li>
-</ul>
-</li>
-</ul>
-<hr>
-</div>
-<div id="version-100-update-801---1-oct-2021" class="section level1">
-<h1 class="hasAnchor">
-<a href="#version-100-update-801---1-oct-2021" class="anchor"></a><strong>version</strong>: 1.00 update 8.01 - 1 oct 2021</h1>
-<p><em>This version includes</em></p>
-<ul>
-<li>Bug correction:
-<ul>
-<li>
-<strong>mlstr_file_index_create()</strong>: haven library import included to handle spss, sav and dta files</li>
-<li>
-<strong>mlstr_process_harmonization()</strong>: correction of undetermined function</li>
-</ul>
-</li>
-<li>Updates:
-<ul>
-<li>
-<strong>project_envir_create()</strong>: names of folder are less restrictive. The user can provide names starting with numbers.</li>
-</ul>
-</li>
-<li>Suppression:</li>
-<li>New feature:
-<ul>
-<li>
-<strong>harmonizR_help()</strong>: description of versioning in rmd_file</li>
-<li>
-<strong>mlstr_file_index_create()</strong>: handle spss files</li>
-<li>
-<strong>mlstr_file_index_read()</strong>: possibility to filter by extension</li>
-<li>
-<strong>read_excel_allsheets()</strong>: possibility for the user to provide the names of the sheets they want to download. If the excel is composed of one sheet, the object is a tibble, else a list of tibbles</li>
-<li>
-<strong>mlstr_process_harmonization()</strong>: possibility to re or post-harmonize an harmonized variable</li>
-<li>
-<strong>mlstr_process_harmonization()</strong>: auto attribution of the value type provided</li>
-<li>
-<strong>mlstr_process_harmonization()</strong>: new harmo rule!: rename<br>
-in the harmorule</li>
-</ul>
-</li>
-<li>Deprecation:
-<ul>
-<li>
-<strong>package_version()</strong>: renamed to harmonizR_help()</li>
-</ul>
-</li>
-<li>General:
-<ul>
-<li>Correction of typo</li>
-</ul>
-</li>
-</ul>
-<hr>
-</div>
-<div id="version-100-update-711---1-july-2021" class="section level1">
-<h1 class="hasAnchor">
-<a href="#version-100-update-711---1-july-2021" class="anchor"></a><strong>version</strong>: 1.00 update 7.11 - 1 july 2021</h1>
-<p><em>This version includes</em></p>
-<ul>
-<li>Bug correction:
-<ul>
-<li>
-<strong>project_envir_create()</strong>: existing project can no longer be silently re-created</li>
-<li>
-<strong>shape_dictionary_mlstr_format()</strong>: control order columns in Categories</li>
-</ul>
-</li>
-<li>Updates:
-<ul>
-<li>
-<strong>package_version()</strong>: description of versioning</li>
-<li>
-<strong>project_envir_create()</strong>: existing project can no longer be silently re-created</li>
-<li>
-<strong>mlstr_process_harmonization()</strong>: suppression of date in harmonization report</li>
-<li>
-<strong>summarize_harmonization()</strong>: percentage of success of harmonization shown in the summary table</li>
-</ul>
-</li>
-<li>Suppression:
-<ul>
-<li>
-<strong>opal()</strong> wrapper functions: Those functions will be corrected and updated in a later version</li>
-<li>
-<strong>project_envir_create()</strong>: ‘provenance’ column is no longer provided</li>
-</ul>
-</li>
-<li>New feature:
-<ul>
-<li>
-<strong>project_envir_create()</strong>: possibility to create a version when none was</li>
-<li>
-<strong>mlstr_file_index_create()</strong>: indicates whether the query returns empty output anticipated in the first place. Enter <em>copy_from = ""</em>
-</li>
-<li>
-<strong>summarize_harmonization()</strong>: show error in the console and not only the line code</li>
-</ul>
-</li>
-<li>Deprecation:
-<ul>
-<li>
-<strong>package_version()</strong>: renamed to mlstr_package_version()</li>
-<li>
-<strong>mlstr_file_index_download()</strong>: renamed to mlstr_file_index_read()</li>
-<li>
-<strong>check_error_1()</strong>: renamed to summarize_harmonization()</li>
-</ul>
-</li>
-<li>General:
-<ul>
-<li>Documentation: creation of parameter documentation in the function call</li>
-<li>Correction of typo</li>
-<li>Unnecessary function steps have been removed</li>
-<li>Remove importation of car libs (may generate some conflicts in library call</li>
-</ul>
-</li>
+<li><p>Bug correction:</p></li>
+<li><p>Suppression:</p></li>
+<li><p>New feature:</p></li>
+<li><p>Deprecation:</p></li>
+<li><p>General:</p></li>
 </ul>
 </div>
 

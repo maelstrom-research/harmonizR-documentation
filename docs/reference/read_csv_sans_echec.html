@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Read all csv file using readr::read_csv and avoid errors — read_csv_sans_echec • harmonizR</title>
+<title>Read all csv files using readr::read_csv and avoid errors — read_csv_sans_echec • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,10 @@
 
 
 
-<meta property="og:title" content="Read all csv file using readr::read_csv and avoid errors — read_csv_sans_echec" />
-<meta property="og:description" content="The file is read twice to handle the number of lines involved in the type attributed
-(guess_max parameter of read_csv). This avoids common errors when read csv files." />
+<meta property="og:title" content="Read all csv files using readr::read_csv and avoid errors — read_csv_sans_echec" />
+<meta property="og:description" content="The csv file is read twice to detect the number of lines to use in attributing
+the column type ('guess_max' parameter of read_csv). This avoids common errors
+when reading csv files." />
 
 
 
@@ -121,14 +122,15 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Read all csv file using readr::read_csv and avoid errors</h1>
+    <h1>Read all csv files using readr::read_csv and avoid errors</h1>
     <small class="dont-index">Source: <a href='https://github.com/maelstrom-research/harmonizR/blob/master/R/00-utils.R'><code>R/00-utils.R</code></a></small>
     <div class="hidden name"><code>read_csv_sans_echec.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The file is read twice to handle the number of lines involved in the type attributed
-(guess_max parameter of read_csv). This avoids common errors when read csv files.</p>
+    <p>The csv file is read twice to detect the number of lines to use in attributing
+the column type ('guess_max' parameter of read_csv). This avoids common errors
+when reading csv files.</p>
     </div>
 
     <pre class="usage"><span class='fu'>read_csv_sans_echec</span><span class='op'>(</span><span class='va'>csv_name</span><span class='op'>)</span></pre>

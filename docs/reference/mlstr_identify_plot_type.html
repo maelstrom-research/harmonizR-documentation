@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Generate R script of plots based on viz type of the variable. — mlstr_identify_plot_type • harmonizR</title>
+<title>Generate R script of plots based on the 'viz_type' of the variable. — mlstr_identify_plot_type • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,11 +39,11 @@
 
 
 
-<meta property="og:title" content="Generate R script of plots based on viz type of the variable. — mlstr_identify_plot_type" />
-<meta property="og:description" content="This helper function use the viz type attributed to a variable in a data dictionary
-to generate R script providing plots in a report. This function can
-be used manually to personalize the report parameters before editing. The plots
-can use an additional variable to group each variable shown by the grouping variable." />
+<meta property="og:title" content="Generate R script of plots based on the 'viz_type' of the variable. — mlstr_identify_plot_type" />
+<meta property="og:description" content="This helper function uses the visual type attributed to a variable in a data dictionary
+to generate R script to generate plots in a report. This function can be used to
+manually personalize the report parameters. The plots can use an additional variable
+to group each variable shown by the grouping variable." />
 
 
 
@@ -123,16 +123,16 @@ can use an additional variable to group each variable shown by the grouping vari
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Generate R script of plots based on viz type of the variable.</h1>
+    <h1>Generate R script of plots based on the 'viz_type' of the variable.</h1>
     <small class="dont-index">Source: <a href='https://github.com/maelstrom-research/harmonizR/blob/master/R/05-harmo_vizualize.R'><code>R/05-harmo_vizualize.R</code></a></small>
     <div class="hidden name"><code>mlstr_identify_plot_type.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This helper function use the viz type attributed to a variable in a data dictionary
-to generate R script providing plots in a report. This function can
-be used manually to personalize the report parameters before editing. The plots
-can use an additional variable to group each variable shown by the grouping variable.</p>
+    <p>This helper function uses the visual type attributed to a variable in a data dictionary
+to generate R script to generate plots in a report. This function can be used to
+manually personalize the report parameters. The plots can use an additional variable
+to group each variable shown by the grouping variable.</p>
     </div>
 
     <pre class="usage"><span class='fu'>mlstr_identify_plot_type</span><span class='op'>(</span>
@@ -147,7 +147,7 @@ can use an additional variable to group each variable shown by the grouping vari
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dataset</th>
-      <td><p>A character string or tibble of the dataset</p></td>
+      <td><p>A character string or tibble specifying the input dataset</p></td>
     </tr>
     <tr>
       <th>data_dict</th>
@@ -156,7 +156,7 @@ can use an additional variable to group each variable shown by the grouping vari
     <tr>
       <th>group_by</th>
       <td><p>A character string of one column in the dataset that can be
-taken as a grouping column. the vizual element will be grouped and displayed
+taken as a grouping column. the visual element will be grouped and displayed
 by this column.</p></td>
     </tr>
     <tr>
@@ -168,8 +168,9 @@ can be either 'ggplot2' or 'plotly'. gglot2 renders static plots, plotly dynamic
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list of two tibbles which is the data dictionary where columns plots
-and summary have been added to the data dictionary provided as an input.</p>
+    <p>A list of two tibbles which make up the Maelstrom-format data dictionary
+where columns plots and summary have been added to the data dictionary provided
+as an input.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The user must run mlstr_identify_viz_type first to run this function.</p>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create folders for a harmonization project — project_envir_create • harmonizR</title>
+<title>Create folders for a harmonization project — harmo_env_create • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Create folders for a harmonization project — project_envir_create" />
+<meta property="og:title" content="Create folders for a harmonization project — harmo_env_create" />
 <meta property="og:description" content="Creates folders for a harmonization project with a structure following Maelstrom
 Research harmonization standards. This is an optional feature that can be used
 as a template for a harmonization project. The project can have versions or not.
@@ -125,7 +125,7 @@ A new version can be created by copying from an existing version." />
     <div class="page-header">
     <h1>Create folders for a harmonization project</h1>
     <small class="dont-index">Source: <a href='https://github.com/maelstrom-research/harmonizR/blob/master/R/01-harmo_envir.R'><code>R/01-harmo_envir.R</code></a></small>
-    <div class="hidden name"><code>project_envir_create.Rd</code></div>
+    <div class="hidden name"><code>harmo_env_create.Rd</code></div>
     </div>
 
     <div class="ref-description">
@@ -135,7 +135,7 @@ as a template for a harmonization project. The project can have versions or not.
 A new version can be created by copying from an existing version.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>project_envir_create</span><span class='op'>(</span>
+    <pre class="usage"><span class='fu'>harmo_env_create</span><span class='op'>(</span>
   <span class='va'>project</span>,
   version <span class='op'>=</span> <span class='cn'>NA_character_</span>,
   copy_from <span class='op'>=</span> <span class='cn'>NA_character_</span>
@@ -168,16 +168,18 @@ will be created.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
-<span class='r-in'><span class='co'># use case 1: create folder without version</span></span>
-<span class='r-in'><span class='fu'>project_envir_create</span><span class='op'>(</span>project <span class='op'>=</span> <span class='st'>"TEST_1"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'># use case 1: create folder without versioning</span></span>
+<span class='r-in'><span class='fu'>harmo_env_create</span><span class='op'>(</span>project <span class='op'>=</span> <span class='st'>"TEST_1"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># use case 2: create folder with a version</span></span>
-<span class='r-in'><span class='fu'>project_envir_create</span><span class='op'>(</span></span>
+<span class='r-in'><span class='co'># use case 2: create folder with a versioning</span></span>
+<span class='r-in'><span class='fu'>harmo_env_create</span><span class='op'>(</span></span>
 <span class='r-in'>  project <span class='op'>=</span> <span class='st'>"TEST_2"</span>,</span>
 <span class='r-in'>  version <span class='op'>=</span> <span class='st'>"version_1"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># use case 3: copy a version in the same project</span></span>
-<span class='r-in'><span class='fu'>project_envir_create</span><span class='op'>(</span></span>
+<span class='r-in'><span class='co'># use case 3: copy a folder in the same project</span></span>
+<span class='r-in'><span class='co'># (e.g., the folder “version 2” will be created as a copy of the folder “version_1”)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>harmo_env_create</span><span class='op'>(</span></span>
 <span class='r-in'>  project <span class='op'>=</span> <span class='st'>"TEST_2"</span>,</span>
 <span class='r-in'>  version <span class='op'>=</span> <span class='st'>"version_2"</span> ,</span>
 <span class='r-in'>  copy_from <span class='op'>=</span> <span class='st'>"version_1"</span><span class='op'>)</span></span>

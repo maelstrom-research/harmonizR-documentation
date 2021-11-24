@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Generate data processing elements summary using annotated data processing elements R object — summarize_harmonization • harmonizR</title>
+<title>Generate summary of data processing elements using annotated data processing elements R object — harmo_summary • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,10 @@
 
 
 
-<meta property="og:title" content="Generate data processing elements summary using annotated data processing elements R object — summarize_harmonization" />
-<meta property="og:description" content="Reads data processing elements annotations to list processes, errors, and an
+<meta property="og:title" content="Generate summary of data processing elements using annotated data processing elements R object — harmo_summary" />
+<meta property="og:description" content="Reads annotated data processing elements to list processes, errors, and an
 overview of each rule of harmonization. The user can take this summary to help
-them in the correction of their data processing elements file and re run the
+in the correction of their data processing elements file and re run the
 process of harmonization." />
 
 
@@ -123,26 +123,26 @@ process of harmonization." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Generate data processing elements summary using annotated data processing elements R object</h1>
+    <h1>Generate summary of data processing elements using annotated data processing elements R object</h1>
     <small class="dont-index">Source: <a href='https://github.com/maelstrom-research/harmonizR/blob/master/R/06-harmo_process_harmonization.R'><code>R/06-harmo_process_harmonization.R</code></a></small>
-    <div class="hidden name"><code>summarize_harmonization.Rd</code></div>
+    <div class="hidden name"><code>harmo_summary.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Reads data processing elements annotations to list processes, errors, and an
+    <p>Reads annotated data processing elements to list processes, errors, and an
 overview of each rule of harmonization. The user can take this summary to help
-them in the correction of their data processing elements file and re run the
+in the correction of their data processing elements file and re run the
 process of harmonization.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>summarize_harmonization</span><span class='op'>(</span><span class='va'>report</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>harmo_summary</span><span class='op'>(</span><span class='va'>report</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>report</th>
-      <td><p>A tibble of the data processing elements annotated.</p></td>
+      <td><p>A tibble of the annotated data processing elements.</p></td>
     </tr>
     </table>
 
@@ -150,19 +150,19 @@ process of harmonization.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'><span class='co'># Read the files</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_path <span class='op'>=</span> <span class='st'>"individual_study_datasets"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='file_index_read.html'>file_index_read</a></span><span class='op'>(</span><span class='va'>index_DEMO</span>, file_path <span class='op'>=</span> <span class='st'>"study_specific_datasets"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># Example 1: all the process of harmonization with data processing elements with errors</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>, file_name <span class='op'>=</span> <span class='st'>"Harmo_rule_with_error"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_process_harmonization.html'>mlstr_process_harmonization</a></span><span class='op'>(</span></span>
+<span class='r-in'><span class='fu'><a href='file_index_read.html'>file_index_read</a></span><span class='op'>(</span><span class='va'>index_DEMO</span>, file_name <span class='op'>=</span> <span class='st'>"Harmo_rule_with_error"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='harmo_process.html'>harmo_process</a></span><span class='op'>(</span></span>
 <span class='r-in'>  dataschema <span class='op'>=</span> <span class='va'>Harmo_dataschema</span>,</span>
 <span class='r-in'>  data_proc_elem <span class='op'>=</span> <span class='va'>Harmo_rule_with_error</span>,</span>
-<span class='r-in'>  output_harmo_folder <span class='op'>=</span> <span class='st'>"demo_files/harmonized_datasets"</span><span class='op'>)</span></span>
+<span class='r-in'>  output_harmo_folder <span class='op'>=</span> <span class='st'>"DEMO/harmonized_datasets"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># Example 2: use the function summarize_harmonization directly to access the</span></span>
+<span class='r-in'><span class='co'># Example 2: use the function harmo_summary directly to access the</span></span>
 <span class='r-in'><span class='co'># errors. In your environment you will find a report attached to harmonization</span></span>
 <span class='r-in'><span class='co'># and the date of it.</span></span>
-<span class='r-in'><span class='fu'>summarize_harmonization</span><span class='op'>(</span><span class='va'>annotated_data_proc_elem</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>harmo_summary</span><span class='op'>(</span><span class='va'>annotated_data_proc_elem</span><span class='op'>)</span></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>
 </pre>

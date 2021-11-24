@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Download tables and data dictionary from Opal in R environment — download_tables_from_opal • harmonizR</title>
+<title>Download tables and data dictionaries from an Opal environment into the R environment — opal_tables_pull • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,9 @@
 
 
 
-<meta property="og:title" content="Download tables and data dictionary from Opal in R environment — download_tables_from_opal" />
-<meta property="og:description" content="Those Opal functions are wrappers of functions present in opalr. For further
-information, please refer to Opal documentation." />
+<meta property="og:title" content="Download tables and data dictionaries from an Opal environment into the R environment — opal_tables_pull" />
+<meta property="og:description" content="These Opal functions are wrappers of functions present in opalr. For further
+information, please refer to Opal documentation. https://www.obiba.org/opalr/index.html" />
 
 
 
@@ -121,17 +121,17 @@ information, please refer to Opal documentation." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Download tables and data dictionary from Opal in R environment</h1>
+    <h1>Download tables and data dictionaries from an Opal environment into the R environment</h1>
     <small class="dont-index">Source: <a href='https://github.com/maelstrom-research/harmonizR/blob/master/R/07-mlstr_opal_functions.R'><code>R/07-mlstr_opal_functions.R</code></a></small>
-    <div class="hidden name"><code>download_tables_from_opal.Rd</code></div>
+    <div class="hidden name"><code>opal_tables_pull.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Those Opal functions are wrappers of functions present in opalr. For further
-information, please refer to Opal documentation.</p>
+    <p>These Opal functions are wrappers of functions present in opalr. For further
+information, please refer to Opal documentation. https://www.obiba.org/opalr/index.html</p>
     </div>
 
-    <pre class="usage"><span class='fu'>download_tables_from_opal</span><span class='op'>(</span>
+    <pre class="usage"><span class='fu'>opal_tables_pull</span><span class='op'>(</span>
   opal <span class='op'>=</span> <span class='fu'>opal.login</span><span class='op'>(</span>url <span class='op'>=</span> <span class='fu'>getPass</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/getPass/man/getPass.html'>getPass</a></span><span class='op'>(</span><span class='st'>"Enter the url: "</span><span class='op'>)</span>, username <span class='op'>=</span>
     <span class='fu'>getPass</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/getPass/man/getPass.html'>getPass</a></span><span class='op'>(</span><span class='st'>"Enter the username: "</span><span class='op'>)</span>, password <span class='op'>=</span>
     <span class='fu'>getPass</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/getPass/man/getPass.html'>getPass</a></span><span class='op'>(</span><span class='st'>"Enter the password: "</span><span class='op'>)</span><span class='op'>)</span>,
@@ -149,11 +149,11 @@ information, please refer to Opal documentation.</p>
     </tr>
     <tr>
       <th>project</th>
-      <td><p>character string to name the project in Opal</p></td>
+      <td><p>A character string to name the project in Opal</p></td>
     </tr>
     <tr>
       <th>table</th>
-      <td><p>character string of the name the table</p></td>
+      <td><p>A character string of the name the table</p></td>
     </tr>
     <tr>
       <th>.envir</th>
@@ -173,12 +173,10 @@ respective data dictionary.</p>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># use case 1: download a table and its data dictionary associated</span></span>
-<span class='r-in'><span class='fu'>download_tables_from_opal</span><span class='op'>(</span>opal <span class='op'>=</span> <span class='va'>o</span>,project <span class='op'>=</span> <span class='va'>random_name</span>,table <span class='op'>=</span> <span class='st'>"iris"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>iris</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>dd_iris</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>opal_tables_pull</span><span class='op'>(</span>opal <span class='op'>=</span> <span class='va'>o</span>,project <span class='op'>=</span> <span class='st'>"DEMO"</span>, table <span class='op'>=</span> <span class='st'>"study_PARIS"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># use case 2: download all tables and their data dictionaries associated</span></span>
-<span class='r-in'><span class='fu'>download_tables_from_opal</span><span class='op'>(</span>opal <span class='op'>=</span> <span class='va'>o</span>,project <span class='op'>=</span> <span class='va'>random_name</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>opal_tables_pull</span><span class='op'>(</span>opal <span class='op'>=</span> <span class='va'>o</span>,project <span class='op'>=</span> <span class='st'>"DEMO"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>

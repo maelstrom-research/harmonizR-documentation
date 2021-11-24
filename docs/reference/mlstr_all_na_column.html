@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Extract 'all NA' columns in a dataset. — mlstr_all_na_column • harmonizR</title>
+<title>Extract columns that are all 'NA' from a dataset. — mlstr_all_na_column • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,9 @@
 
 
 
-<meta property="og:title" content="Extract 'all NA' columns in a dataset. — mlstr_all_na_column" />
-<meta property="og:description" content="This helper function extracts in a dataset the names of the columns having NA
-entry for all observations." />
+<meta property="og:title" content="Extract columns that are all 'NA' from a dataset. — mlstr_all_na_column" />
+<meta property="og:description" content="This helper function extracts the names of the columns in a dataset having NA
+values for all observations." />
 
 
 
@@ -121,14 +121,14 @@ entry for all observations." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Extract 'all NA' columns in a dataset.</h1>
+    <h1>Extract columns that are all 'NA' from a dataset.</h1>
     <small class="dont-index">Source: <a href='https://github.com/maelstrom-research/harmonizR/blob/master/R/04-data_QA.R'><code>R/04-data_QA.R</code></a></small>
     <div class="hidden name"><code>mlstr_all_na_column.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This helper function extracts in a dataset the names of the columns having NA
-entry for all observations.</p>
+    <p>This helper function extracts the names of the columns in a dataset having NA
+values for all observations.</p>
     </div>
 
     <pre class="usage"><span class='fu'>mlstr_all_na_column</span><span class='op'>(</span><span class='va'>dataset</span><span class='op'>)</span></pre>
@@ -138,14 +138,14 @@ entry for all observations.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dataset</th>
-      <td><p>A character string or tibble of the dataset</p></td>
+      <td><p>A character string or tibble of the input dataset</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector string indicating either the dataset do not have empty column
-or the names of the empty ones.</p>
+    <p>A vector string indicating either that the dataset does not have empty
+columns or the names of the empty columns.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>

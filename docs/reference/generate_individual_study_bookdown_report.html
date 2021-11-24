@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Generate a summary report bookdown for a study dataset — generate_individual_study_bookdown_report • harmonizR</title>
+<title>Generate a summary report bookdown for a study dataset — generate_study_specific_bookdown_report • harmonizR</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,9 @@
 
 
 
-<meta property="og:title" content="Generate a summary report bookdown for a study dataset — generate_individual_study_bookdown_report" />
-<meta property="og:description" content="This function generates a summary report in an bookdown (html-based) document
-showing descriptive statistics for each variable in an individual study dataset to
+<meta property="og:title" content="Generate a summary report bookdown for a study dataset — generate_study_specific_bookdown_report" />
+<meta property="og:description" content="This function generates a summary report in an html bookdown document
+showing descriptive statistics for each variable in an study-specific dataset to
 facilitate assessment of input data. Statistics and figures are generated according
 to four types of variables: numerical, text, categorical, and dual (open field
 variables with not open categories, e.g., “Do not know”, “Do not want to answer”).
@@ -128,12 +128,12 @@ The output can be editable (using plotly library) or static (using ggplot2 libra
     <div class="page-header">
     <h1>Generate a summary report bookdown for a study dataset</h1>
     <small class="dont-index">Source: <a href='https://github.com/maelstrom-research/harmonizR/blob/master/R/05-harmo_vizualize.R'><code>R/05-harmo_vizualize.R</code></a></small>
-    <div class="hidden name"><code>generate_individual_study_bookdown_report.Rd</code></div>
+    <div class="hidden name"><code>generate_study_specific_bookdown_report.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function generates a summary report in an bookdown (html-based) document
-showing descriptive statistics for each variable in an individual study dataset to
+    <p>This function generates a summary report in an html bookdown document
+showing descriptive statistics for each variable in an study-specific dataset to
 facilitate assessment of input data. Statistics and figures are generated according
 to four types of variables: numerical, text, categorical, and dual (open field
 variables with not open categories, e.g., “Do not know”, “Do not want to answer”).
@@ -141,7 +141,7 @@ The variable type is automatically detected from the dataset and its data dictio
 The output can be editable (using plotly library) or static (using ggplot2 library).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>generate_individual_study_bookdown_report</span><span class='op'>(</span>
+    <pre class="usage"><span class='fu'>generate_study_specific_bookdown_report</span><span class='op'>(</span>
   <span class='va'>dataset</span>,
   <span class='va'>data_dict</span>,
   group_by <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -156,12 +156,12 @@ The output can be editable (using plotly library) or static (using ggplot2 libra
     <tr>
       <th>dataset</th>
       <td><p>A character string or tibble R object identifying the input dataset
-(in Maelstrom format). Maelstrom-format dataset has the entity (usually participant)
+(in the Maelstrom Research formats). Maelstrom-format dataset has the entity (usually participant)
 ID as the first column.</p></td>
     </tr>
     <tr>
       <th>data_dict</th>
-      <td><p>A tibble identifying the data dictionary (in Maelstrom format) associated
+      <td><p>A tibble identifying the data dictionary (in the Maelstrom Research formats) associated
 with the dataset. Automatically generated if not provided.</p></td>
     </tr>
     <tr>
@@ -192,34 +192,34 @@ can be either 'ggplot2' or 'plotly'. gglot2 renders static plots, plotly dynamic
 (current folder/docs by default). To open the file in browser, open "index.html"</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Must provide dataset and data dictionary in Maelstrom formats. If the data dictionary
+    <p>Must provide dataset and data dictionary in the Maelstrom Research formats. If the data dictionary
 is not provided, a basic one is being created during the process.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># Create index of files in one folder and read the files</span></span>
-<span class='r-in'><span class='va'>index_demo_files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='mlstr_file_index_create.html'>mlstr_file_index_create</a></span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"demo_files"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span>index <span class='op'>=</span> <span class='va'>index_demo_files</span>, file_name <span class='op'>=</span> <span class='st'>"study_TOKYO"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span>index <span class='op'>=</span> <span class='va'>index_demo_files</span>, file_name <span class='op'>=</span> <span class='st'>"dd_TOKYO"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>index_DEMO</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_index_create.html'>file_index_create</a></span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"DEMO"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='file_index_read.html'>file_index_read</a></span><span class='op'>(</span>index <span class='op'>=</span> <span class='va'>index_DEMO</span>, file_name <span class='op'>=</span> <span class='st'>"study_TOKYO"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='file_index_read.html'>file_index_read</a></span><span class='op'>(</span>index <span class='op'>=</span> <span class='va'>index_DEMO</span>, file_name <span class='op'>=</span> <span class='st'>"dd_TOKYO"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># use case 1: report of demo dataset TOKYO</span></span>
-<span class='r-in'><span class='fu'>generate_individual_study_bookdown_report</span><span class='op'>(</span></span>
+<span class='r-in'><span class='fu'>generate_study_specific_bookdown_report</span><span class='op'>(</span></span>
 <span class='r-in'>  dataset <span class='op'>=</span> <span class='va'>study_TOKYO</span>,</span>
 <span class='r-in'>  data_dict <span class='op'>=</span> <span class='va'>dd_TOKYO_format_maelstrom_tagged</span>,</span>
-<span class='r-in'>  to <span class='op'>=</span> <span class='st'>"demo_files/reports/TOKYO"</span><span class='op'>)</span></span>
+<span class='r-in'>  to <span class='op'>=</span> <span class='st'>"DEMO/reports/TOKYO"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># use case 2: report of demo dataset TOKYO, grouped by gndr</span></span>
-<span class='r-in'><span class='fu'>generate_individual_study_bookdown_report</span><span class='op'>(</span></span>
+<span class='r-in'><span class='fu'>generate_study_specific_bookdown_report</span><span class='op'>(</span></span>
 <span class='r-in'>  dataset <span class='op'>=</span> <span class='va'>study_TOKYO</span>,</span>
 <span class='r-in'>  data_dict <span class='op'>=</span> <span class='va'>dd_TOKYO_format_maelstrom_tagged</span>,</span>
-<span class='r-in'>  to <span class='op'>=</span> <span class='st'>"demo_files/reports/TOKYO_gndr"</span>,group_by <span class='op'>=</span> <span class='st'>"gndr"</span>,out <span class='op'>=</span> <span class='st'>"ggplot2"</span><span class='op'>)</span></span>
+<span class='r-in'>  to <span class='op'>=</span> <span class='st'>"DEMO/reports/TOKYO_gndr"</span>,group_by <span class='op'>=</span> <span class='st'>"gndr"</span>,out <span class='op'>=</span> <span class='st'>"ggplot2"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># re-index your files to include new files created</span></span>
-<span class='r-in'><span class='va'>index_demo_files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='mlstr_file_index_create.html'>mlstr_file_index_create</a></span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"demo_files"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>index_DEMO</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_index_create.html'>file_index_create</a></span><span class='op'>(</span>folder <span class='op'>=</span> <span class='st'>"DEMO"</span><span class='op'>)</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'># read the book down</span></span>
-<span class='r-in'><span class='fu'><a href='mlstr_file_index_read.html'>mlstr_file_index_read</a></span><span class='op'>(</span><span class='va'>index_demo_files</span>,file_path <span class='op'>=</span> <span class='st'>"demo_files/reports/TOKYO_gndr/docs/index.html"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='file_index_read.html'>file_index_read</a></span><span class='op'>(</span><span class='va'>index_DEMO</span>,file_path <span class='op'>=</span> <span class='st'>"DEMO/reports/TOKYO_gndr/docs/index.html"</span><span class='op'>)</span></span>
 <span class='r-in'><span class='op'>}</span></span>
 <span class='r-in'></span>
 </pre>
