@@ -1,5 +1,7 @@
 library(harmonizRv3)
 library(fs)
+# usethis::use_pkgdown()
+pkgdown::build_site()
 
 dir_copy(
   "/staff/gfabre/harmonizRv3/docs",
@@ -7,5 +9,3 @@ dir_copy(
   overwrite = TRUE
 )
 
-# usethis::use_pkgdown()
-pkgdown::build_site()
