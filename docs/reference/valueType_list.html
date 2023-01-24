@@ -80,20 +80,26 @@ for programmatic use.</p>
 <h3 id="tibble"><code>tibble</code><a class="anchor" aria-label="anchor" href="#tibble"></a></h3>
 
 
-<p>A data frame with 12 rows and 5 columns:</p><dl><dt>valueType</dt>
+<p>A data frame with 12 rows and 6 columns:</p><dl><dt>valueType</dt>
 <dd><p>data type as described in Opal</p></dd>
 
 <dt>typeof</dt>
-<dd><p>data type provided by base::typeof()</p></dd>
+<dd><p>data type provided by base::typeof</p></dd>
 
 <dt>class</dt>
 <dd><p>data class provided by base::class</p></dd>
 
 <dt>call</dt>
-<dd><p>function to transpose object according do.call() function</p></dd>
+<dd><p>function to transpose object according base::do.call function</p></dd>
 
 <dt>toValueType</dt>
-<dd><p>data type as described in Opal</p></dd>
+<dd><p>ensemble data type as described in Opal</p></dd>
+
+<dt>toTypeof</dt>
+<dd><p>ensemble data type provided by base::typeof</p></dd>
+
+<dt>genericType</dt>
+<dd><p>ensemble data type which valueType belongs</p></dd>
 
 ...
 
@@ -105,31 +111,11 @@ for programmatic use.</p>
     <p>valueType is one of the property of a variable entity. It refers to
 the (Obiba internal) type of any variable. The valueType can be 'text',
 'integer', 'decimal', 'boolean', 'locale', 'datetime', 'date', 'binary',
-'point', 'linestring', 'polygon'.
-The valueType list is avalable using valueType_list, and their
-correspondancy with typeof which is the (R internal) type of any object.</p>
+'point', 'linestring', 'polygon'.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
-    <div class="dont-index"><p><a href="https://opaldoc.obiba.org/en/dev/magma-user-guide/value/type.html" class="external-link">Opal documentation</a></p>
-<p>A data frame with 12 rows and 5 columns:</p><dl><dt>valueType</dt>
-<dd><p>data type as described in Opal</p></dd>
-
-<dt>typeof</dt>
-<dd><p>data type provided by base::typeof()</p></dd>
-
-<dt>class</dt>
-<dd><p>data class provided by base::class</p></dd>
-
-<dt>call</dt>
-<dd><p>function to transpose object according do.call() function</p></dd>
-
-<dt>toValueType</dt>
-<dd><p>data type as described in Opal</p></dd>
-
-...
-
-</dl></div>
+    <div class="dont-index"><p><a href="https://opaldoc.obiba.org/en/dev/magma-user-guide/value/type.html" class="external-link">Opal documentation</a></p></div>
     </div>
 
   </div>
