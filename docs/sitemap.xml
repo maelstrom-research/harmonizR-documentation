@@ -22,60 +22,6 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/as_data_dict.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_data_dict_shape.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_data_procelem.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_dataschema.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_dataset.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_mlstr_data_dict.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_mlstr_dataschema.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_study.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_taxonomy.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_valueType.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_data_dict_categories.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_data_dict_missing_categories.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_data_dict_valueType.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_data_dict_variables.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_dataset_categories.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_dataset_valueType.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_dataset_variables.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_name_standards.html</loc>
-  </url>
-  <url>
     <loc>/reference/data_dict_apply.html</loc>
   </url>
   <url>
@@ -121,9 +67,6 @@
     <loc>/reference/data_extract.html</loc>
   </url>
   <url>
-    <loc>/reference/data_procelem_evaluate.html</loc>
-  </url>
-  <url>
     <loc>/reference/dataschema_evaluate.html</loc>
   </url>
   <url>
@@ -142,49 +85,7 @@
     <loc>/reference/dataset_zap_data_dict.html</loc>
   </url>
   <url>
-    <loc>/reference/harmo_parse_process_rule.html</loc>
-  </url>
-  <url>
     <loc>/reference/harmo_process.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_add_variable.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_case_when.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_direct_mapping.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_function.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_id_creation.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_impossible.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_merge_variable.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_operation.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_other.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_paste.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_recode.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_rename.html</loc>
-  </url>
-  <url>
-    <loc>/reference/harmo_process_undetermined.html</loc>
   </url>
   <url>
     <loc>/reference/harmonizR_help.html</loc>
@@ -199,34 +100,7 @@
     <loc>/reference/harmonized_study_visualize.html</loc>
   </url>
   <url>
-    <loc>/reference/identify_plot_type.html</loc>
-  </url>
-  <url>
-    <loc>/reference/identify_visual_type.html</loc>
-  </url>
-  <url>
     <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/is_data_dict.html</loc>
-  </url>
-  <url>
-    <loc>/reference/is_data_dict_shape.html</loc>
-  </url>
-  <url>
-    <loc>/reference/is_dataset.html</loc>
-  </url>
-  <url>
-    <loc>/reference/is_mlstr_data_dict.html</loc>
-  </url>
-  <url>
-    <loc>/reference/is_study.html</loc>
-  </url>
-  <url>
-    <loc>/reference/is_taxonomy.html</loc>
-  </url>
-  <url>
-    <loc>/reference/is_valueType.html</loc>
   </url>
   <url>
     <loc>/reference/opal_files_pull.html</loc>
@@ -253,12 +127,6 @@
     <loc>/reference/open_visual_report.html</loc>
   </url>
   <url>
-    <loc>/reference/rename_process_rule_columnsV1.html</loc>
-  </url>
-  <url>
-    <loc>/reference/resume_variables.html</loc>
-  </url>
-  <url>
     <loc>/reference/show_harmo_error.html</loc>
   </url>
   <url>
@@ -269,21 +137,6 @@
   </url>
   <url>
     <loc>/reference/study_summarize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/summary_variables.html</loc>
-  </url>
-  <url>
-    <loc>/reference/summary_variables_categorical.html</loc>
-  </url>
-  <url>
-    <loc>/reference/summary_variables_date.html</loc>
-  </url>
-  <url>
-    <loc>/reference/summary_variables_numerical.html</loc>
-  </url>
-  <url>
-    <loc>/reference/summary_variables_text.html</loc>
   </url>
   <url>
     <loc>/reference/valueType_adjust.html</loc>
