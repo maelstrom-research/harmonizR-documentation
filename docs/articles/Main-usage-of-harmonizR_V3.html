@@ -83,7 +83,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Main usage of harmonizR V3</h1>
             
-            <h4 data-toc-skip class="date">2023-01-24</h4>
+            <h4 data-toc-skip class="date">2023-01-31</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/harmonizRv3/blob/HEAD/vignettes/Main-usage-of-harmonizR_V3.Rmd" class="external-link"><code>vignettes/Main-usage-of-harmonizR_V3.Rmd</code></a></small>
       <div class="hidden name"><code>Main-usage-of-harmonizR_V3.Rmd</code></div>
@@ -122,7 +122,7 @@ on an Opal demo environment.</p>
 <span><span class="co"># additional packages needed in the demonstration</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/obiba/opalr/" class="external-link">opalr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">utils</span><span class="op">)</span></span>
+<span><span class="co"># library(utils)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/GuiFabre/fabR/" class="external-link">fabR</a></span><span class="op">)</span></span>
 <span></span>
 <span></span>
@@ -168,7 +168,7 @@ different versions of datasets, data dictionaries, DataSchema, and data
 processing elements).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># use case 1: create folder without versioning (not mandatory - can be done manually)</span></span>
-<span><span class="fu">harmo_env_create</span><span class="op">(</span>project <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/harmo_env_create.html" class="external-link">harmo_env_create</a></span><span class="op">(</span>project <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="import-the-demonstration-files">Import the demonstration files<a class="anchor" aria-label="anchor" href="#import-the-demonstration-files"></a>
@@ -284,7 +284,7 @@ can be integrated into the process.</p>
 <span></span>
 <span><span class="co"># Example 2: use the function harmo_summary() to access the errors. </span></span>
 <span><span class="co"># In your environment, you will find a report attached to harmonization process.</span></span>
-<span><span class="fu">harmo_summary</span><span class="op">(</span><span class="va">harmonized_study_DEMO</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/harmo_summary.html" class="external-link">harmo_summary</a></span><span class="op">(</span><span class="va">harmonized_study_DEMO</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># After correction, re-run the process of harmonization with the corrected data </span></span>
 <span><span class="co"># processing elements.</span></span>
@@ -323,7 +323,7 @@ can be integrated into the process.</p>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

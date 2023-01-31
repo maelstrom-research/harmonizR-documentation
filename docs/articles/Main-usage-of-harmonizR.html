@@ -83,7 +83,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Main usage of harmonizR</h1>
             
-            <h4 data-toc-skip class="date">2023-01-24</h4>
+            <h4 data-toc-skip class="date">2023-01-31</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/harmonizRv3/blob/HEAD/vignettes/Main-usage-of-harmonizR.Rmd" class="external-link"><code>vignettes/Main-usage-of-harmonizR.Rmd</code></a></small>
       <div class="hidden name"><code>Main-usage-of-harmonizR.Rmd</code></div>
@@ -116,7 +116,7 @@ on an Opal demo environment.</p>
 <span>  auth_token <span class="op">=</span> <span class="st">"ghp_xxx"</span>,</span>
 <span>  force <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">harmonizR</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/harmonizR/" class="external-link">harmonizR</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># additional packages needed in the demonstration</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
@@ -163,7 +163,7 @@ different versions of datasets, data dictionaries, DataSchema, and data
 processing elements).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># use case 1: create folder without versioning</span></span>
-<span><span class="fu">harmo_env_create</span><span class="op">(</span>project <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/harmo_env_create.html" class="external-link">harmo_env_create</a></span><span class="op">(</span>project <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="import-the-demonstration-files">Import the demonstration files<a class="anchor" aria-label="anchor" href="#import-the-demonstration-files"></a>
@@ -193,13 +193,13 @@ environment.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># create index of files that are in a  folder</span></span>
-<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu">file_index_create</span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
+<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># search index for files matching a specific file path query</span></span>
-<span><span class="fu">file_index_search</span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/file_index_search.html" class="external-link">file_index_search</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># read the files</span></span>
-<span><span class="fu">file_index_read</span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="generate-visual-reports-of-the-study-specific-variables">Generate visual report(s) of the study-specific variables<a class="anchor" aria-label="anchor" href="#generate-visual-reports-of-the-study-specific-variables"></a>
@@ -218,22 +218,22 @@ about graphics and tables generated in the report.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># use case 1: report of demo dataset TOKYO</span></span>
-<span><span class="fu">study_visual_report</span><span class="op">(</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/study_visual_report.html" class="external-link">study_visual_report</a></span><span class="op">(</span></span>
 <span>  dataset <span class="op">=</span> <span class="va">study_TOKYO</span>,</span>
 <span>  data_dict <span class="op">=</span> <span class="va">dd_TOKYO_format_maelstrom_tagged</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"DEMO/reports/TOKYO"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># use case 2: report of demo dataset TOKYO, grouped by gndr</span></span>
-<span><span class="fu">study_visual_report</span><span class="op">(</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/study_visual_report.html" class="external-link">study_visual_report</a></span><span class="op">(</span></span>
 <span>  dataset <span class="op">=</span> <span class="va">study_TOKYO</span>,</span>
 <span>  data_dict <span class="op">=</span> <span class="va">dd_TOKYO_format_maelstrom_tagged</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"DEMO/reports/TOKYO_gndr"</span>,group_by <span class="op">=</span> <span class="st">"gndr"</span>,out <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># re-index your files to include new files created</span></span>
-<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu">file_index_create</span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
+<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># read the bookdown</span></span>
-<span><span class="fu">file_index_read</span><span class="op">(</span><span class="va">index_DEMO</span>,file_path <span class="op">=</span> <span class="st">"DEMO/reports/TOKYO_gndr/docs/index.html"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>,file_path <span class="op">=</span> <span class="st">"DEMO/reports/TOKYO_gndr/docs/index.html"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="read-and-run-the-data-processing-rules-and-generate-the-harmonized-dataset">Read and run the data processing rules and generate the harmonized
@@ -248,9 +248,9 @@ can be integrated into the process.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Read the files</span></span>
-<span><span class="fu">file_index_read</span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span>
-<span><span class="fu">file_index_read</span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"dataschema"</span><span class="op">)</span></span>
-<span><span class="fu">file_index_read</span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"data_processing_elements"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"dataschema"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"data_processing_elements"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Example 1: run the process of harmonization with data processing elements containing errors</span></span>
 <span><span class="fu"><a href="../reference/harmo_process.html">harmo_process</a></span><span class="op">(</span></span>
@@ -261,7 +261,7 @@ can be integrated into the process.</p>
 <span></span>
 <span><span class="co"># Example 2: use the function harmo_summary() to access the errors. </span></span>
 <span><span class="co"># In your environment, you will find a report attached to harmonization process.</span></span>
-<span><span class="fu">harmo_summary</span><span class="op">(</span><span class="va">harmo_report</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/harmo_summary.html" class="external-link">harmo_summary</a></span><span class="op">(</span><span class="va">harmo_report</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span><span class="va">harmo_report</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># After correction, re-run the process of harmonization with the corrected data </span></span>
@@ -273,7 +273,7 @@ can be integrated into the process.</p>
 <span>  output_harmo_folder <span class="op">=</span> <span class="st">"DEMO/harmonized_datasets"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># re-index your files to include new files created</span></span>
-<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu">file_index_create</span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="generate-visual-report-of-the-harmonized-variables">Generate visual report of the harmonized variables<a class="anchor" aria-label="anchor" href="#generate-visual-report-of-the-harmonized-variables"></a>
@@ -292,11 +292,11 @@ default).</p>
 <span><span class="co"># pool your data in one tibble</span></span>
 <span><span class="va">harmonized_study_DEMO_table_DEMO</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">harmonized_study_MELBOURNE_table_MELBOURNE</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">harmonized_study_PARIS_table_PARIS</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">harmonized_study_TOKYO_table_TOKYO</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">harmonized_study_PARIS_table_PARIS</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">harmonized_study_TOKYO_table_TOKYO</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># use case 1: report of harmonized_study_DEMO_table_DEMO.</span></span>
-<span><span class="fu">harmo_visual_report</span><span class="op">(</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/harmo_visual_report.html" class="external-link">harmo_visual_report</a></span><span class="op">(</span></span>
 <span>  harmonized_dataset <span class="op">=</span> <span class="va">harmonized_study_DEMO_table_DEMO</span>,</span>
 <span>  dataschema <span class="op">=</span> <span class="va">DEMO_dataschema</span>,</span>
 <span>  data_proc_elem <span class="op">=</span> <span class="va">`DEMO_data_processing_elements - work in progress`</span>,</span>
@@ -305,10 +305,10 @@ default).</p>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># re-index your files to include new files created</span></span>
-<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu">file_index_create</span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
+<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># read the bookdown (or open the file named 'index.html' in your browser)</span></span>
-<span><span class="fu">file_index_read</span><span class="op">(</span><span class="va">index_DEMO</span>,file_path <span class="op">=</span> <span class="st">"DEMO/reports/harmonized_DEMO/docs/index.html"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizR/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>,file_path <span class="op">=</span> <span class="st">"DEMO/reports/harmonized_DEMO/docs/index.html"</span><span class="op">)</span></span></code></pre></div>
 </div>
   </div>
 
@@ -329,7 +329,7 @@ default).</p>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
