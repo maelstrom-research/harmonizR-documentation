@@ -5,8 +5,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support The Harmonization Process Following Maelstrom Research Standards  • harmonizRv3</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<title>Support The Harmonization Process Following Maelstrom Research Standards  • harmonizR</title>
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -14,7 +14,8 @@
 <script src="pkgdown.js"></script><meta property="og:title" content="Support The Harmonization Process Following Maelstrom Research Standards ">
 <meta property="og:description" content="The goal of this package is to help the user through the process of 
     harmonization following the Maelstrom Research guidelines. The user can: 
-    a) Create an R environment where the user can place files in an organized structure. 
+    a) Create an R environment where the user can place files in an organized 
+       structure. 
     b) Identify the location and content of files in user's environment. 
     c) Generate bookdown reports of study-specific variables (input). 
     d) Read and interpret the data processing elements (harmonization potential 
@@ -39,8 +40,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">harmonizRv3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">3.2.6</span>
+        <a class="navbar-link" href="index.html">harmonizR</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0.1001</span>
       </span>
     </div>
 
@@ -57,10 +58,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/Main-usage-of-harmonizR.html">Main usage of harmonizR</a>
-    </li>
-    <li>
-      <a href="articles/Main-usage-of-harmonizR_V3.html">Main usage of harmonizR V3</a>
+      <a href="articles/Main-usage-of-harmonizR.html">Main-usage-of-harmonizR</a>
     </li>
   </ul>
 </li>
@@ -70,7 +68,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/maelstrom-research/harmonizRv3/" class="external-link">
+  <a href="https://github.com/maelstrom-research/harmonizR/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -87,120 +85,50 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-
 <div class="section level1">
-<div class="page-header"><h1 id="coming-soon">
-<strong>Coming soon</strong>:<a class="anchor" aria-label="anchor" href="#coming-soon"></a>
+<div class="page-header"><h1 id="harmonizr">harmonizR<a class="anchor" aria-label="anchor" href="#harmonizr"></a>
 </h1></div>
-<ul>
-<li>v3 coming “soon”</li>
-<li>new feature: update index</li>
-<li>new feature: QA functions for datasets and datadictionaries</li>
-</ul>
-<hr>
-</div>
-<div class="section level1">
-<h1 id="latest-version-211-update---23-dec-2021">
-<strong>latest version</strong>: 2.1.1 update - 23 dec 2021<a class="anchor" aria-label="anchor" href="#latest-version-211-update---23-dec-2021"></a>
-</h1>
-<p><em>This version includes</em></p>
-<ul>
-<li>
-<p>Updates:</p>
-<ul>
-<li>MAJOR UPDATE: Creation of all the documentation associated with the package, along with the Maelstrom Research standards.</li>
-</ul>
-<p>The name of each function has been standardized and replaced, following both R best practices and Maelstrom Research standards. The package version 1.00 has been archived.</p>
-<table class="table">
-<colgroup>
-<col width="45%">
-<col width="54%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">Name of functions in latest version</th>
-<th align="left">Name of functions in the previous version</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">file_index_create()</td>
-<td align="left">mlstr_file_index_create()</td>
-</tr>
-<tr class="even">
-<td align="left">file_index_read()</td>
-<td align="left">mlstr_file_index_read()</td>
-</tr>
-<tr class="odd">
-<td align="left">file_index_search()</td>
-<td align="left">mlstr_file_index_search()</td>
-</tr>
-<tr class="even">
-<td align="left">harmo_env_create()</td>
-<td align="left">project_envir_create()</td>
-</tr>
-<tr class="odd">
-<td align="left">harmo_process()</td>
-<td align="left">mlstr_process_harmonization()</td>
-</tr>
-<tr class="even">
-<td align="left">harmo_summary()</td>
-<td align="left">summarize_harmonization()</td>
-</tr>
-<tr class="odd">
-<td align="left">harmo_visual_report()</td>
-<td align="left">generate_harmonized_study_bookdown_report()</td>
-</tr>
-<tr class="even">
-<td align="left">study_visual_report()</td>
-<td align="left">generate_study_specific_bookdown_report()</td>
-</tr>
-<tr class="odd">
-<td align="left">opal_project_create()</td>
-<td align="left">create_project_in_opal()</td>
-</tr>
-<tr class="even">
-<td align="left">opal_files_pull()</td>
-<td align="left">download_files_from_opal()</td>
-</tr>
-<tr class="odd">
-<td align="left">opal_tables_pull()</td>
-<td align="left">download_tables_from_opal()</td>
-</tr>
-<tr class="even">
-<td align="left">opal_files_push()</td>
-<td align="left">upload_files_to_opal()</td>
-</tr>
-<tr class="odd">
-<td align="left">opal_tables_push()</td>
-<td align="left">upload_tables_to_opal()</td>
-</tr>
-<tr class="even">
-<td align="left">data_dict_create()</td>
-<td align="left">create_data_dict()</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li><p>Bug correction:</p></li>
-<li><p>Suppression:</p></li>
-<li>
-<p>New feature:</p>
-<ul>
-<li>valueType_apply : Apply all the valueTypes of a data dictionary to a dataset</li>
-</ul>
-</li>
-<li><p>Deprecation:</p></li>
-<li><p>General:</p></li>
-</ul>
-</div>
+<!-- badges: start -->
 
+<p>The goal of harmonizR is to …</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the development version of harmonizR from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"maelstrom-research/harmonizR"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
+<p>This is a basic example which shows you how to solve a common problem:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/harmonizR/" class="external-link">harmonizR</a></span><span class="op">)</span></span>
+<span><span class="co">## basic example code</span></span></code></pre></div>
+<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span></span>
+<span><span class="co">#&gt;      speed           dist       </span></span>
+<span><span class="co">#&gt;  Min.   : 4.0   Min.   :  2.00  </span></span>
+<span><span class="co">#&gt;  1st Qu.:12.0   1st Qu.: 26.00  </span></span>
+<span><span class="co">#&gt;  Median :15.0   Median : 36.00  </span></span>
+<span><span class="co">#&gt;  Mean   :15.4   Mean   : 42.98  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:19.0   3rd Qu.: 56.00  </span></span>
+<span><span class="co">#&gt;  Max.   :25.0   Max.   :120.00</span></span></code></pre></div>
+<p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date. <code><a href="https://devtools.r-lib.org/reference/build_rmd.html" class="external-link">devtools::build_readme()</a></code> is handy for this. You could also use GitHub Actions to re-render <code>README.Rmd</code> every time you push. An example workflow can be found here: <a href="https://github.com/r-lib/actions/tree/v1/examples" class="external-link uri">https://github.com/r-lib/actions/tree/v1/examples</a>.</p>
+<p>You can also embed plots, for example:</p>
+<p>In that case, don’t forget to commit and push the resulting figure files, so they display on GitHub and CRAN.</p>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/maelstrom-research/harmonizRv3/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/maelstrom-research/harmonizRv3/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/maelstrom-research/harmonizR/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/maelstrom-research/harmonizR/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -215,7 +143,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing harmonizRv3</a></li>
+<li><a href="authors.html#citation">Citing harmonizR</a></li>
 </ul>
 </div>
 
@@ -227,7 +155,12 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/maelstrom-research/harmonizR/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/maelstrom-research/harmonizR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+</ul>
+</div>
 
   </div>
 </div>
