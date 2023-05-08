@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Main-usage-of-harmonizR • harmonizR</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0.1001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0.1006</span>
       </span>
     </div>
 
@@ -51,6 +51,9 @@
   <ul class="dropdown-menu" role="menu">
 <li>
       <a href="../articles/Main-usage-of-harmonizR.html">Main-usage-of-harmonizR</a>
+    </li>
+    <li>
+      <a href="../articles/Main-usage-of-harmonizRLegacy.html">Main-usage-of-harmonizRLegacy</a>
     </li>
   </ul>
 </li>
@@ -80,7 +83,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Main-usage-of-harmonizR</h1>
             
-            <h4 data-toc-skip class="date">2023-03-17</h4>
+            <h4 data-toc-skip class="date">2023-05-08</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/harmonizR/blob/HEAD/vignettes/Main-usage-of-harmonizR.Rmd" class="external-link"><code>vignettes/Main-usage-of-harmonizR.Rmd</code></a></small>
       <div class="hidden name"><code>Main-usage-of-harmonizR.Rmd</code></div>
@@ -90,36 +93,57 @@
     
     
 <div class="section level2">
-<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<h2 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a>
 </h2>
-<p>This vignette is a first step into the <strong>harmonizR</strong> to
-facilitate the data harmonization process. The package follows Maelstrom
-Research approach and standards. It is built on
-<strong>madshapR</strong> and
-<a href="https://cran.r-project.org/web//packages/fabR/index.html" target="_blank" class="external-link">
-fabR</a>.</p>
-<p>For more information about Maelstrom Research, <a href="https://www.maelstrom-research.org/" class="external-link">see here</a>.</p>
-<p>Bellow is a walkthrough of the harmonization process using the
-package <strong>harmonizR</strong> and established harmonization rules.
-It shows how to:</p>
+<p>Combining and co-analyzing data from different studies offers
+potential advantages for addressing research questions, but data items
+collected by different studies must first be made suitably equivalent,
+i.e., harmonized. This process of data harmonization is essential but
+challenging to implement in a rigorous and transparent way. To help
+address these challenges,
+<a href="https://www.maelstrom-research.org/" target="_blank" class="external-link"> Maelstrom
+Research</a> developed guidelines for rigorous
+<a href="https://maelstrom-research.org/page/maelstrom-guidelines" target="_blank" class="external-link">
+retrospective data harmonization</a>. An overview of the iterative steps
+of this process are shown in Figure 1.</p>
+<div class="figure">
+<img src="https://www.maelstrom-research.org/assets/images/HarmoStepsNew.png" id="id" class="class" style="width:50.0%;height:50.0%" alt=""><p class="caption">Figure 1. Iterative harmonization steps.</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="harmonizr">harmonizR<a class="anchor" aria-label="anchor" href="#harmonizr"></a>
+</h2>
+<p>The <strong>harmonizR</strong> package addresses practical aspects of
+data harmonization processing (guidelines Step 3) and facilitates
+evaluation (Step 4) and documentation (Step 5) of harmonization
+products. It was developed to meet certain needs of Maelstrom’s
+collaborative harmonization initiatives, including integration with the
+<a href="https://www.obiba.org/" target="_blank" class="external-link">OBiBa software</a>, but
+is intended as a general resource for diverse harmonization efforts.</p>
+<p>This vignette provides an introductory walkthrough of the basic
+harmonization process using ‘harmonizR’. It will cover steps to:</p>
 <ul>
-<li>Explore datasets prior to harmonization</li>
-<li>Generate bookdown reports of study-specific variables</li>
-<li>Read and interpret the data processing elements (harmonization
-potential and data processing rules) to generate harmonized
+<li>Prepare inputs used in harmonization processing</li>
+<li>Run the harmonization process and generate harmonized
 dataset(s)</li>
-<li>Generate bookdown reports of harmonized variables</li>
+<li>Generate reports and evaluate harmonized variables</li>
 </ul>
-<p>Please note that all the demo files mentioned below are downloadable
-on an Opal demo environment.</p>
+<p>Note that, while these steps are often performed sequentially, each
+action can be run independently. For example, reports could be generated
+for harmonized datasets previously created outside of ‘harmonizR’.</p>
 </div>
 <div class="section level2">
 <h2 id="get-started">Get started<a class="anchor" aria-label="anchor" href="#get-started"></a>
 </h2>
-<p>To download our package, you need to have an account on
+<div class="section level3">
+<h3 id="install-the-package">Install the package<a class="anchor" aria-label="anchor" href="#install-the-package"></a>
+</h3>
+<p>To download the package, you need to have an account on
 <a href="https://github.com/" target="_blank" class="external-link">GitHub</a> and create a
-<a href="https://github.com/settings/tokens" target="_blank" class="external-link">secure
-key</a> (in the format “ghp_xxx”).</p>
+<a href="https://github.com/settings/tokens" target="_blank" class="external-link">personal
+access token</a> (in the format “ghp_xxx”). To use the package, you will
+need to be added to the list of authorized users. To request access,
+contact us and send us your Github username.</p>
 <p>You can send us your Github name using the
 <a href="https://www.maelstrom-research.org/contact" target="_blank" class="external-link">following
 link</a> so we can add you to our authorized list of users.</p>
@@ -131,150 +155,140 @@ link</a> so we can add you to our authorized list of users.</p>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span></span>
 <span>  repo <span class="op">=</span> <span class="st">"https://github.com/maelstrom-research/harmonizR"</span>,</span>
 <span>  auth_token <span class="op">=</span> <span class="st">"ghp_YouNeedaValidGithubTOKEN!!!"</span>,</span>
+<span>  ref <span class="op">=</span> <span class="st">'testing'</span>,</span>
 <span>  force <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/harmonizR/" class="external-link">harmonizR</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/madshapR/" class="external-link">madshapR</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/GuiFabre/fabR/" class="external-link">fabR</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/madshapR/" class="external-link">madshapR</a></span><span class="op">)</span>  <span class="co"># dowload DEMO files.</span></span>
 <span></span>
 <span><span class="co">#if you need help with the package, please use:</span></span>
 <span><span class="fu"><a href="../reference/harmonizR_help.html">harmonizR_help</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
+</div>
 <div class="section level2">
-<h2 id="demonstration-files">Demonstration files<a class="anchor" aria-label="anchor" href="#demonstration-files"></a>
+<h2 id="understanding-the-main-inputs">Understanding the main inputs<a class="anchor" aria-label="anchor" href="#understanding-the-main-inputs"></a>
 </h2>
-<p>The <strong>madshapR</strong> library contains demonstration files
-useful to try <strong>harmonizR</strong>.</p>
+<p>In a typical harmonization process, ‘harmonizR’ functions use a few
+main inputs: study-specific datasets, study-specific data
+dictionaries,the DataSchema, and data processing elements. These inputs
+are generally created in other programs, imported into R, and prepared
+as needed to match the specific formats required by
+<strong>harmonizR</strong> functions. <strong>Study-specific
+datasets</strong> contain variables in original formats (e.g., as
+collected by separate studies), which provide the source variables for
+harmonization processing. Ideally, study-specific <strong>data
+dictionaries</strong> that contain metadata about variables (e.g.,
+labels, units, categories) are also provided by the user and associated
+with the datasets but are not required. The <strong>DataSchema</strong>
+defines the list and attributes of harmonized variables to be generated
+(guidelines Step 2). <strong>The data processing elements</strong>
+contain the processing rules and metadata that will be used to generate
+harmonized variables from study-specific variables (guidelines Step 3).
+These inputs provide the information used to evaluate and document the
+harmonization process and harmonized datasets produced (Steps 4 and 5).
+The DataSchema and data processing elements are first created as Excel
+files from templates and imported into R.</p>
+<div class="section level3">
+<h3 id="demo-files">Demo files<a class="anchor" aria-label="anchor" href="#demo-files"></a>
+</h3>
+<p>Demo files are available in the built-in DEMO_files object in the
+<strong>madshapR</strong> library. These provide illustrative examples
+of the main inputs and are used to run commands in this vignette.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># To see examples:</span></span>
-<span><span class="va">DEMO_files</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="co">#Data processing elements</span></span>
-<span><span class="va">DEMO_files</span><span class="op">[</span><span class="fl">4</span><span class="op">]</span> <span class="co">#Dataschema </span></span>
-<span><span class="va">DEMO_files</span><span class="op">[</span><span class="fl">5</span><span class="op">]</span> <span class="co">#Data dictionaries</span></span>
-<span><span class="va">DEMO_files</span><span class="op">[</span><span class="fl">15</span><span class="op">]</span> <span class="co">#Datasets</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">)</span> <span class="co"># Data processing elements</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span><span class="op">)</span>               <span class="co"># Dataschema </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_TOKYO_format_maelstrom_tagged</span><span class="op">)</span>   <span class="co"># Data dictionaries</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_TOKYO</span><span class="op">)</span>                      <span class="co"># Datasets</span></span>
 <span>                  </span></code></pre></div>
+</div>
 </div>
 <div class="section level2">
 <h2 id="harmonize">Harmonize<a class="anchor" aria-label="anchor" href="#harmonize"></a>
 </h2>
-<p><strong>harmonizR</strong> requires specific inputs to achieve the
-harmonization process, and includes many validation of the inputs
-provided.</p>
-<p>The general process involves to:</p>
-<ul>
-<li>Prepare the datasets and inputs</li>
-<li>Associate dataset(s) and their data dictionary (facultative)</li>
-<li>Group dataset(s) in a study object</li>
-<li>Harmonize a study using the data schema and data processing
-element</li>
-<li>Review the harmonized study</li>
-</ul>
-<p>When you have no errors, this is straigthforward. The first step is
-to prepare the datasets in a study:</p>
+<p>A general process with <strong>harmonizR</strong> involves the
+following steps: * Associate study-specific datasets with their data
+dictionaries. * Prepare a “dossier” of study-specific datasets and data
+dictionaries. * Harmonize a dossier of datasets using the DataSchema and
+data processing elements. * Review the dossier of harmonized datasets.
+The process is demonstrated below with all inputs in valid formats and
+no errors, i.e., assuming that the content and structure of all inputs
+are compatible with <strong>harmonizR</strong>. Error-checking and other
+manipulations of inputs will be covered in other vignettes.</p>
+<div class="section level3">
+<h3 id="prepare-the-study-specific-inputs">Prepare the study-specific inputs<a class="anchor" aria-label="anchor" href="#prepare-the-study-specific-inputs"></a>
+</h3>
+<p>If study-specific data dictionaries are available, they can be
+associated with their corresponding datasets using the function
+‘data_dict_apply’. If not provided, minimal data dictionaries will
+automatically be created to meet technical requirements of the following
+functions. The study-specific datasets and associated data dictionaries
+are then grouped into a dossier.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Associate metadata from data dictionnary to the the data</span></span>
-<span><span class="va">dataset_MELBOURNE_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_1</span>,</span>
-<span>                                       data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_MELBOURNE_1_format_maelstrom</span><span class="op">)</span></span>
-<span><span class="va">dataset_MELBOURNE_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_2</span>,</span>
-<span>                                       data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_MELBOURNE_2_format_maelstrom</span><span class="op">)</span></span>
-<span><span class="va">dataset_PARIS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_PARIS</span>,</span>
-<span>                                 data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_PARIS_format_maelstrom</span><span class="op">)</span></span>
-<span><span class="va">dataset_TOKYO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_TOKYO</span>,</span>
-<span>                                 data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_TOKYO_format_maelstrom_tagged</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="co"># Associate metadata from data dictionary to the the data</span></span>
+<span><span class="va">dataset_MELBOURNE_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_1</span>,</span>
+<span>  data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_MELBOURNE_1_format_maelstrom</span><span class="op">)</span></span>
 <span></span>
+<span><span class="va">dataset_MELBOURNE_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_2</span>,</span>
+<span>  data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_MELBOURNE_2_format_maelstrom</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># group the datasets in a study object</span></span>
-<span><span class="co"># NB: the name of the datasets in the study must match the column ss_table in the data processing element</span></span>
-<span><span class="va">study_ALL</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/study_create.html" class="external-link">study_create</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">dataset_MELBOURNE_1</span>, <span class="va">dataset_MELBOURNE_2</span>, <span class="va">dataset_PARIS</span>, <span class="va">dataset_TOKYO</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p>Then you can proceed with the harmonization:</p>
+<span><span class="va">dataset_PARIS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_PARIS</span>,</span>
+<span>  data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_PARIS_format_maelstrom</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dataset_TOKYO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_TOKYO</span>,</span>
+<span>  data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_TOKYO_format_maelstrom_tagged</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="generate-harmonized-data">Generate harmonized data<a class="anchor" aria-label="anchor" href="#generate-harmonized-data"></a>
+</h3>
+<p>When the main inputs (dossier, DataSchema, and data processing
+element) are prepared,</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Harmonization process</span></span>
-<span><span class="va">harmonized_ALL</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmo_process.html">harmo_process</a></span><span class="op">(</span>study <span class="op">=</span> <span class="va">study_ALL</span>,</span>
-<span>                                dataschema <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">DEMO_dataschema</span>,</span>
-<span>                                data_procelem <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">)</span></span></code></pre></div>
-<p>And finally assess your harmonized data:</p>
+<code class="sourceCode R"><span></span>
+<span><span class="co"># group the datasets in a dossier object</span></span>
+<span><span class="co"># NB: the name of the datasets in the study must match the column ss_table in </span></span>
+<span><span class="co"># the data processing element</span></span>
+<span><span class="va">dosssier</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/dossier_create.html" class="external-link">dossier_create</a></span><span class="op">(</span></span>
+<span>  dataset_list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>    <span class="va">dataset_MELBOURNE_1</span>, </span>
+<span>    <span class="va">dataset_MELBOURNE_2</span>, </span>
+<span>    <span class="va">dataset_PARIS</span>, </span>
+<span>    <span class="va">dataset_TOKYO</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dataschema</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span></span>
+<span><span class="va">data_proc_elem</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span></span></code></pre></div>
+<p>You can proceed with harmonization using ‘harmo_process’.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Assess the harmonization</span></span>
-<span><span class="va">harmonized_ALL_eval</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmonized_study_evaluate.html">harmonized_study_evaluate</a></span><span class="op">(</span><span class="va">harmonized_ALL</span><span class="op">)</span></span>
-<span><span class="va">harmonized_ALL_eval</span><span class="op">$</span><span class="va">`Mlstr::pooled_harmonized_dataset`</span> <span class="co">#identify errors and potential issues</span></span>
-<span></span>
-<span><span class="co"># Produce summary statistics of the harmonized data</span></span>
-<span><span class="va">harmonized_ALL_summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmonized_study_summarise.html">harmonized_study_summarise</a></span><span class="op">(</span><span class="va">harmonized_ALL</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/fabR/man/write_excel_allsheets.html" class="external-link">write_excel_allsheets</a></span><span class="op">(</span><span class="va">harmonized_ALL_summary</span><span class="op">$</span><span class="va">`Mlstr::pooled_harmonized_dataset`</span>,</span>
-<span>                      filename <span class="op">=</span> <span class="st">"DEMO/harmonized_summary.xls"</span><span class="op">)</span> <span class="co"># Save summary as Excel if needed</span></span>
-<span></span>
-<span><span class="co"># Generate visual report</span></span>
-<span><span class="fu"><a href="../reference/harmonized_study_visualize.html">harmonized_study_visualize</a></span><span class="op">(</span><span class="va">harmonized_ALL</span>, to<span class="op">=</span><span class="st">"DEMO/visual_harmonized"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/open_visual_report.html" class="external-link">open_visual_report</a></span><span class="op">(</span><span class="st">"DEMO/visual_harmonized"</span><span class="op">)</span> <span class="co"># open the report in browser</span></span></code></pre></div>
+<code class="sourceCode R"><span></span>
+<span><span class="co"># Process harmonization</span></span>
+<span><span class="va">harmonized_dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmo_process.html">harmo_process</a></span><span class="op">(</span><span class="va">dossier</span>, <span class="va">dataschema</span>, <span class="va">data_proc_elem</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/show_harmo_error.html">show_harmo_error</a></span><span class="op">(</span><span class="va">harmonized_dossier</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="identify-errors-and-explore-inputs">Identify errors and explore inputs<a class="anchor" aria-label="anchor" href="#identify-errors-and-explore-inputs"></a>
-</h2>
-<p>The <strong>harmonizR</strong> package also includes functions coming
-from <strong>madshapR</strong> to validate the data and inputs required
-for the harmonization. Functions ending by “_evaluate” identify errors
-[ERR] and warn of potential issues [INFO]. Functions ending by
-“_summary” produce descriptive statistics of the data. Visualization of
-the distribution of the data can also be produced using “_visualize”
-functions.</p>
-<p>Data dictionnaries:</p>
+<div class="section level3">
+<h3 id="assess-harmonized-data">Assess harmonized data<a class="anchor" aria-label="anchor" href="#assess-harmonized-data"></a>
+</h3>
+<p>You can then assess and summarize the harmonized data to identify
+potential issues, produce summary statistics, and generate visual
+reports.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_evaluate.html" class="external-link">data_dict_evaluate</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dd_TOKYO_format_maelstrom_tagged - ERROR WITH DATA`</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="co"># Assess the harmonization (this report can be downloaded as an excel file)</span></span>
+<span><span class="va">harmonized_dossier_evaluate</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmonized_dossier_evaluate.html">harmonized_dossier_evaluate</a></span><span class="op">(</span><span class="va">harmonized_dossier</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_evaluate.html" class="external-link">data_dict_evaluate</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dd_TOKYO_format_maelstrom_tagged - ERROR`</span><span class="op">)</span></span>
+<span><span class="co"># Produce summary statistics (this summary can be downloaded as an excel file)</span></span>
+<span><span class="va">harmonized_dossier_summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmonized_dossier_summarise.html">harmonized_dossier_summarise</a></span><span class="op">(</span><span class="va">harmonized_dossier</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_evaluate.html" class="external-link">data_dict_evaluate</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_TOKYO_format_maelstrom_tagged</span><span class="op">)</span></span></code></pre></div>
-<p>Datasets:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Create a dataset with errors</span></span>
-<span><span class="va">dataset_TOKYO_errors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataset_TOKYO - ERROR WITH DATA`</span>,</span>
-<span>                                        data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dd_TOKYO_format_maelstrom_tagged - ERROR WITH DATA`</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Evaluate the dataset</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/dataset_evaluate.html" class="external-link">dataset_evaluate</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="va">dataset_TOKYO_errors</span><span class="op">)</span></span>
-<span></span>
-<span></span>
-<span><span class="co"># Generate a summary and save as Excel file</span></span>
-<span><span class="va">TOKYO_summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/dataset_summarize.html" class="external-link">dataset_summarize</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="va">dataset_TOKYO_errors</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/fabR/man/write_excel_allsheets.html" class="external-link">write_excel_allsheets</a></span><span class="op">(</span><span class="va">TOKYO_summary</span>,</span>
-<span>                      filename <span class="op">=</span> <span class="st">"DEMO/TOKYO_summary.xls"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Generate a visual report</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/dataset_visualize.html" class="external-link">dataset_visualize</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="va">dataset_TOKYO_errors</span>,</span>
-<span>                  to <span class="op">=</span> <span class="st">"DEMO/visual_dataset_TOKYO_errors"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/open_visual_report.html" class="external-link">open_visual_report</a></span><span class="op">(</span><span class="st">"DEMO/visual_dataset_TOKYO_errors"</span><span class="op">)</span></span></code></pre></div>
-<p>Studies:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Create study with errors</span></span>
-<span><span class="va">study_ERRORS</span> <span class="op">&lt;-</span> <span class="va">study_ALL</span></span>
-<span><span class="va">study_ERRORS</span><span class="op">$</span><span class="va">dataset_TOKYO</span> <span class="op">&lt;-</span> <span class="va">dataset_TOKYO_errors</span></span>
-<span></span>
-<span><span class="co"># Evaluate the study</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/study_evaluate.html" class="external-link">study_evaluate</a></span><span class="op">(</span><span class="va">study_ERRORS</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Generate a summary for each datasets in the study</span></span>
-<span><span class="va">study_ERRORS_summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/study_summarize.html" class="external-link">study_summarize</a></span><span class="op">(</span><span class="va">study_ERRORS</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/fabR/man/write_excel_allsheets.html" class="external-link">write_excel_allsheets</a></span><span class="op">(</span><span class="va">TOKYO_summary</span>,</span>
-<span>                      filename <span class="op">=</span> <span class="st">"DEMO/study_ERRORS_summary.xls"</span><span class="op">)</span></span></code></pre></div>
-<p>Data schemas:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/dataschema_evaluate.html">dataschema_evaluate</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co"># Generate visual report (this report is an web-base interactive application)</span></span>
+<span><span class="va">to</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">harmonized_study_visualize</span><span class="op">(</span><span class="va">harmonized_dossier</span>, to <span class="op">=</span> <span class="va">to</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/open_visual_report.html" class="external-link">open_visual_report</a></span><span class="op">(</span><span class="va">to</span><span class="op">)</span> <span class="co"># open the report in browser</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="errors-in-harmonization">Errors in harmonization<a class="anchor" aria-label="anchor" href="#errors-in-harmonization"></a>
-</h2>
-<p>When there are issues in the harmonization, the process is
-interrupted and a tibble of errors is produced instead.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Harmonization with errors in data processing elements</span></span>
-<span><span class="va">harmonized_ERRORS</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmo_process.html">harmo_process</a></span><span class="op">(</span>study <span class="op">=</span> <span class="va">study_ALL</span>,</span>
-<span>                                dataschema <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span>,</span>
-<span>                                data_procelem <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - with error`</span><span class="op">)</span></span>
-<span><span class="co"># Show errors</span></span>
-<span><span class="va">harmonized_ERRORS</span></span>
-<span><span class="fu"><a href="../reference/show_harmo_error.html">show_harmo_error</a></span><span class="op">(</span><span class="va">harmonized_ERRORS</span><span class="op">)</span></span></code></pre></div>
 </div>
   </div>
 
