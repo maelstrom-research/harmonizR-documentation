@@ -11,4 +11,4 @@ fs::dir_copy(
   overwrite = TRUE
 )
 
-harmonizR::harmonizR_help()
+harmonizR_help()
