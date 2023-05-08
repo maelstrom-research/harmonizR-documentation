@@ -1,4 +1,6 @@
 library(harmonizR)
+library(madshapR)
+library(fabR)
 library(fs)
 # usethis::use_pkgdown()
 
@@ -12,3 +14,5 @@ fs::dir_copy(
 )
 
 harmonizR_help()
+madshapR_help()
+fabR_help()
