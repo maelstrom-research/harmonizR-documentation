@@ -91,10 +91,11 @@ errors in the harmonization process</p>
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>A harmonized dossier must be a named list containing at least one data-frame
-or data-frame extension (e.g. a tibble), each of them being
-harmonized dataset(s). The name of each tibble will be use as the reference
-name of the dataset. A harmonized dossier has four attributes :
+    <p>A harmonized dossier must be a named list containing at least one data frame
+or data frame extension (e.g. a tibble), each of them being
+harmonized dataset(s). It is generally the product of applying harmonization
+processing to a dossier object. The name of each tibble will be use as the
+reference name of the dataset. A harmonized dossier has four attributes :
 <code><a href="https://rdrr.io/r/base/class.html" class="external-link">harmonizR::class</a></code> which is "harmonized_dossier" ; <code>harmonizR::Dataschema</code>
 (provided by user) ; <code>harmonizR::data processing elements</code> ;
 <code>harmonizR::harmonized_col_id</code> (provided by user) which refers to the column

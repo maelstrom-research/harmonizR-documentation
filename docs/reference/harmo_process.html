@@ -118,26 +118,24 @@ input datataset.</p>
     <div id="details">
     <h2>Details</h2>
     <p>A dossier must be a named list containing at least one data frame or
-data frame extension (e.g. a tibble), each of them being datasets.</p>
-<p>The DataSchema must be a list of at least one or two data-frames or
-data-frame extension (e.g. a tibble) named 'Variables' and 'Categories'
-(if any), representing meta data of an associated harmonized dossier.
-The DataSchema is the core list of output variables to be generated using
-input variables from dataset(s). In addition, the DataSchema may follow
-Maelstrom research standards, and its content can be evaluated accordingly,
-such as naming convention restriction, columns like <code>valueType</code>
-and <code>label(:xx)</code>, and/or any harmonization taxonomy provided.</p>
-<p>A data processing elements is a list of at least one data-frame or data-frame
-extension (e.g. a tibble) named ’dataProcess’. These elements are the
-centralised decision making to perform harmonization of each input dataset.
-The tibble must contain certain columns which participate to the process,
-including the 'dataschema_variable', 'ss-table','ss_variables',
-’Mlstr::rule_category’ and ’Mlstr::algorithm’. In addition,
-the data processing elements may follow Maelstrom research standards, and its
-content can be evaluated accordingly, such as naming convention restriction,
-columns like ’valueType’, and ’Mlstr::status_details’, and/or any
-harmonization taxonomy provided. The mandatory first processing element must
-be "id_creation" in <code>Mlstr::rule_category</code> followed by the name of the column
+data frame extension (e.g. a tibble), each of them being datasets.
+The name of each tibble will be use as the reference name of the dataset.</p>
+<p>A DataSchema defines the harmonized variables to be generated, representing
+meta data of an associated harmonized dossier. It must be a
+list of data frame like objects with elements named 'Variables' (required)
+and 'Categories' (if any). The 'Variables' element must contain at least the
+'name' column, and the 'Categories' element must contain at least the
+'variable' and 'name' columns to be usable in any function. To be considered
+as a minimum workable DataSchema, in 'Variables' the 'name' column must also
+have unique and non-null entries, and in 'Categories' the combination of
+'variable' and 'name' columns must also be unique'.</p>
+<p>A data processing element contains the rules and metadata that will be used
+to perform harmonization of input datasets in accordance with the DataSchema.
+It must be a data frame or data frame extension (e.g. a tibble) and it must
+contain certain columns which participate to the process, including the
+<code>dataschema_variable</code>, <code>ss-table</code>,<code>ss_variables</code>, <code>Mlstr::rule_category</code> and
+<code>Mlstr::algorithm</code>. The mandatory first processing element must be
+""id_creation"" in <code>Mlstr::rule_category</code> followed by the name of the column
 taken as identifier of each dataset to initiate the process of harmonization.</p>
     </div>
 

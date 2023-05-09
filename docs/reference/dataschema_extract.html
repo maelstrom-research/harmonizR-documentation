@@ -85,21 +85,17 @@ data processing elements.</p></dd>
     
 
 <p>A list of tibble(s), 'Variables' and 'Categories' (if any), each of them
-being the two components of the DataSchema.</p>
+being the two elements of the DataSchema.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>A data processing elements is a list of at least one data-frame or data-frame
-extension (e.g. a tibble) named ’dataProcess’. These elements are the
-centralised decision making to perform harmonization of each input dataset.
-The tibble must contain certain columns which participate to the process,
-including the 'dataschema_variable', 'ss-table','ss_variables',
-’Mlstr::rule_category’ and ’Mlstr::algorithm’. In addition,
-the data processing elements may follow Maelstrom research standards, and its
-content can be evaluated accordingly, such as naming convention restriction,
-columns like ’valueType’, and ’Mlstr::status_details’, and/or any
-harmonization taxonomy provided. The mandatory first processing element must
-be "id_creation" in <code>Mlstr::rule_category</code> followed by the name of the column
+    <p>A data processing element contains the rules and metadata that will be used
+to perform harmonization of input datasets in accordance with the DataSchema.
+It must be a data-frame or data-frame extension (e.g. a tibble) and it must
+contain certain columns which participate to the process, including the
+<code>dataschema_variable</code>, <code>ss-table</code>,<code>ss_variables</code>, <code>Mlstr::rule_category</code> and
+<code>Mlstr::algorithm</code>. The mandatory first processing element must be
+""id_creation"" in <code>Mlstr::rule_category</code> followed by the name of the column
 taken as identifier of each dataset to initiate the process of harmonization.</p>
     </div>
 
