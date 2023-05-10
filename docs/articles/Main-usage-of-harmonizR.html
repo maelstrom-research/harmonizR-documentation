@@ -286,6 +286,8 @@ element) are prepared,</p>
 <p>You can then assess and summarize the harmonized data to identify
 potential issues, produce summary statistics, and generate visual
 reports.</p>
+<p><strong>Warning ⚠</strong> <em>This tutorial creates for you a folder
+‘tmp’ where the visual report is generated.</em></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Assess the harmonization (this report can be downloaded as an excel file)</span></span>
 <span><span class="va">harmonized_dossier_evaluate</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmonized_dossier_evaluate.html">harmonized_dossier_evaluate</a></span><span class="op">(</span><span class="va">harmonized_dossier</span><span class="op">)</span></span>
@@ -296,7 +298,8 @@ reports.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">harmonized_dossier_summary</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Generate visual report (this report is an web-base interactive application)</span></span>
-<span><span class="va">to</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">to</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">'tmp/'</span>,<span class="fu"><a href="https://rdrr.io/r/base/basename.html" class="external-link">basename</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="st">'to'</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/harmonized_dossier_visualize.html">harmonized_dossier_visualize</a></span><span class="op">(</span><span class="va">harmonized_dossier</span>, to <span class="op">=</span> <span class="va">to</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/open_visual_report.html" class="external-link">open_visual_report</a></span><span class="op">(</span><span class="va">to</span><span class="op">)</span> <span class="co"># open the report in browser</span></span></code></pre></div>
 </div>

@@ -10,6 +10,7 @@
  *
  * Key idea seems to be to ensure that .container and __all its parents__
  * have height set to 100%
+ *
  */
 
 html, body {
