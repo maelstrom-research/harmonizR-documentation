@@ -16,5 +16,3 @@ fs::dir_copy(
 )
 
 harmonizR_help()
-madshapR_help()
-fabR_help()
