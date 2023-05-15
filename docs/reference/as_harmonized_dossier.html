@@ -20,7 +20,7 @@ check if an object is valid for use in a function."><!-- mathjax --><script src=
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0.1007</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0.1008</span>
       </span>
     </div>
 
@@ -35,7 +35,7 @@ check if an object is valid for use in a function."><!-- mathjax --><script src=
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
-      <a href="../articles/Main-usage-of-harmonizR.html">Main-usage-of-harmonizR</a>
+      <a href="../articles/Main-usage-of-harmonizR.html">Introduction to data harmonization with harmonizR</a>
     </li>
     <li>
       <a href="../articles/Main-usage-of-harmonizRLegacy.html">Main-usage-of-harmonizRLegacy</a>
@@ -151,7 +151,7 @@ taken as identifier of each dataset to initiate the process of harmonization.</p
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">dataset_MELBOURNE_1</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_1</span></span></span>
 <span class="r-in"><span><span class="va">dataset_MELBOURNE_2</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_2</span></span></span>
-<span class="r-in"><span><span class="va">dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/dossier_create.html" class="external-link">dossier_create</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">dataset_MELBOURNE_1</span>, <span class="va">dataset_MELBOURNE_2</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/dossier_create.html" class="external-link">dossier_create</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">dataset_MELBOURNE_1</span>, <span class="va">dataset_MELBOURNE_2</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">dataschema</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span></span></span>
 <span class="r-in"><span></span></span>
@@ -252,19 +252,19 @@ taken as identifier of each dataset to initiate the process of harmonization.</p
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    variable       name  `label:en`                         missing project table</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                              <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> lsb_smo_curr   0     currently smoker                   FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> lsb_smo_curr   1     not currently smoker               FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> lsb_smo_ever   0     never smoked                       FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> lsb_smo_ever   1     smoked one pack of cigarette or m… FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> lsb_smo_status 0     never smoker                       FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> lsb_smo_status 1     former smoker                      FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> lsb_smo_status 2     current smoker                     FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> rep_preg_curr  0     currently pregnant                 FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> rep_preg_curr  1     not currently pregnant             FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> rep_preg_ever  0     never pregnant                     FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> rep_preg_ever  1     pregnant once or more              FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> sdc_gender     1     Male                               FALSE   DEMO    harm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> sdc_gender     2     Female                             FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> sdc_gender     1     Male                               FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> sdc_gender     2     Female                             FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> rep_preg_ever  0     never pregnant                     FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> rep_preg_ever  1     pregnant once or more              FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> rep_preg_curr  0     currently pregnant                 FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> rep_preg_curr  1     not currently pregnant             FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> lsb_smo_ever   0     never smoked                       FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> lsb_smo_ever   1     smoked one pack of cigarette or m… FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> lsb_smo_curr   0     currently smoker                   FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> lsb_smo_curr   1     not currently smoker               FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> lsb_smo_status 0     never smoker                       FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> lsb_smo_status 1     former smoker                      FALSE   DEMO    harm…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> lsb_smo_status 2     current smoker                     FALSE   DEMO    harm…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"harmonizR::Dataschema")attr(,"madshapR::class")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "data_dict_mlstr"</span>

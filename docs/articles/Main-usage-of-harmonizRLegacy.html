@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0.1007</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0.1008</span>
       </span>
     </div>
 
@@ -50,7 +50,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/Main-usage-of-harmonizR.html">Main-usage-of-harmonizR</a>
+      <a href="../articles/Main-usage-of-harmonizR.html">Introduction to data harmonization with harmonizR</a>
     </li>
     <li>
       <a href="../articles/Main-usage-of-harmonizRLegacy.html">Main-usage-of-harmonizRLegacy</a>
@@ -83,7 +83,7 @@
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Main-usage-of-harmonizRLegacy</h1>
             
-            <h4 data-toc-skip class="date">2023-05-10</h4>
+            <h4 data-toc-skip class="date">2023-05-15</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/harmonizR/blob/HEAD/vignettes/Main-usage-of-harmonizRLegacy.Rmd" class="external-link"><code>vignettes/Main-usage-of-harmonizRLegacy.Rmd</code></a></small>
       <div class="hidden name"><code>Main-usage-of-harmonizRLegacy.Rmd</code></div>
@@ -164,7 +164,7 @@ different versions of datasets, data dictionaries, DataSchema, and data
 processing elements).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># use case 1: create folder without versioning</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/harmo_env_create.html" class="external-link">harmo_env_create</a></span><span class="op">(</span>project <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/harmo_env_create.html" class="external-link">harmo_env_create</a></span><span class="op">(</span>project <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="import-the-demonstration-files">Import the demonstration files<a class="anchor" aria-label="anchor" href="#import-the-demonstration-files"></a>
@@ -178,9 +178,9 @@ above.</p>
 <span>                password <span class="op">=</span> <span class="st">'password'</span>,</span>
 <span>                url <span class="op">=</span> <span class="st">'https://opal-demo.maelstrom-research.org/'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/opal_files_pull.html" class="external-link">opal_files_pull</a></span><span class="op">(</span><span class="va">o</span>, from <span class="op">=</span> <span class="st">"/home/administrator/DEMO/data_processing_elements"</span>, to <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/opal_files_pull.html" class="external-link">opal_files_pull</a></span><span class="op">(</span><span class="va">o</span>, from <span class="op">=</span> <span class="st">"/home/administrator/DEMO/dataschema"</span>,               to <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/opal_files_pull.html" class="external-link">opal_files_pull</a></span><span class="op">(</span><span class="va">o</span>, from <span class="op">=</span> <span class="st">"/home/administrator/DEMO/study_specific_datasets"</span>,  to <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/opal_files_pull.html" class="external-link">opal_files_pull</a></span><span class="op">(</span><span class="va">o</span>, from <span class="op">=</span> <span class="st">"/home/administrator/DEMO/data_processing_elements"</span>, to <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/opal_files_pull.html" class="external-link">opal_files_pull</a></span><span class="op">(</span><span class="va">o</span>, from <span class="op">=</span> <span class="st">"/home/administrator/DEMO/dataschema"</span>,               to <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/opal_files_pull.html" class="external-link">opal_files_pull</a></span><span class="op">(</span><span class="va">o</span>, from <span class="op">=</span> <span class="st">"/home/administrator/DEMO/study_specific_datasets"</span>,  to <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="index-the-files-in-your-harmonization-r-environment">Index the files in your harmonization R environment<a class="anchor" aria-label="anchor" href="#index-the-files-in-your-harmonization-r-environment"></a>
@@ -194,13 +194,13 @@ environment.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># create index of files that are in a  folder</span></span>
-<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
+<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># search index for files matching a specific file path query</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/file_index_search.html" class="external-link">file_index_search</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/file_index_search.html" class="external-link">file_index_search</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># read the files</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span>index <span class="op">=</span> <span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="generate-visual-reports-of-the-study-specific-variables">Generate visual report(s) of the study-specific variables<a class="anchor" aria-label="anchor" href="#generate-visual-reports-of-the-study-specific-variables"></a>
@@ -219,22 +219,22 @@ about graphics and tables generated in the report.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># use case 1: report of demo dataset TOKYO</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/study_visual_report.html" class="external-link">study_visual_report</a></span><span class="op">(</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/study_visual_report.html" class="external-link">study_visual_report</a></span><span class="op">(</span></span>
 <span>  dataset <span class="op">=</span> <span class="va">study_TOKYO</span>,</span>
 <span>  data_dict <span class="op">=</span> <span class="va">dd_TOKYO_format_maelstrom_tagged</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"DEMO/reports/TOKYO"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># use case 2: report of demo dataset TOKYO, grouped by gndr</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/study_visual_report.html" class="external-link">study_visual_report</a></span><span class="op">(</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/study_visual_report.html" class="external-link">study_visual_report</a></span><span class="op">(</span></span>
 <span>  dataset <span class="op">=</span> <span class="va">study_TOKYO</span>,</span>
 <span>  data_dict <span class="op">=</span> <span class="va">dd_TOKYO_format_maelstrom_tagged</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"DEMO/reports/TOKYO_gndr"</span>,group_by <span class="op">=</span> <span class="st">"gndr"</span>,out <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># re-index your files to include new files created</span></span>
-<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
+<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># read the bookdown</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>,file_path <span class="op">=</span> <span class="st">"DEMO/reports/TOKYO_gndr/docs/index.html"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>,file_path <span class="op">=</span> <span class="st">"DEMO/reports/TOKYO_gndr/docs/index.html"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="read-and-run-the-data-processing-rules-and-generate-the-harmonized-dataset">Read and run the data processing rules and generate the harmonized
@@ -249,9 +249,9 @@ can be integrated into the process.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Read the files</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"dataschema"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"data_processing_elements"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"study_specific_datasets"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"dataschema"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>, file_path <span class="op">=</span> <span class="st">"data_processing_elements"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Example 1: run the process of harmonization with data processing elements containing errors</span></span>
 <span><span class="fu"><a href="../reference/harmo_process.html">harmo_process</a></span><span class="op">(</span></span>
@@ -262,7 +262,7 @@ can be integrated into the process.</p>
 <span></span>
 <span><span class="co"># Example 2: use the function harmo_summary() to access the errors. </span></span>
 <span><span class="co"># In your environment, you will find a report attached to harmonization process.</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/harmo_summary.html" class="external-link">harmo_summary</a></span><span class="op">(</span><span class="va">harmo_report</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/harmo_summary.html" class="external-link">harmo_summary</a></span><span class="op">(</span><span class="va">harmo_report</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span><span class="va">harmo_report</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># After correction, re-run the process of harmonization with the corrected data </span></span>
@@ -274,7 +274,7 @@ can be integrated into the process.</p>
 <span>  output_harmo_folder <span class="op">=</span> <span class="st">"DEMO/harmonized_datasets"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># re-index your files to include new files created</span></span>
-<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="generate-visual-report-of-the-harmonized-variables">Generate visual report of the harmonized variables<a class="anchor" aria-label="anchor" href="#generate-visual-report-of-the-harmonized-variables"></a>
@@ -297,7 +297,7 @@ default).</p>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">harmonized_study_TOKYO_table_TOKYO</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># use case 1: report of harmonized_study_DEMO_table_DEMO.</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/harmo_visual_report.html" class="external-link">harmo_visual_report</a></span><span class="op">(</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/harmo_visual_report.html" class="external-link">harmo_visual_report</a></span><span class="op">(</span></span>
 <span>  harmonized_dataset <span class="op">=</span> <span class="va">harmonized_study_DEMO_table_DEMO</span>,</span>
 <span>  dataschema <span class="op">=</span> <span class="va">DEMO_dataschema</span>,</span>
 <span>  data_proc_elem <span class="op">=</span> <span class="va">`DEMO_data_processing_elements - work in progress`</span>,</span>
@@ -306,10 +306,10 @@ default).</p>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># re-index your files to include new files created</span></span>
-<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
+<span><span class="va">index_DEMO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/file_index_create.html" class="external-link">file_index_create</a></span><span class="op">(</span>folder <span class="op">=</span> <span class="st">"DEMO"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># read the bookdown (or open the file named 'index.html' in your browser)</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/harmonizRLegacy-documentation/reference/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>,file_path <span class="op">=</span> <span class="st">"DEMO/reports/harmonized_DEMO/docs/index.html"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/harmonizRLegacy/man/file_index_read.html" class="external-link">file_index_read</a></span><span class="op">(</span><span class="va">index_DEMO</span>,file_path <span class="op">=</span> <span class="st">"DEMO/reports/harmonized_DEMO/docs/index.html"</span><span class="op">)</span></span></code></pre></div>
 </div>
   </div>
 
