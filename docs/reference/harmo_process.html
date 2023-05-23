@@ -28,7 +28,7 @@ the DataSchema variables across input dataset(s)."><!-- mathjax --><script src="
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0.1009</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1000</span>
       </span>
     </div>
 
@@ -44,9 +44,6 @@ the DataSchema variables across input dataset(s)."><!-- mathjax --><script src="
   </a>
   <ul class="dropdown-menu" role="menu"><li>
       <a href="../articles/Main-usage-of-harmonizR.html">Introduction to data harmonization with harmonizR</a>
-    </li>
-    <li>
-      <a href="../articles/Main-usage-of-harmonizRLegacy.html">Main-usage-of-harmonizRLegacy</a>
     </li>
   </ul></li>
 <li>
@@ -149,7 +146,7 @@ taken as identifier of each dataset to initiate the process of harmonization.</p
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">dataset_MELBOURNE_1</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_1</span></span></span>
 <span class="r-in"><span><span class="va">dataset_MELBOURNE_2</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_2</span></span></span>
-<span class="r-in"><span><span class="va">dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/dossier_create.html" class="external-link">dossier_create</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">dataset_MELBOURNE_1</span>, <span class="va">dataset_MELBOURNE_2</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/dossier_create.html" class="external-link">dossier_create</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">dataset_MELBOURNE_1</span>, <span class="va">dataset_MELBOURNE_2</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">dataschema</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span></span></span>
 <span class="r-in"><span></span></span>
@@ -163,34 +160,34 @@ taken as identifier of each dataset to initiate the process of harmonization.</p
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">- DATA PROCESSING ELEMENTS: ------------------------------------------------</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> --harmonization of : <span style="font-weight: bold;">dataset_MELBOURNE_1</span> ------------------------------</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 1/13 : adm_unique_id     <span style="font-weight: bold;">id created</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 2/13 : adm_study         complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 3/13 : adm_year_dce      complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 4/13 : sdc_age           complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 5/13 : sdc_gender        complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 6/13 : phy_height        impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 7/13 : phy_weight        impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 8/13 : phy_bmi           complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 9/13 : rep_preg_ever     impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 10/13 : rep_preg_curr    impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 11/13 : lsb_smo_ever     impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 12/13 : lsb_smo_curr     impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 13/13 : lsb_smo_status   impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 1/13 : adm_unique_id               <span style="font-weight: bold;">id created</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 2/13 : adm_study                   complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 3/13 : adm_year_dce                complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 4/13 : sdc_age                     complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 5/13 : sdc_gender                  complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 6/13 : phy_height                  impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 7/13 : phy_weight                  impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 8/13 : phy_bmi                     complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 9/13 : rep_preg_ever               impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 10/13 : rep_preg_curr              impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 11/13 : lsb_smo_ever               impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 12/13 : lsb_smo_curr               impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 13/13 : lsb_smo_status             impossible</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> --harmonization of : <span style="font-weight: bold;">dataset_MELBOURNE_2</span> ------------------------------</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 1/13 : adm_unique_id     <span style="font-weight: bold;">id created</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 2/13 : adm_study         complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 3/13 : adm_year_dce      complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 4/13 : sdc_age           impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 5/13 : sdc_gender        impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 6/13 : phy_height        impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 7/13 : phy_weight        impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 8/13 : phy_bmi           impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 9/13 : rep_preg_ever     impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 10/13 : rep_preg_curr    complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 11/13 : lsb_smo_ever     complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 12/13 : lsb_smo_curr     complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 13/13 : lsb_smo_status   complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 1/13 : adm_unique_id               <span style="font-weight: bold;">id created</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 2/13 : adm_study                   complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 3/13 : adm_year_dce                complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 4/13 : sdc_age                     impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 5/13 : sdc_gender                  impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 6/13 : phy_height                  impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 7/13 : phy_weight                  impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 8/13 : phy_bmi                     impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 9/13 : rep_preg_ever               impossible</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 10/13 : rep_preg_curr              complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 11/13 : lsb_smo_ever               complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 12/13 : lsb_smo_curr               complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 13/13 : lsb_smo_status             complete</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - CREATION OF STUDY-SPECIFIC DATASCHEMA: ----------------------------------</span>
