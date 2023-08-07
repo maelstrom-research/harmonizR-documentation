@@ -75,7 +75,7 @@ harmonized_dossier_template <- harmo_process(
   data_proc_elem = data_proc_elem_template)
 
 #### test harmonization ####
-show_harmo_error(harmonized_dossier)
+show_harmo_error(harmonized_dossier_template)
 
 #### ss_dataschema_template ####
 ss_dataschema_template <- 
@@ -90,12 +90,12 @@ harmonized_dataset_template <- harmonized_dossier_template$STUDY_1
 
 path = "C:/Users/guill/OneDrive/Bureau/R/harmonizR-documentation/"
 
-write_excel_allsheets( dataschema_template,                paste0(path,"templates/dataschema - template.xlsx"))
-write_excel_allsheets( ss_dataschema_template,             paste0(path,"templates/ss_dataschema - template.xlsx"))
-write_excel_allsheets( data_dict_template,                 paste0(path,"templates/data_dictionary - template.xlsx"))
-write_excel_allsheets( dossier_template,                   paste0(path,"templates/dossier - template.xlsx"))
-write_excel_allsheets( harmonized_dossier_template,        paste0(path,"templates/harmonized_dossier - template.xlsx"))
-write_csv(             data_proc_elem_template,            paste0(path,"templates/data_processing_elements - template.csv"))
-write_csv(             dataset_template,                   paste0(path,"templates/dataset - template.csv"))
-write_csv(             harmonized_dataset_template,        paste0(path,"templates/harmonized_dataset - template.csv"))
-write_csv(             pooled_harmonized_dataset_template, paste0(path,"templates/pooled_harmonized_dataset - template.csv"))  
+write_excel_allsheets( dataschema_template,                paste0(path,"docs/templates/dataschema - template.xlsx"))
+write_excel_allsheets( ss_dataschema_template,             paste0(path,"docs/templates/ss_dataschema - template.xlsx"))
+write_excel_allsheets( data_dict_template,                 paste0(path,"docs/templates/data_dictionary - template.xlsx"))
+write_excel_allsheets( dossier_template,                   paste0(path,"docs/templates/dossier - template.xlsx"))
+write_excel_allsheets( harmonized_dossier_template,        paste0(path,"docs/templates/harmonized_dossier - template.xlsx"))
+write_csv(             data_proc_elem_template,            paste0(path,"docs/templates/data_processing_elements - template.csv"))
+write_csv(             dataset_template,                   paste0(path,"docs/templates/dataset - template.csv"))
+write_csv(             harmonized_dataset_template,        paste0(path,"docs/templates/harmonized_dataset - template.csv"))
+write_csv(             pooled_harmonized_dataset_template, paste0(path,"docs/templates/pooled_harmonized_dataset - template.csv"))  
