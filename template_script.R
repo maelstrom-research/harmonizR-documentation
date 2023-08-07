@@ -4,6 +4,7 @@ library(tidyverse)
 library(fabR)
 library(madshapR)
 library(harmonizR)
+library(haven)
 
 #### data_proc_elem_template ####
 data_proc_elem_template <- 
@@ -16,7 +17,7 @@ data_proc_elem_template <-
   slice(4,8) %>%
   mutate(
     index = c(1,2) ,
-    ss_table = c('DATASET','DATASET'),
+    ss_table = c('STUDY_1','STUDY_1'),
     `Mlstr::algorithm` = c("part_id","'study_1'"))
 
 #### dataschema_template ####
@@ -53,24 +54,48 @@ data_dict_template <-
   as_data_dict_mlstr()
 
 
+
 #### dataset_template ####
 dataset_template <- 
   DEMO_files$dataset_TOKYO %>%
   select(1) %>%
   slice(1) %>%
   add_column(cat_example = 1L) %>%
-  as_dataset(col_id = 'part_id') %>%
-  write_csv("templates/dataset - template.csv")
+  as_dataset(col_id = 'part_id') 
 
-harmo_process(
-  dossier = dossier_create(list(
-    DATASET = data_dict_apply(dataset_template, data_dict_template))),
+#### dossier_template ####
+dossier_template <- 
+  dossier_create(list(
+    STUDY_1 = data_dict_apply(dataset_template, data_dict_template)))
+
+#### harmonized_dossier_template ####
+harmonized_dossier_template <- harmo_process(
+  dossier = dossier_template,
   dataschema = dataschema_template,
-  data_proc_elem = data_proc_elem_template) %>% 
-  show_harmo_error()
+  data_proc_elem = data_proc_elem_template)
 
-write_excel_allsheets(dataschema_template, "templates/dataschema - template.xlsx")
-write_csv(data_proc_elem_template, "templates/data_processing_elements - template.csv")
-write_excel_allsheets(data_dict_template, "templates/data_dictionary - template.xlsx")
-write_csv(dataset_template, "templates/dataset - template.csv")
-  
+#### test harmonization ####
+show_harmo_error(harmonized_dossier)
+
+#### ss_dataschema_template ####
+ss_dataschema_template <- 
+  data_dict_extract(harmonized_dossier_template$STUDY_1)
+
+#### pooled_harmonized_dataset_template ####
+pooled_harmonized_dataset_template <- 
+  pooled_harmonized_dataset_create(harmonized_dossier_template)
+
+#### harmonized_dataset_template ####
+harmonized_dataset_template <- harmonized_dossier_template$STUDY_1
+
+path = "C:/Users/guill/OneDrive/Bureau/R/harmonizR-documentation/"
+
+write_excel_allsheets( dataschema_template,                paste0(path,"templates/dataschema - template.xlsx"))
+write_excel_allsheets( ss_dataschema_template,             paste0(path,"templates/ss_dataschema - template.xlsx"))
+write_excel_allsheets( data_dict_template,                 paste0(path,"templates/data_dictionary - template.xlsx"))
+write_excel_allsheets( dossier_template,                   paste0(path,"templates/dossier - template.xlsx"))
+write_excel_allsheets( harmonized_dossier_template,        paste0(path,"templates/harmonized_dossier - template.xlsx"))
+write_csv(             data_proc_elem_template,            paste0(path,"templates/data_processing_elements - template.csv"))
+write_csv(             dataset_template,                   paste0(path,"templates/dataset - template.csv"))
+write_csv(             harmonized_dataset_template,        paste0(path,"templates/harmonized_dataset - template.csv"))
+write_csv(             pooled_harmonized_dataset_template, paste0(path,"templates/pooled_harmonized_dataset - template.csv"))  
