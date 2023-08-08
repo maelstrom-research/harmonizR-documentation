@@ -54,7 +54,7 @@ have unique and non-null entries, and in "Categories" the combination of
     <br><br>
     
     <button><a 
-      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/ss_dataschema%20-%20template.csv"
+      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/ss_dataschema%20-%20template.xlsx"
       download>Download template</a>
     </button>
 
@@ -234,7 +234,7 @@ The name of each tibble will be use as the reference name of the dataset.
     <br><br>
     
     <button><a 
-      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/harmonized_dataset%20-%20template.xlsx"
+      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/harmonized_dataset%20-%20template.csv"
       download>Download template</a>
     </button>
     
@@ -265,7 +265,7 @@ two extra columns are added.
     <br><br>
     
     <button><a 
-      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/pooled_harmonized_dataset%20-%20template.xlsx"
+      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/pooled_harmonized_dataset%20-%20template.csv"
       download>Download template</a>
     </button>
     
@@ -370,7 +370,7 @@ mlstr_status <-
     
     
     
-    '<code><b>complete</b></code>',
+    '<code><b>partial*</b></code>',
     'With loss of information, study-specific variable :
      <ul>
            <li>approximates results</li>
@@ -552,7 +552,7 @@ data_proc_elem_expl <-
       mutate(`<b>ss_variables</b>` = str_replace(
         `<b>ss_variables</b>`,'col_id','ID_part')) %>%
       mutate(`<b>dataschema_variable</b>` = str_replace(
-        `<b>dataschema_variable</b>`,'variable_D','variable_A')) %>%
+        `<b>dataschema_variable</b>`,'variable_E','variable_A')) %>%
       mutate(`<b>dataschema_variable</b>` = str_replace(
         `<b>dataschema_variable</b>`,'variable_G','variable_B'))
   ) %>%
