@@ -20,7 +20,7 @@ object is valid for use in a function."><!-- mathjax --><script src="https://cdn
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.0000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
       </span>
     </div>
 
@@ -35,7 +35,16 @@ object is valid for use in a function."><!-- mathjax --><script src="https://cdn
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
-      <a href="../articles/Main-usage-of-harmonizR.html">Introduction to data harmonization with harmonizR</a>
+      <a href="../articles/a-Glossary-and-templates.html">Glossary and templates</a>
+    </li>
+    <li>
+      <a href="../articles/b-Understand-the-workflow.html">Understand the workflow</a>
+    </li>
+    <li>
+      <a href="../articles/c-The-Data-processing-elements.html">The Data processing elements</a>
+    </li>
+    <li>
+      <a href="../articles/d-Example-with-DEMO-files.html">Introduction to harmonizR</a>
     </li>
   </ul></li>
 <li>
@@ -57,7 +66,7 @@ object is valid for use in a function."><!-- mathjax --><script src="https://cdn
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Validate and coerce any object as the DataSchema</h1>
-    <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/harmonizR/blob/HEAD/R/04-harmo_process_harmonization.R" class="external-link"><code>R/04-harmo_process_harmonization.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/harmonizR/blob/HEAD/R/02-harmo_process_harmonization.R" class="external-link"><code>R/02-harmo_process_harmonization.R</code></a></small>
     <div class="hidden name"><code>as_dataschema.Rd</code></div>
     </div>
 
@@ -102,7 +111,7 @@ and 'Categories' (if any). The 'Variables' element must contain at least the
 'variable' and 'name' columns to be usable in any function. To be considered
 as a minimum workable DataSchema, in 'Variables' the 'name' column must also
 have unique and non-null entries, and in 'Categories' the combination of
-'variable' and 'name' columns must also be unique'.</p>
+'variable' and 'name' columns must also be unique.</p>
     </div>
 
     <div id="ref-examples">
@@ -112,9 +121,10 @@ have unique and non-null entries, and in 'Categories' the combination of
 <span class="r-in"><span><span class="co"># You can use our demonstration files to run examples</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/madshapR/" class="external-link">madshapR</a></span><span class="op">)</span> <span class="co"># import DEMO_files</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">as_dataschema</span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">as_dataschema</span><span class="op">(</span><span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`dataschema - final`</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>package 'madshapR' was built under R version 4.2.3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Variables</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 11</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    name    typeof index project table `label:en` valueType unit  `Mlstr_area::1`</span>
@@ -167,7 +177,7 @@ have unique and non-null entries, and in 'Categories' the combination of
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Guillaume Fabre.</p>
+  <p></p><p>Developed by Guillaume Fabre, Maelstrom-research group.</p>
 </div>
 
 <div class="pkgdown">

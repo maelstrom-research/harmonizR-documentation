@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support Data Harmonization following Maelstrom Research Guidelines • harmonizR</title>
+<title>Support Data Harmonization Following Maelstrom Research Guidelines • harmonizR</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Support Data Harmonization following Maelstrom Research Guidelines">
+<script src="pkgdown.js"></script><meta property="og:title" content="Support Data Harmonization Following Maelstrom Research Guidelines">
 <meta property="og:description" content="Functions to support rigorous retrospective data harmonization 
     processing, evaluation, and documentation across datasets from different 
     studies based on Maelstrom Research guidelines. The package includes the 
@@ -23,7 +23,9 @@
     and Data Processing Elements (processing rules to be applied to generate 
     harmonized variables from study-specific variables). The main outputs of 
     processing are harmonized datasets, associated metadata, and tabular and 
-    visual summary reports.">
+    visual summary reports. As described in 
+    Maelstrom Research guidelines for rigorous retrospective data 
+    harmonization (Fortier I and al. (2017) &lt;doi:10.1093/ije/dyw075&gt;).">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -44,7 +46,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.0000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
       </span>
     </div>
 
@@ -61,7 +63,16 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/Main-usage-of-harmonizR.html">Introduction to data harmonization with harmonizR</a>
+      <a href="articles/a-Glossary-and-templates.html">Glossary and templates</a>
+    </li>
+    <li>
+      <a href="articles/b-Understand-the-workflow.html">Understand the workflow</a>
+    </li>
+    <li>
+      <a href="articles/c-The-Data-processing-elements.html">The Data processing elements</a>
+    </li>
+    <li>
+      <a href="articles/d-Example-with-DEMO-files.html">Introduction to harmonizR</a>
     </li>
   </ul>
 </li>
@@ -107,13 +118,6 @@ Figure 1. Iterative harmonization steps.
 <h1 id="harmonizr-1">harmonizR<a class="anchor" aria-label="anchor" href="#harmonizr-1"></a>
 </h1>
 <p>The <strong>harmonizR</strong> package addresses practical aspects of data harmonization processing (guidelines Step 3) and facilitates evaluation (Step 4) and documentation (Step 5) of harmonization products. It was developed to meet certain needs of Maelstrom’s collaborative harmonization initiatives, including integration with the <a href="https://www.obiba.org/" target="_blank" class="external-link">OBiBa software</a>, but is intended as a general resource for diverse harmonization efforts.</p>
-<p>This vignette provides an introductory walkthrough of the basic harmonization process using ‘harmonizR’. It will cover steps to:</p>
-<ul>
-<li>Prepare inputs used in harmonization processing</li>
-<li>Run the harmonization process and generate harmonized dataset(s)</li>
-<li>Generate reports and evaluate harmonized variables</li>
-</ul>
-<p>Note that, while these steps are often performed sequentially, each action can be run independently. For example, reports could be generated for harmonized datasets previously created outside of ‘harmonizR’.</p>
 </div>
 <div class="section level1">
 <h1 id="get-started">Get started<a class="anchor" aria-label="anchor" href="#get-started"></a>
@@ -121,24 +125,21 @@ Figure 1. Iterative harmonization steps.
 <div class="section level2">
 <h2 id="install-the-package">Install the package<a class="anchor" aria-label="anchor" href="#install-the-package"></a>
 </h2>
-<p>To download the package, you need to have an account on <a href="https://github.com/" target="_blank" class="external-link">GitHub</a> and create a <a href="https://github.com/settings/tokens" target="_blank" class="external-link">personal access token</a> (in the format “ghp_xxx”). To use the package, you will need to be added to the list of authorized users. To request access, contact us and send us your Github username.</p>
-<p>You can send us your Github name using the <a href="https://www.maelstrom-research.org/contact" target="_blank" class="external-link">following link</a> so we can add you to our authorized list of users.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># To update the R package in your R environment you may first need to remove it, </span></span>
-<span><span class="co"># and use the exit command quit() to terminate the current R session.</span></span>
+<code class="sourceCode R"><span><span class="co"># To install the R package:</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'harmonizR'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># To install the R package:</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span></span>
-<span>  repo <span class="op">=</span> <span class="st">"https://github.com/maelstrom-research/harmonizR@testing"</span>,</span>
-<span>  auth_token <span class="op">=</span> <span class="st">"ghp_YouNeedaValidGithubTOKEN!!!"</span>,</span>
-<span>  force <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/harmonizR/" class="external-link">harmonizR</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/madshapR/" class="external-link">madshapR</a></span><span class="op">)</span>  <span class="co"># dowload DEMO files.</span></span>
-<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/harmonizR/" class="external-link">harmonizR</a></span><span class="op">)</span></span>
 <span><span class="co">#if you need help with the package, please use:</span></span>
-<span><span class="fu"><a href="reference/harmonizR_help.html">harmonizR_help</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/madshapR_help.html" class="external-link">madshapR_help</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="reference/harmonizR_help.html">harmonizR_help</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="annexes">Annexes<a class="anchor" aria-label="anchor" href="#annexes"></a>
+</h2>
+<p><a href="articles/a-Glossary-and-templates.html">Glossary and templates</a></p>
+<p><a href="articles/b-Understand-the-workflow.html">Understand the workflow</a></p>
+<p><a href="articles/c-The-Data-processing-elements.html">How to fill the Data processing elements</a></p>
+<p><a href="articles/d-Example-with-DEMO-files.html">Example with DEMO files</a></p>
 </div>
 </div>
 
@@ -172,6 +173,7 @@ Figure 1. Iterative harmonization steps.
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Guillaume Fabre <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-0124-9970" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Maelstrom-research group <br><small class="roles"> Copyright holder, funder </small>  </li>
 <li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
@@ -189,7 +191,7 @@ Figure 1. Iterative harmonization steps.
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Guillaume Fabre.</p>
+<p>Developed by Guillaume Fabre, Maelstrom-research group.</p>
 </div>
 
 <div class="pkgdown">

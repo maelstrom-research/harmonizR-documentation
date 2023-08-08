@@ -20,7 +20,7 @@ investigate, and coherence across elements."><!-- mathjax --><script src="https:
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.0000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
       </span>
     </div>
 
@@ -35,7 +35,16 @@ investigate, and coherence across elements."><!-- mathjax --><script src="https:
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
-      <a href="../articles/Main-usage-of-harmonizR.html">Introduction to data harmonization with harmonizR</a>
+      <a href="../articles/a-Glossary-and-templates.html">Glossary and templates</a>
+    </li>
+    <li>
+      <a href="../articles/b-Understand-the-workflow.html">Understand the workflow</a>
+    </li>
+    <li>
+      <a href="../articles/c-The-Data-processing-elements.html">The Data processing elements</a>
+    </li>
+    <li>
+      <a href="../articles/d-Example-with-DEMO-files.html">Introduction to harmonizR</a>
     </li>
   </ul></li>
 <li>
@@ -57,7 +66,7 @@ investigate, and coherence across elements."><!-- mathjax --><script src="https:
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Generate a summary of the annotated data processing elements in the console</h1>
-    <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/harmonizR/blob/HEAD/R/04-harmo_process_harmonization.R" class="external-link"><code>R/04-harmo_process_harmonization.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/harmonizR/blob/HEAD/R/02-harmo_process_harmonization.R" class="external-link"><code>R/02-harmo_process_harmonization.R</code></a></small>
     <div class="hidden name"><code>show_harmo_error.Rd</code></div>
     </div>
 
@@ -84,7 +93,7 @@ harmonized dataset.</p></dd>
     
 
 <p>No object returned, the function sends messages in the console, showing
-errors in the harmonization process</p>
+errors in the harmonization process.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -106,139 +115,15 @@ initiate the process of harmonization.</p>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># You can use our demonstration files to run examples</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/madshapR/" class="external-link">madshapR</a></span><span class="op">)</span> <span class="co"># import DEMO_files</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org" class="external-link">lubridate</a></span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">dataset_MELBOURNE_1</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_1</span></span></span>
-<span class="r-in"><span><span class="va">dataset_MELBOURNE_2</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_2</span></span></span>
-<span class="r-in"><span><span class="va">dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/dossier_create.html" class="external-link">dossier_create</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">dataset_MELBOURNE_1</span>, <span class="va">dataset_MELBOURNE_2</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">dataschema</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">data_proc_elem</span> <span class="op">&lt;-</span> </span></span>
-<span class="r-in"><span>  <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - with error`</span><span class="op">$</span><span class="va">`dataProcessing`</span></span></span>
-<span class="r-in"><span>  </span></span>
-<span class="r-in"><span><span class="co"># perform harmonization </span></span></span>
-<span class="r-in"><span><span class="va">harmonized_dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="harmo_process.html">harmo_process</a></span><span class="op">(</span><span class="va">dossier</span>,<span class="va">dataschema</span>,<span class="va">data_proc_elem</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">harmonized_dossier</span> <span class="op">&lt;-</span> <span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">harmonized_dossier</span></span></span>
 <span class="r-in"><span><span class="fu">show_harmo_error</span><span class="op">(</span><span class="va">harmonized_dossier</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">- DATA PROCESSING ELEMENTS: ------------------------------------------------</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> --harmonization of : <span style="font-weight: bold;">dataset_MELBOURNE_1</span> ------------------------------</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 1/13 : adm_unique_id               <span style="font-weight: bold;">id created</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 2/13 : adm_study                   complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 3/13 : adm_year_dce                complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 4/13 : sdc_age                     complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 5/13 : sdc_gender                  <span style="font-weight: bold;">**ERROR**</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 6/13 : phy_height                  impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 7/13 : phy_weight                  impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 8/13 : phy_bmi                     complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 9/13 : rep_preg_ever               impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 10/13 : rep_preg_curr              impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 11/13 : lsb_smo_ever               impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 12/13 : lsb_smo_curr               impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 13/13 : lsb_smo_status             impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> --harmonization of : <span style="font-weight: bold;">dataset_MELBOURNE_2</span> ------------------------------</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 1/13 : adm_unique_id               <span style="font-weight: bold;">id created</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 2/13 : adm_study                   complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 3/13 : adm_year_dce                complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 4/13 : sdc_age                     impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 5/13 : sdc_gender                  impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 6/13 : phy_height                  impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 7/13 : phy_weight                  impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 8/13 : phy_bmi                     impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 9/13 : rep_preg_ever               impossible</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 10/13 : rep_preg_curr              complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 11/13 : lsb_smo_ever               complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 12/13 : lsb_smo_curr               <span style="font-weight: bold;">**ERROR**</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     processing 13/13 : lsb_smo_status             complete</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> - CREATION OF STUDY-SPECIFIC DATASCHEMA: ----------------------------------</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">dataset_MELBOURNE_1</span> : done</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">dataset_MELBOURNE_2</span> : done</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ------------------------------------------------------------------------------</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Your harmonization process contains errors. The tables with error(s) have not </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> been generated to avoid any version confusion. Correct your data processing </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> elements file and re-run the process.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Useful tip: If you identified errors and want to correct them later, you can specify</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 'undetermined' in the column 'Mlstr::algorithm' of your problematic </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> data processing elements(s). Such data processing elements will not be </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> processed.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">- WARNING MESSAGES (if any): ----------------------------------------------</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> - ERROR STATUS DETAILS: ---------------------------------------------------</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Here is the list of the errors encountered in the process of harmonization:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> -----------------------------------------------------------------------------</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">sdc_gender in dataset_MELBOURNE_1 </span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Pseudo Code:</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> direct_mapping</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">R Script:</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> dataset_MELBOURNE_1 %&gt;% </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>   mutate(</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>   sdc_gender = gendr) %&gt;%</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>   select(1,sdc_gender)</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000; font-weight: bold;">R Error:</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000;">Error in mutate(., sdc_gender = gendr) : </span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000;">  </span><span style="color: #00BBBB;">ℹ</span><span style="color: #000000;"> In argument: `sdc_gender = gendr`.</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000; font-weight: bold;">Caused by error:</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span><span style="color: #000000;"> object 'gendr' not found</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> -----------------------------------------------------------------------------</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">lsb_smo_curr in dataset_MELBOURNE_2 </span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Pseudo Code:</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> recode(1 = 0 ; 3 = 0 ; 2 = 1  ELSE = NA)</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">R Script:</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> dataset_MELBOURNE_2 %&gt;% </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>   select(1, smo_status) %&gt;% </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>   mutate(</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>   lsb_smo_curr = car::recode(</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>       as.numeric = FALSE ,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>       var = .$smo_status ,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>       recodes =  '1 = 0 ; 3 = 0 ; 2 = 1  else  = NA')) %&gt;%</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>   select(1,lsb_smo_curr)</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000; font-weight: bold;">R Error:</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000;">Error in mutate(., lsb_smo_curr = car::recode(as.numeric = FALSE, var = .$smo_status,  : </span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000;">  </span><span style="color: #00BBBB;">ℹ</span><span style="color: #000000;"> In argument: `lsb_smo_curr = car::recode(as.numeric = FALSE, var =</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000;">  .$smo_status, recodes = "1 = 0 ; 3 = 0 ; 2 = 1 else = NA")`.</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000; font-weight: bold;">Caused by error in `car::recode()`:</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span><span style="color: #000000;"> </span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000;">  in recode term:  2 = 1  else  = NA</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000;">  message: Error in parse(text = strsplit(term, to.value)[[1]][2]) : </span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000;">  &lt;text&gt;:1:5: unexpected 'else'</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000;">1:  1  else</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #000000;">        ^</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">- STATUS SUMMARY: --------------------------------------------------------</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 4</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   `Mlstr::rule_category` total_nb_errors total_nb_rules success</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> direct_mapping         1               2              50 %   </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> recode                 1               5              80 %   </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> id_creation            0               2              100 %  </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> impossible             0               13             100 %  </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> paste                  0               4              100 %  </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> id_creation            0               1              100 %  </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
@@ -251,7 +136,7 @@ initiate the process of harmonization.</p>
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Guillaume Fabre.</p>
+  <p></p><p>Developed by Guillaume Fabre, Maelstrom-research group.</p>
 </div>
 
 <div class="pkgdown">

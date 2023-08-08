@@ -4,10 +4,19 @@
     <loc>/404.html</loc>
   </url>
   <url>
-    <loc>/articles/index.html</loc>
+    <loc>/articles/a-Glossary-and-templates.html</loc>
   </url>
   <url>
-    <loc>/articles/Main-usage-of-harmonizR.html</loc>
+    <loc>/articles/b-Understand-the-workflow.html</loc>
+  </url>
+  <url>
+    <loc>/articles/c-The-Data-processing-elements.html</loc>
+  </url>
+  <url>
+    <loc>/articles/d-Example-with-DEMO-files.html</loc>
+  </url>
+  <url>
+    <loc>/articles/index.html</loc>
   </url>
   <url>
     <loc>/authors.html</loc>
@@ -35,6 +44,12 @@
   </url>
   <url>
     <loc>/reference/dataschema_extract.html</loc>
+  </url>
+  <url>
+    <loc>/reference/DEMO_files_harmo.html</loc>
+  </url>
+  <url>
+    <loc>/reference/dowload_templates.html</loc>
   </url>
   <url>
     <loc>/reference/harmonized_dossier_evaluate.html</loc>

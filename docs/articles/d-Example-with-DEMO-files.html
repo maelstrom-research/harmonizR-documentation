@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Introduction to data harmonization with harmonizR • harmonizR</title>
+<title>Introduction to harmonizR • harmonizR</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to data harmonization with harmonizR">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to harmonizR">
 <meta property="og:description" content="harmonizR">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.0000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
       </span>
     </div>
 
@@ -50,7 +50,16 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/Main-usage-of-harmonizR.html">Introduction to data harmonization with harmonizR</a>
+      <a href="../articles/a-Glossary-and-templates.html">Glossary and templates</a>
+    </li>
+    <li>
+      <a href="../articles/b-Understand-the-workflow.html">Understand the workflow</a>
+    </li>
+    <li>
+      <a href="../articles/c-The-Data-processing-elements.html">The Data processing elements</a>
+    </li>
+    <li>
+      <a href="../articles/d-Example-with-DEMO-files.html">Introduction to harmonizR</a>
     </li>
   </ul>
 </li>
@@ -78,143 +87,58 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Introduction to data harmonization with
-harmonizR</h1>
+      <h1 data-toc-skip>Introduction to harmonizR</h1>
             
-            <h4 data-toc-skip class="date">2023-05-24</h4>
+            <h4 data-toc-skip class="date">2023-08-08</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/harmonizR/blob/HEAD/vignettes/Main-usage-of-harmonizR.Rmd" class="external-link"><code>vignettes/Main-usage-of-harmonizR.Rmd</code></a></small>
-      <div class="hidden name"><code>Main-usage-of-harmonizR.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/harmonizR/blob/HEAD/vignettes/d-Example-with-DEMO-files.Rmd" class="external-link"><code>vignettes/d-Example-with-DEMO-files.Rmd</code></a></small>
+      <div class="hidden name"><code>d-Example-with-DEMO-files.Rmd</code></div>
 
     </div>
 
     
     
 <div class="section level2">
-<h2 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a>
-</h2>
-<p>Combining and co-analyzing data from different studies offers
-potential advantages for addressing research questions, but data items
-collected by different studies must first be made suitably equivalent,
-i.e., harmonized. This process of data harmonization is essential but
-challenging to implement in a rigorous and transparent way. To help
-address these challenges,
-<a href="https://www.maelstrom-research.org/" target="_blank" class="external-link"> Maelstrom
-Research</a> developed guidelines for rigorous
-<a href="https://maelstrom-research.org/page/maelstrom-guidelines" target="_blank" class="external-link">
-retrospective data harmonization</a>. An overview of the iterative steps
-of this process are shown in Figure 1.</p>
-<div class="figure">
-<img src="https://www.maelstrom-research.org/assets/images/HarmoStepsNew.png" id="id" class="class" style="width:50.0%;height:50.0%" alt=""><p class="caption">Figure 1. Iterative harmonization steps.</p>
-</div>
-</div>
-<div class="section level2">
-<h2 id="harmonizr">harmonizR<a class="anchor" aria-label="anchor" href="#harmonizr"></a>
-</h2>
-<p>The <strong>harmonizR</strong> package addresses practical aspects of
-data harmonization processing (guidelines Step 3) and facilitates
-evaluation (Step 4) and documentation (Step 5) of harmonization
-products. It was developed to meet certain needs of Maelstrom’s
-collaborative harmonization initiatives, including integration with the
-<a href="https://www.obiba.org/" target="_blank" class="external-link">OBiBa software</a>, but
-is intended as a general resource for diverse harmonization efforts.</p>
-<p>This vignette provides an introductory walkthrough of the basic
-harmonization process using ‘harmonizR’. It will cover steps to:</p>
-<ul>
-<li>Prepare inputs used in harmonization processing</li>
-<li>Run the harmonization process and generate harmonized
-dataset(s)</li>
-<li>Generate reports and evaluate harmonized variables</li>
-</ul>
-<p>Note that, while these steps are often performed sequentially, each
-action can be run independently. For example, reports could be generated
-for harmonized datasets previously created outside of ‘harmonizR’.</p>
-</div>
-<div class="section level2">
 <h2 id="get-started">Get started<a class="anchor" aria-label="anchor" href="#get-started"></a>
 </h2>
 <div class="section level3">
 <h3 id="install-the-package">Install the package<a class="anchor" aria-label="anchor" href="#install-the-package"></a>
 </h3>
-<p>To download the package, you need to have an account on
-<a href="https://github.com/" target="_blank" class="external-link">GitHub</a> and create a
-<a href="https://github.com/settings/tokens" target="_blank" class="external-link">personal
-access token</a> (in the format “ghp_xxx”). To use the package, you will
-need to be added to the list of authorized users. To request access,
-contact us and send us your Github username.</p>
-<p>You can send us your Github name using the
-<a href="https://www.maelstrom-research.org/contact" target="_blank" class="external-link">following
-link</a> so we can add you to our authorized list of users.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># To update the R package in your R environment you may first need to remove it, </span></span>
-<span><span class="co"># and use the exit command quit() to terminate the current R session.</span></span>
+<code class="sourceCode R"><span><span class="co"># To install the R package:</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'harmonizR'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># To install the R package:</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span></span>
-<span>  repo <span class="op">=</span> <span class="st">"https://github.com/maelstrom-research/harmonizR"</span>,</span>
-<span>  auth_token <span class="op">=</span> <span class="st">"ghp_YouNeedaValidGithubTOKEN!!!"</span>,</span>
-<span>  ref <span class="op">=</span> <span class="st">'testing'</span>,</span>
-<span>  force <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/harmonizR/" class="external-link">harmonizR</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/harmonizR/" class="external-link">harmonizR</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/madshapR/" class="external-link">madshapR</a></span><span class="op">)</span>  <span class="co"># dowload DEMO files.</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org" class="external-link">lubridate</a></span><span class="op">)</span> <span class="co"># presence of date variable in study specific dataset</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://haven.tidyverse.org" class="external-link">haven</a></span><span class="op">)</span>     <span class="co"># for categorical variables</span></span>
 <span></span>
 <span><span class="co">#if you need help with the package, please use:</span></span>
 <span><span class="fu"><a href="../reference/harmonizR_help.html">harmonizR_help</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/madshapR_help.html" class="external-link">madshapR_help</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/madshapR_help.html" class="external-link">madshapR_help</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
-</div>
-<div class="section level2">
-<h2 id="understanding-the-main-inputs">Understanding the main inputs<a class="anchor" aria-label="anchor" href="#understanding-the-main-inputs"></a>
-</h2>
-<p>In a typical harmonization process, ‘harmonizR’ functions use a few
-main inputs: study-specific datasets, study-specific data
-dictionaries,the DataSchema, and data processing elements. These inputs
-are generally created in other programs, imported into R, and prepared
-as needed to match the specific formats required by
-<strong>harmonizR</strong> functions.</p>
-<ul>
-<li>
-<strong>Study-specific datasets</strong> contain variables in
-original formats (e.g., as collected by separate studies), which provide
-the source variables for harmonization processing. Ideally,
-study-specific <strong>data dictionaries</strong> that contain metadata
-about variables (e.g., labels, units, categories) are also provided by
-the user and associated with the datasets but are not required.</li>
-<li>The <strong>DataSchema</strong> defines the list and attributes of
-harmonized variables to be generated (guidelines Step 2).</li>
-<li>
-<strong>The data processing elements</strong> contain the processing
-rules and metadata that will be used to generate harmonized variables
-from study-specific variables (guidelines Step 3).</li>
-</ul>
-<p>These inputs provide the information used to evaluate and document
-the harmonization process and harmonized datasets produced (Steps 4 and
-5). The DataSchema and data processing elements are first created as
-Excel files from templates and imported into R. <em>These element are
-mandatory in the technical process of harmonization in this
-package.</em></p>
 <div class="section level3">
 <h3 id="demo-files">Demo files<a class="anchor" aria-label="anchor" href="#demo-files"></a>
 </h3>
 <p>Demo files are available in the built-in DEMO_files object in the
 <strong>madshapR</strong> library. These provide illustrative examples
 of the main inputs and are used to run commands in this vignette.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># To see examples:</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">$</span><span class="va">dataProcessing</span><span class="op">)</span> </span>
-<span>                                                  <span class="co"># The data processing elements</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span><span class="op">)</span>             <span class="co"># The Dataschema </span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_TOKYO_format_maelstrom_tagged</span><span class="op">)</span> <span class="co"># A data dictionaries</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_TOKYO</span><span class="op">)</span>                    <span class="co"># Datasets</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">$</span><span class="va">dataProcessing</span><span class="op">)</span> </span>
+<span>                                                  <span class="co"># The data processing elements</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`dataschema - final`</span><span class="op">)</span>       <span class="co"># The Dataschema </span></span>
 <span>                  </span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
-<h2 id="harmonize">Harmonize<a class="anchor" aria-label="anchor" href="#harmonize"></a>
+<h2 id="general-objective-of-this-demonstration">General objective of this demonstration<a class="anchor" aria-label="anchor" href="#general-objective-of-this-demonstration"></a>
 </h2>
 <p>A general process with <strong>harmonizR</strong> involves the
 following steps:</p>
@@ -240,21 +164,21 @@ associated with their corresponding datasets using the function
 automatically be created to meet technical requirements of the following
 functions. The study-specific datasets and associated data dictionaries
 are then grouped into a dossier.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Associate metadata from data dictionary to the the data</span></span>
-<span><span class="va">dataset_MELBOURNE_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
+<span><span class="va">dataset_MELBOURNE_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_1</span>,</span>
 <span>  data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_MELBOURNE_1_format_maelstrom</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">dataset_MELBOURNE_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
+<span><span class="va">dataset_MELBOURNE_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_MELBOURNE_2</span>,</span>
 <span>  data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_MELBOURNE_2_format_maelstrom</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">dataset_PARIS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
+<span><span class="va">dataset_PARIS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_PARIS</span>,</span>
 <span>  data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_PARIS_format_maelstrom</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">dataset_TOKYO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
+<span><span class="va">dataset_TOKYO</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_apply.html" class="external-link">data_dict_apply</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_TOKYO</span>,</span>
 <span>  data_dict <span class="op">=</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_TOKYO_format_maelstrom_tagged</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -263,25 +187,24 @@ are then grouped into a dossier.</p>
 </h3>
 <p>When the main inputs (dossier, DataSchema, and data processing
 element) are prepared,</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># group the datasets in a dossier object</span></span>
 <span><span class="co"># NB: the name of the datasets in the study must match the column ss_table in </span></span>
 <span><span class="co"># the data processing element</span></span>
-<span><span class="va">dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/dossier_create.html" class="external-link">dossier_create</a></span><span class="op">(</span></span>
+<span><span class="va">dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/dossier_create.html" class="external-link">dossier_create</a></span><span class="op">(</span></span>
 <span>  dataset_list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
 <span>    <span class="va">dataset_MELBOURNE_1</span>, </span>
 <span>    <span class="va">dataset_MELBOURNE_2</span>, </span>
 <span>    <span class="va">dataset_PARIS</span>, </span>
 <span>    <span class="va">dataset_TOKYO</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">dataschema</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span></span>
-<span><span class="va">data_proc_elem</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">$</span><span class="va">dataProcessing</span></span></code></pre></div>
+<span><span class="va">dataschema</span> <span class="op">&lt;-</span> <span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`dataschema - final`</span></span>
+<span><span class="va">data_proc_elem</span> <span class="op">&lt;-</span> <span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">$</span><span class="va">dataProcessing</span></span></code></pre></div>
 <p>You can proceed with harmonization using ‘harmo_process’.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Process harmonization</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org" class="external-link">lubridate</a></span><span class="op">)</span></span>
 <span><span class="va">harmonized_dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmo_process.html">harmo_process</a></span><span class="op">(</span><span class="va">dossier</span>, <span class="va">dataschema</span>, <span class="va">data_proc_elem</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/show_harmo_error.html">show_harmo_error</a></span><span class="op">(</span><span class="va">harmonized_dossier</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -293,7 +216,7 @@ potential issues, produce summary statistics, and generate visual
 reports.</p>
 <p><strong>Warning ⚠</strong> <em>This tutorial creates for you a folder
 ‘tmp’ where the visual report is generated.</em></p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Assess the harmonization (this report can be downloaded as an excel file)</span></span>
 <span><span class="va">harmonized_dossier_evaluate</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmonized_dossier_evaluate.html">harmonized_dossier_evaluate</a></span><span class="op">(</span><span class="va">harmonized_dossier</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">harmonized_dossier_evaluate</span><span class="op">)</span></span>
@@ -306,7 +229,7 @@ reports.</p>
 <span><span class="va">to</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">'tmp/'</span>,<span class="fu"><a href="https://rdrr.io/r/base/basename.html" class="external-link">basename</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">to</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/harmonized_dossier_visualize.html">harmonized_dossier_visualize</a></span><span class="op">(</span><span class="va">harmonized_dossier</span>, to <span class="op">=</span> <span class="va">to</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://maelstrom-research.github.io/madshapR-documentation/reference/open_visual_report.html" class="external-link">open_visual_report</a></span><span class="op">(</span><span class="va">to</span><span class="op">)</span> <span class="co"># open the report in browser</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/open_visual_report.html" class="external-link">open_visual_report</a></span><span class="op">(</span><span class="va">to</span><span class="op">)</span> <span class="co"># open the report in browser</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.remove</a></span><span class="op">(</span><span class="va">to</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
@@ -324,7 +247,7 @@ reports.</p>
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Guillaume Fabre.</p>
+<p>Developed by Guillaume Fabre, Maelstrom-research group.</p>
 </div>
 
 <div class="pkgdown">
