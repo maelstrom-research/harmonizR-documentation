@@ -54,9 +54,8 @@ have unique and non-null entries, and in "Categories" the combination of
     <br><br>
     
     <button><a 
-      href="https://github.com/maelstrom-research/harmonizR-documentation/blob/master/templates/ss_dataschema%20-%20template.csv"
-      download="https://github.com/maelstrom-research/harmonizR-documentation/blob/master/templates/ss_dataschema%20-%20template.csv"
-      >Download template</a>
+      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/ss_dataschema%20-%20template.csv"
+      download>Download template</a>
     </button>
 
     ',
@@ -105,9 +104,8 @@ the process.
     <br><br>
     
     <button><a 
-      href="" target = "blank_"
-      download="https://github.com/maelstrom-research/harmonizR-documentation/blob/master/templates/data_processing_elements%20-%20template.csv"
-      >Download template</a>
+      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/data_processing_elements%20-%20template.csv"
+      download>Download template</a>
     </button>
     
     ',
@@ -145,9 +143,8 @@ also be unique.
     <br><br>
     
     <button><a 
-      href="" target = "blank_"
-      download="https://github.com/maelstrom-research/harmonizR-documentation/blob/master/templates/data_dictionary%20-%20template.xlsx"
-      >Download template</a>
+      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/data_dictionary%20-%20template.xlsx"
+      download>Download template</a>
     </button>
     
     ',
@@ -184,9 +181,8 @@ automatically by the function.
     <br><br>
     
     <button><a 
-      href="" target = "blank_"
-      download="https://github.com/maelstrom-research/harmonizR-documentation/blob/master/templates/dataset%20-%20template.csv"
-      >Download template</a>
+      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/dataset%20-%20template.csv"
+      download>Download template</a>
     </button>
     
     ',
@@ -214,9 +210,8 @@ The name of each tibble will be use as the reference name of the dataset.
     <br><br>
     
     <button><a 
-      download="https://github.com/maelstrom-research/harmonizR-documentation/blob/master/templates/dossier%20-%20template.xlsx"
-      href="dataschema%20-%20template"
-      >Download template</a>
+      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/dossier%20-%20template.xlsx"
+      download>Download template</a>
     </button>
     
     ',
@@ -239,9 +234,8 @@ The name of each tibble will be use as the reference name of the dataset.
     <br><br>
     
     <button><a 
-      download="https://github.com/maelstrom-research/harmonizR-documentation/blob/master/templates/harmonized_dataset%20-%20template.xlsx"
-      href="dataschema%20-%20template"
-      >Download template</a>
+      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/harmonized_dataset%20-%20template.xlsx"
+      download>Download template</a>
     </button>
     
     ',
@@ -271,9 +265,8 @@ two extra columns are added.
     <br><br>
     
     <button><a 
-      download="https://github.com/maelstrom-research/harmonizR-documentation/blob/master/templates/pooled_harmonized_dataset%20-%20template.xlsx"
-      href="dataschema%20-%20template"
-      >Download template</a>
+      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/pooled_harmonized_dataset%20-%20template.xlsx"
+      download>Download template</a>
     </button>
     
     ',
@@ -314,9 +307,8 @@ initiate the process of harmonization.
     <br><br>
     
     <button><a 
-      download="https://github.com/maelstrom-research/harmonizR-documentation/blob/master/templates/harmonized_dossier%20-%20template.xlsx"
-      href="dataschema%20-%20template"
-      >Download template</a>
+      href="https://maelstrom-research.github.io/harmonizR-documentation/templates/harmonized_dossier%20-%20template.xlsx"
+      download>Download template</a>
     </button>
     
     ',
