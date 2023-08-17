@@ -9,7 +9,7 @@ library(fs)
 
 #### data_proc_elem_template ####
 data_proc_elem_template <- 
-  DEMO_files_harmo$`data_processing_elements - final` %>% .[[1]] %>%
+  DEMO_files$`data_processing_elements - final` %>% .[[1]] %>%
   as_data_proc_elem() %>%
   select(
     index,dataschema_variable,valueType, ss_table, ss_variables,
@@ -24,10 +24,10 @@ data_proc_elem_template <-
 #### dataschema_template ####
 dataschema_template <- 
   list(Variables = 
-         DEMO_files_harmo$`dataschema - final`$Variables %>%
+         DEMO_files$`dataschema - final`$Variables %>%
          select(name, `label:en`,valueType) %>% slice(1,2),
        Categories = 
-         DEMO_files_harmo$`dataschema - final`$Categories %>%
+         DEMO_files$`dataschema - final`$Categories %>%
          select(variable, name, `label:en`, missing) %>% slice(1) %>%
          mutate(variable = 'adm_study', `label:en` = 'Study n. 1', name = 'study_1', missing = FALSE)) %>%
   as_data_dict_mlstr()

@@ -130,9 +130,9 @@ of the main inputs and are used to run commands in this vignette.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">dd_TOKYO_format_maelstrom_tagged</span><span class="op">)</span> <span class="co"># A data dictionaries</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">dataset_TOKYO</span><span class="op">)</span>                    <span class="co"># Datasets</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">$</span><span class="va">dataProcessing</span><span class="op">)</span> </span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">$</span><span class="va">dataProcessing</span><span class="op">)</span> </span>
 <span>                                                  <span class="co"># The data processing elements</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`dataschema - final`</span><span class="op">)</span>       <span class="co"># The Dataschema </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span><span class="op">)</span>       <span class="co"># The Dataschema </span></span>
 <span>                  </span></code></pre></div>
 </div>
 </div>
@@ -198,8 +198,8 @@ element) are prepared,</p>
 <span>    <span class="va">dataset_PARIS</span>, </span>
 <span>    <span class="va">dataset_TOKYO</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">dataschema</span> <span class="op">&lt;-</span> <span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`dataschema - final`</span></span>
-<span><span class="va">data_proc_elem</span> <span class="op">&lt;-</span> <span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">$</span><span class="va">dataProcessing</span></span></code></pre></div>
+<span><span class="va">dataschema</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span></span>
+<span><span class="va">data_proc_elem</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">$</span><span class="va">dataProcessing</span></span></code></pre></div>
 <p>You can proceed with harmonization using ‘harmo_process’.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>

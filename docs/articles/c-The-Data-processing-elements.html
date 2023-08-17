@@ -728,10 +728,10 @@ elements found in the Data Processing Elements.</p>
 <span><span class="va">dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/dossier_create.html" class="external-link">dossier_create</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
 <span>  <span class="va">dataset_MELBOURNE_1</span>, <span class="va">dataset_MELBOURNE_2</span>, <span class="va">dataset_PARIS</span>, <span class="va">dataset_TOKYO</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">dataschema</span> <span class="op">&lt;-</span> <span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`dataschema - final`</span></span>
+<span><span class="va">dataschema</span> <span class="op">&lt;-</span> <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span></span>
 <span></span>
 <span><span class="va">data_proc_elem</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">$</span><span class="va">`dataProcessing`</span></span>
+<span>  <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">$</span><span class="va">`dataProcessing`</span></span>
 <span></span>
 <span><span class="co"># perform harmonization</span></span>
 <span><span class="fu"><a href="../reference/harmo_process.html">harmo_process</a></span><span class="op">(</span><span class="va">dossier</span>,<span class="va">dataschema</span>,<span class="va">data_proc_elem</span><span class="op">)</span></span>
@@ -751,7 +751,7 @@ console using the function <a href="../reference/show_harmo_error.html">show_har
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">data_proc_elem</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`data_processing_elements - with error`</span><span class="op">$</span><span class="va">`dataProcessing`</span></span>
+<span>  <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - with error`</span><span class="op">$</span><span class="va">`dataProcessing`</span></span>
 <span></span>
 <span><span class="co"># perform harmonization</span></span>
 <span><span class="va">harmonized_dossier</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmo_process.html">harmo_process</a></span><span class="op">(</span><span class="va">dossier</span>, <span class="va">dataschema</span>, <span class="va">data_proc_elem</span><span class="op">)</span></span>
