@@ -21,7 +21,7 @@ and can be exported as an Excel spreadsheet."><!-- mathjax --><script src="https
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1003</span>
       </span>
     </div>
 
@@ -128,21 +128,26 @@ case, the tibble must also contain 'vocabulary_short', 'taxonomy_scale',
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/madshapR/" class="external-link">madshapR</a></span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sfirke/janitor" class="external-link">janitor</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/madshapR/" class="external-link">madshapR</a></span><span class="op">)</span> <span class="co"># data_dict_filter</span></span></span>
+<span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">dataschema</span> <span class="op">&lt;-</span> </span></span>
-<span class="r-in"><span>  <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`dataschema - final`</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_filter.html" class="external-link">data_dict_filter</a></span><span class="op">(</span><span class="st">"name == 'adm_unique_id'"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://sfirke.github.io/janitor/reference/remove_empty.html" class="external-link">remove_empty</a></span><span class="op">(</span><span class="va">x</span>,which <span class="op">=</span> <span class="st">'cols'</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`dataschema - final`</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/data_dict_filter.html" class="external-link">data_dict_filter</a></span><span class="op">(</span><span class="st">"name == 'adm_unique_id'"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  </span></span>
 <span class="r-in"><span><span class="fu">dataschema_evaluate</span><span class="op">(</span><span class="va">dataschema</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>package 'dplyr' was built under R version 4.2.3</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Attaching package: 'janitor'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Attaching package: 'dplyr'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The following objects are masked from 'package:stats':</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     chisq.test, fisher.test</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     filter, lag</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> The following objects are masked from 'package:base':</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     intersect, setdiff, setequal, union</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>package 'madshapR' was built under R version 4.2.3</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> - DATA DICTIONARY ASSESSMENT: <span style="font-weight: bold;">dataschema</span> --------------</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the standard adequacy of naming</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the uniqueness of variable names</span>
@@ -153,16 +158,44 @@ case, the tibble must also contain 'vocabulary_short', 'taxonomy_scale',
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the `valueType` column in 'Variables'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Generate report</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     The data dictionary contains no error/warning.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">  - WARNING MESSAGES (if any): --------------------------------------------</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`Study-specific Dataschema summary`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 8</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   index name          `label:en`         valueType project table `Mlstr_area::1`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     1 adm_unique_id Unique identifica… text      DEMO    harm… ADM            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1 more variable: `Mlstr_area::1.term` &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 25</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   index name          `label:en`  valueType unit  other_format individual_entity</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     1 adm_unique_id Unique ide… text      <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>           <span style="color: #BB0000;">NA</span>               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 18 more variables: time_period &lt;chr&gt;, source &lt;chr&gt;, informant &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   time_collection &lt;chr&gt;, wording &lt;chr&gt;, measures &lt;chr&gt;, procedures &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   instructions &lt;chr&gt;, comments &lt;chr&gt;, `Mlstr_additional::Source` &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Mlstr_additional::Target` &lt;chr&gt;, `Mlstr_area::1` &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Mlstr_area::1.term` &lt;chr&gt;, `Mlstr_area::1.scale` &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Mlstr_area::2` &lt;chr&gt;, `Mlstr_area::2.term` &lt;chr&gt;, `Mlstr_area::3` &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Mlstr_area::3.term` &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`Study-specific Dataschema assessement`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 19 × 4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    sheet     name_col                 name_var `Quality assessment comment`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Variables Mlstr_additional::Source <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Variables Mlstr_additional::Target <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Variables Mlstr_area::1.scale      <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Variables Mlstr_area::2            <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Variables Mlstr_area::2.term       <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Variables Mlstr_area::3            <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Variables Mlstr_area::3.term       <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Variables comments                 <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Variables individual_entity        <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Variables informant                <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> Variables instructions             <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> Variables measures                 <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> Variables other_format             <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> Variables procedures               <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> Variables source                   <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> Variables time_collection          <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> Variables time_period              <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> Variables unit                     <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span> Variables wording                  <span style="color: #BB0000;">NA</span>       [INFO] - Empty column       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

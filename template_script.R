@@ -4,17 +4,11 @@ library(tidyverse)
 library(fabR)
 library(madshapR)
 library(harmonizR)
-library(haven)
-library(fs)
 
 #### data_proc_elem_template ####
 data_proc_elem_template <- 
-  DEMO_files$`data_processing_elements - final` %>% .[[1]] %>%
+  DEMO_files_harmo$`data_processing_elements - final` %>%
   as_data_proc_elem() %>%
-  select(
-    index,dataschema_variable,valueType, ss_table, ss_variables,
-    `Mlstr::rule_category`,`Mlstr::algorithm`,`Mlstr::status`) %>%
-  as_data_proc_elem() %>% 
   slice(4,8) %>%
   mutate(
     index = c(1,2) ,
@@ -24,10 +18,10 @@ data_proc_elem_template <-
 #### dataschema_template ####
 dataschema_template <- 
   list(Variables = 
-         DEMO_files$`dataschema - final`$Variables %>%
+         DEMO_files_harmo$`dataschema - final`$Variables %>%
          select(name, `label:en`,valueType) %>% slice(1,2),
        Categories = 
-         DEMO_files$`dataschema - final`$Categories %>%
+         DEMO_files_harmo$`dataschema - final`$Categories %>%
          select(variable, name, `label:en`, missing) %>% slice(1) %>%
          mutate(variable = 'adm_study', `label:en` = 'Study n. 1', name = 'study_1', missing = FALSE)) %>%
   as_data_dict_mlstr()
@@ -53,8 +47,6 @@ data_dict_template <-
                  `label:en` = 'Missing category (Do not want to answer, skip pattern, etc.)', 
                  name = '-77' , missing = TRUE)) %>%
   as_data_dict_mlstr()
-
-
 
 #### dataset_template ####
 dataset_template <- 
@@ -88,7 +80,6 @@ pooled_harmonized_dataset_template <-
 
 #### harmonized_dataset_template ####
 harmonized_dataset_template <- harmonized_dossier_template$STUDY_1
-
 
 path = "C:/Users/guill/OneDrive/Bureau/R/harmonizR-documentation/"
 try(dir_delete(paste0(path,'docs/templates/')))

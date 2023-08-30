@@ -22,7 +22,7 @@ with Excel and can be exported as an Excel spreadsheet."><!-- mathjax --><script
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1003</span>
       </span>
     </div>
 
@@ -134,7 +134,7 @@ case, the tibble must also contain 'vocabulary_short', 'taxonomy_scale',
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">harmonized_dossier_evaluate</span><span class="op">(</span><span class="va">DEMO_files</span><span class="op">$</span><span class="va">harmonized_dossier</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">harmonized_dossier_evaluate</span><span class="op">(</span><span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">harmonized_dossier</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">- DOSSIER ASSESSMENT: ----------------------------------------------------</span></span>
@@ -144,8 +144,11 @@ case, the tibble must also contain 'vocabulary_short', 'taxonomy_scale',
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of possible duplicated columns</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of empty rows in the data dictionary</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of empty columns in the data dictionary</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of categories not in the data dictionary</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the completion of `label(:xx)` column in 'Variables'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the `valueType` column in 'Variables'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess presence and completion of `label(:xx)` column in 'Categories'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the logical values of missing column in Categories</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Generate report</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     The data dictionary contains no error/warning.</span>
@@ -168,19 +171,42 @@ case, the tibble must also contain 'vocabulary_short', 'taxonomy_scale',
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">    </span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $dataset_MELBOURNE_1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $dataset_MELBOURNE_1$`Study-specific Dataschema summary`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 12</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   index name          `label:en`         valueType project table `Mlstr_area::1`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     1 adm_unique_id Unique identifica… text      DEMO    harm… ADM            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: `Mlstr_area::1.term` &lt;chr&gt;, `Mlstr::rule_category` &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Mlstr::algorithm` &lt;chr&gt;, `harmonizR::r_script` &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Mlstr::status` &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 15</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    index name  `label:en` valueType `Categories::label:en` `Categories::missing`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     1 adm_… Unique id… text       <span style="color: #BB0000;">NA</span>                     <span style="color: #BB0000;">NA</span>                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     2 adm_… Indicator… text       <span style="color: #BB0000;">NA</span>                     <span style="color: #BB0000;">NA</span>                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     3 adm_… Indicator… text       <span style="color: #BB0000;">NA</span>                     <span style="color: #BB0000;">NA</span>                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     4 sdc_… Participa… integer    <span style="color: #BB0000;">NA</span>                     <span style="color: #BB0000;">NA</span>                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     5 sdc_… Gender of… integer   <span style="color: #949494;">"</span>1 = Male ; \n2 = Fem… <span style="color: #949494;">"</span>1 = FALSE ; \n2 = F…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     6 phy_… participa… decimal    <span style="color: #BB0000;">NA</span>                     <span style="color: #BB0000;">NA</span>                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     7 phy_… participa… decimal    <span style="color: #BB0000;">NA</span>                     <span style="color: #BB0000;">NA</span>                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     8 phy_… participa… decimal    <span style="color: #BB0000;">NA</span>                     <span style="color: #BB0000;">NA</span>                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     9 rep_… whether t… integer   <span style="color: #949494;">"</span>0 = never pregnant ;… <span style="color: #949494;">"</span>0 = FALSE ; \n1 = F…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    10 rep_… whether t… integer   <span style="color: #949494;">"</span>0 = currently pregna… <span style="color: #949494;">"</span>0 = FALSE ; \n1 = F…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>    11 lsb_… whether t… integer   <span style="color: #949494;">"</span>0 = never smoked ; \… <span style="color: #949494;">"</span>0 = FALSE ; \n1 = F…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>    12 lsb_… whether t… integer   <span style="color: #949494;">"</span>0 = currently smoker… <span style="color: #949494;">"</span>0 = FALSE ; \n1 = F…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>    13 lsb_… participa… integer   <span style="color: #949494;">"</span>0 = never smoker ; \… <span style="color: #949494;">"</span>0 = FALSE ; \n1 = F…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9 more variables: `Mlstr_area::1` &lt;chr&gt;, `Mlstr_area::1.term` &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Mlstr_harmo::rule_category` &lt;chr&gt;, `Mlstr_harmo::algorithm` &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `harmonizR::r_script` &lt;chr&gt;, `Mlstr_harmo::status` &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Mlstr_harmo::status_detail` &lt;chr&gt;, unit &lt;chr&gt;, `Mlstr_area::1.scale` &lt;chr&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $dataset_MELBOURNE_1$`Harmonized Dataset assessment`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   `index in data dict.` name          Quality assessment comm…¹ value suggestion</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>                     1 adm_unique_id [INFO] - refined valueTy… text  integer   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 32 × 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    `index in data dict.` name          Quality assessment com…¹ value suggestion</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>                     1 adm_unique_id [INFO] - possible dupli… 3779… <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>                     2 adm_study     [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>                     3 adm_year_dce  [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>                     4 sdc_age       [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>                     5 sdc_gender    [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>                     6 phy_height    [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>                     7 phy_weight    [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>                     8 phy_bmi       [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>                     9 rep_preg_ever [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>                    10 rep_preg_curr [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 22 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ abbreviated name: ¹​`Quality assessment comment`</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>

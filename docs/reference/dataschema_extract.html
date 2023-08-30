@@ -19,7 +19,7 @@ data processing elements."><!-- mathjax --><script src="https://cdnjs.cloudflare
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">harmonizR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1003</span>
       </span>
     </div>
 
@@ -99,9 +99,9 @@ being the two elements of the DataSchema.</p>
 to perform harmonization of input datasets in accordance with the DataSchema.
 It must be a data-frame or data-frame extension (e.g. a tibble) and it must
 contain certain columns which participate to the process, including the
-<code>dataschema_variable</code>, <code>ss-table</code>,<code>ss_variables</code>, <code>Mlstr::rule_category</code> and
-<code>Mlstr::algorithm</code>. The mandatory first processing element must be
-""id_creation"" in <code>Mlstr::rule_category</code> followed by the name of the column
+<code>dataschema_variable</code>, <code>ss-table</code>,<code>ss_variables</code>, <code>Mlstr_harmo::rule_category</code> and
+<code>Mlstr_harmo::algorithm</code>. The mandatory first processing element must be
+""id_creation"" in <code>Mlstr_harmo::rule_category</code> followed by the name of the column
 taken as identifier of each dataset to initiate the process of harmonization.</p>
     </div>
 
@@ -110,11 +110,9 @@ taken as identifier of each dataset to initiate the process of harmonization.</p
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># You can use our demonstration files to run examples</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/madshapR/" class="external-link">madshapR</a></span><span class="op">)</span> <span class="co"># import DEMO_files</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">dataschema_extract</span><span class="op">(</span></span></span>
-<span class="r-in"><span>  data_proc_elem <span class="op">=</span> </span></span>
-<span class="r-in"><span>  <span class="va">DEMO_files</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">$</span><span class="va">dataProcessing</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  data_proc_elem <span class="op">=</span> <span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Variables</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 3</span></span>
