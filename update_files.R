@@ -1,3 +1,4 @@
+
 library(harmonizR)
 library(madshapR)
 library(fabR)
@@ -14,8 +15,9 @@ fs::dir_delete("../harmonizR-documentation/docs")
 fs::dir_copy(
   "docs",
   "../harmonizR-documentation/docs",
-  overwrite = TRUE
-)
+  overwrite = TRUE)
+
+source('template_script.R')
 
 # push to git
 

@@ -105,10 +105,9 @@
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># To install the R package:</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'harmonizR'</span><span class="op">)</span></span>
+<span><span class="co"># install.packages('harmonizR')</span></span>
 <span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/harmonizR/" class="external-link">harmonizR</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://haven.tidyverse.org" class="external-link">haven</a></span><span class="op">)</span>     <span class="co"># for categorical variables</span></span>
 <span></span>
 <span><span class="co">#if you need help with the package, please use:</span></span>
 <span><span class="fu"><a href="../reference/harmonizR_help.html">harmonizR_help</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -125,12 +124,12 @@ used to run commands in this vignette.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">DEMO_files_harmo</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># To see examples:</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">dd_TOKYO_format_maelstrom_tagged</span><span class="op">)</span> <span class="co"># A data dictionaries</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">dataset_TOKYO</span><span class="op">)</span>                    <span class="co"># Datasets</span></span>
+<span><span class="co"># View(DEMO_files_harmo$dd_TOKYO_format_maelstrom_tagged) # A data dictionaries</span></span>
+<span><span class="co"># View(DEMO_files_harmo$dataset_TOKYO)                    # Datasets</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`data_processing_elements - final`</span><span class="op">)</span> </span>
+<span><span class="co"># View(DEMO_files_harmo$`data_processing_elements - final`) </span></span>
 <span>                                                  <span class="co"># The data processing elements</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">DEMO_files_harmo</span><span class="op">$</span><span class="va">`dataschema - final`</span><span class="op">)</span>       <span class="co"># The Dataschema </span></span>
+<span><span class="co"># View(DEMO_files_harmo$`dataschema - final`)       # The Dataschema </span></span>
 <span>                  </span></code></pre></div>
 </div>
 </div>
@@ -216,22 +215,21 @@ reports.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Assess the harmonization (this report can be downloaded as an excel file)</span></span>
 <span><span class="va">harmonized_dossier_evaluate</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmonized_dossier_evaluate.html">harmonized_dossier_evaluate</a></span><span class="op">(</span><span class="va">harmonized_dossier</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">harmonized_dossier_evaluate</span><span class="op">)</span></span>
+<span><span class="co"># View(harmonized_dossier_evaluate)</span></span>
 <span></span>
 <span><span class="co"># Produce summary statistics (this summary can be downloaded as an excel file)</span></span>
 <span><span class="va">harmonized_dossier_summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/harmonized_dossier_summarise.html">harmonized_dossier_summarise</a></span><span class="op">(</span><span class="va">harmonized_dossier</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">harmonized_dossier_summary</span><span class="op">)</span></span>
+<span><span class="co"># View(harmonized_dossier_summary)</span></span>
 <span></span>
 <span><span class="co"># Generate visual report (this report is an web-base interactive application)</span></span>
 <span><span class="va">bookdown_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">'tmp/'</span>,<span class="fu"><a href="https://rdrr.io/r/base/basename.html" class="external-link">basename</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">bookdown_path</span><span class="op">)</span></span>
+<span><span class="co"># print(bookdown_path)</span></span>
 <span><span class="fu"><a href="../reference/harmonized_dossier_visualize.html">harmonized_dossier_visualize</a></span><span class="op">(</span></span>
 <span>  <span class="va">harmonized_dossier</span>, </span>
-<span>  bookdown_path <span class="op">=</span> <span class="va">bookdown_path</span>,</span>
-<span>  overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  to <span class="op">=</span> <span class="va">bookdown_path</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/open_visual_report.html" class="external-link">open_visual_report</a></span><span class="op">(</span><span class="va">bookdown_path</span><span class="op">)</span> <span class="co"># open the report in browser</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.remove</a></span><span class="op">(</span><span class="va">bookdown_path</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co"># file.remove(bookdown_path)</span></span></code></pre></div>
 </div>
 </div>
   </div>
