@@ -151,7 +151,7 @@ pooled harmonized dataset.</p></dd>
 
 <p>A bookdown folder containing files in the specified output folder. To
 open the file in browser, open 'docs/index.html'.
-Or use <code><a href="https://rdrr.io/pkg/madshapR/man/open_visual_report.html" class="external-link">open_visual_report()</a></code></p>
+Or use <code><a href="https://rdrr.io/pkg/madshapR/man/deprecated.html" class="external-link">open_visual_report()</a></code></p>
 
 
     </div>
@@ -192,7 +192,7 @@ possibilities and their correspondence with R data types are available using
     <h2>See also</h2>
     <div class="dont-index"><p><code><a href="pooled_harmonized_dataset_create.html">pooled_harmonized_dataset_create()</a></code>
 <code><a href="https://rdrr.io/pkg/madshapR/man/dataset_summarize.html" class="external-link">dataset_summarize()</a></code>
-<code><a href="https://rdrr.io/pkg/madshapR/man/open_visual_report.html" class="external-link">open_visual_report()</a></code></p></div>
+<code><a href="https://rdrr.io/pkg/madshapR/man/deprecated.html" class="external-link">open_visual_report()</a></code></p></div>
     </div>
 
     <div id="ref-examples">
@@ -207,32 +207,12 @@ possibilities and their correspondence with R data types are available using
 <span class="r-in"><span>  pooled_harmonized_dataset <span class="op">=</span> <span class="va">pooled_harmonized_dataset</span>,</span></span>
 <span class="r-in"><span>  .summary_pool <span class="op">=</span> <span class="va">summary_var_harmo</span>,</span></span>
 <span class="r-in"><span>  to <span class="op">=</span> <span class="va">to</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1/125                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2/125 [unnamed-chunk-1]  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3/125                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4/125 [unnamed-chunk-2]  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5/125                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6/125 [unnamed-chunk-3]  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7/125                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8/125 [unnamed-chunk-4]  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9/125                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10/125 [unnamed-chunk-5]  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11/125                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12/125 [unnamed-chunk-6]  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13/125                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14/125 [unnamed-chunk-7]  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15/125                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16/125 [figures-plot12-2] </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17/125                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18/125 [unnamed-chunk-8]  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19/125                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20/125 [unnamed-chunk-9]  </span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in pull(.summary_var$`Variables summary (all)` %&gt;% filter(.data$name %in%     col) %&gt;% select(starts_with("Grouping variable:"))):</span> Can't extract columns past the end.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Location 1 doesn't exist.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> There are only 0 columns.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dataset_visualize(dataset = pooled_harmonized_dataset, group_by = group_by,     taxonomy = taxonomy, to = to, valueType_guess = valueType_guess,     .keep_files = .keep_files, .summary_var = .summary_pool):</span> unused arguments (to = to, .keep_files = .keep_files)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># To open the file in browser, you can also open 'to/docs/index.html'.</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/open_visual_report.html" class="external-link">open_visual_report</a></span><span class="op">(</span><span class="va">to</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/madshapR/man/deprecated.html" class="external-link">open_visual_report</a></span><span class="op">(</span><span class="va">to</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The `to` argument of `open_visual_report()` is deprecated as of madshapR 1.0.2.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Please use the `bookdown_path` argument of `bookdown_open()` instead.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>

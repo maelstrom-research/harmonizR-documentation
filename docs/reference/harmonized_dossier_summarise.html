@@ -182,11 +182,8 @@ correspondance with R data types are available using
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of possible duplicated columns</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of empty rows in the data dictionary</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of empty columns in the data dictionary</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of categories not in the data dictionary</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the completion of `label(:xx)` column in 'Variables'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the `valueType` column in 'Variables'</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess presence and completion of `label(:xx)` column in 'Categories'</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the logical values of missing column in Categories</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Generate report</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     The data dictionary contains no error/warning.</span>
@@ -198,103 +195,10 @@ correspondance with R data types are available using
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of variable names both in dataset and data dictionary</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of possible duplicated variable in the dataset</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of duplicated participants in the dataset</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of unique value columns in dataset</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of empty rows in the data dictionary</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence all NA(s) of columns in the data dictionary</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the presence of categories not in the data dictionary</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Assess the `valueType` comparison in dataset and data dictionary</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Generate report</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">  - WARNING MESSAGES (if any): -------------------------------------------------</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">    </span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> - DATASET SUMMARIZE: <span style="font-weight: bold;">dataset_MELBOURNE_1</span> --------------------------</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Summarize the data type of each variable across the dataset</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Summarise information for all variables</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Summarise information for numerical variables</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Summarise information for text variables</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Summarise information for date variables</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Summarise information for categorical variables</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Summarise global information (Overview)</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Generate report</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $dataset_MELBOURNE_1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $dataset_MELBOURNE_1$`Harmonization Overview`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 14 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    `Quality control of dataset`                           `(all)`              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="color: #949494;">"</span>Date<span style="color: #949494;">"</span>                                                 <span style="color: #949494;">"</span>2023-08-30<span style="color: #949494;">"</span>         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="color: #949494;">"</span>Name of the dataset<span style="color: #949494;">"</span>                                  <span style="color: #949494;">"</span>dataset_MELBOURNE_1<span style="color: #949494;">"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="color: #949494;">"</span>    Identifier Variable<span style="color: #949494;">"</span>                              <span style="color: #949494;">"</span>adm_unique_id<span style="color: #949494;">"</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="color: #949494;">"</span>    Variables<span style="color: #949494;">"</span>                                        <span style="color: #949494;">"</span> <span style="color: #949494;">"</span>                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="color: #949494;">"</span>        Total number of variables (incl. identifier)<span style="color: #949494;">"</span> <span style="color: #949494;">"</span>13<span style="color: #949494;">"</span>                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="color: #949494;">"</span>        Total number of empty columns<span style="color: #949494;">"</span>                <span style="color: #949494;">"</span>12<span style="color: #949494;">"</span>                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="color: #949494;">"</span>    Data type in dictionary (valueType)<span style="color: #949494;">"</span>              <span style="color: #949494;">"</span> <span style="color: #949494;">"</span>                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="color: #949494;">"</span>        Nb. text variables<span style="color: #949494;">"</span>                           <span style="color: #949494;">"</span>0<span style="color: #949494;">"</span>                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="color: #949494;">"</span>        Nb. date variables<span style="color: #949494;">"</span>                           <span style="color: #949494;">"</span>0<span style="color: #949494;">"</span>                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="color: #949494;">"</span>        Nb. numerical variables<span style="color: #949494;">"</span>                      <span style="color: #949494;">"</span>0<span style="color: #949494;">"</span>                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> <span style="color: #949494;">"</span>        Nb. categorical variables<span style="color: #949494;">"</span>                    <span style="color: #949494;">"</span>6<span style="color: #949494;">"</span>                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> <span style="color: #949494;">"</span>    Rows<span style="color: #949494;">"</span>                                             <span style="color: #949494;">"</span>(all)<span style="color: #949494;">"</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> <span style="color: #949494;">"</span>        Total number of observations<span style="color: #949494;">"</span>                 <span style="color: #949494;">"</span>19<span style="color: #949494;">"</span>                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> <span style="color: #949494;">"</span>        Nb. distinct observations<span style="color: #949494;">"</span>                    <span style="color: #949494;">"</span>19<span style="color: #949494;">"</span>                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $dataset_MELBOURNE_1$`Harmonized Dataset assessment`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 32 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    `index in data dict.` name          Quality assessment com…¹ value suggestion</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>                     1 adm_unique_id [INFO] - possible dupli… 3779… <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>                     2 adm_study     [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>                     3 adm_year_dce  [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>                     4 sdc_age       [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>                     5 sdc_gender    [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>                     6 phy_height    [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>                     7 phy_weight    [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>                     8 phy_bmi       [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>                     9 rep_preg_ever [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>                    10 rep_preg_curr [INFO] - Empty column    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 22 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ abbreviated name: ¹​`Quality assessment comment`</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $dataset_MELBOURNE_1$`Variables summary (all)`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 13</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    `index in data dict.` name           `Quality assessment comment` `label:en` </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>                     1 adm_unique_id  <span style="color: #BB0000;">NA</span>                           Unique ide…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>                     2 adm_study      [INFO] - The column is empty Indicator …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>                     3 adm_year_dce   [INFO] - The column is empty Indicator …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>                     4 sdc_age        [INFO] - The column is empty Participan…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>                     5 sdc_gender     [INFO] - The column is empty Gender of …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>                     6 phy_height     [INFO] - The column is empty participan…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>                     7 phy_weight     [INFO] - The column is empty participan…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>                     8 phy_bmi        [INFO] - The column is empty participan…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>                     9 rep_preg_ever  [INFO] - The column is empty whether th…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>                    10 rep_preg_curr  [INFO] - The column is empty whether th…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>                    11 lsb_smo_ever   [INFO] - The column is empty whether th…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>                    12 lsb_smo_curr   [INFO] - The column is empty whether th…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>                    13 lsb_smo_status [INFO] - The column is empty participan…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9 more variables: `Data Dictionary valueType` &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Estimated dataset valueType` &lt;chr&gt;, `Actual dataset valueType` &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Categorical variable` &lt;chr&gt;, `Categories in data dictionary` &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Total number of observations` &lt;dbl&gt;, `Nb. distinct values` &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `% total Valid values` &lt;dbl&gt;, `% NA` &lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $dataset_MELBOURNE_1$`Categorical variable summary`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 18</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   `index in data dict.` name           `Quality assessment comment` `label:en`  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>                     5 sdc_gender     [INFO] - The column is empty Gender of t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>                     9 rep_preg_ever  [INFO] - The column is empty whether the…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>                    10 rep_preg_curr  [INFO] - The column is empty whether the…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>                    11 lsb_smo_ever   [INFO] - The column is empty whether the…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>                    12 lsb_smo_curr   [INFO] - The column is empty whether the…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>                    13 lsb_smo_status [INFO] - The column is empty participant…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 14 more variables: `Data Dictionary valueType` &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Estimated dataset valueType` &lt;chr&gt;, `Actual dataset valueType` &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Categorical variable` &lt;chr&gt;, `Categories in data dictionary` &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Total number of observations` &lt;dbl&gt;, `Nb. distinct values` &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `% total Valid values` &lt;dbl&gt;, `% NA` &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `% Valid categorical values (if applicable)` &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `% Missing categorical values (if applicable)` &lt;dbl&gt;, …</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in df_append(out, united, after = after):</span> `after` must be a whole number, not an integer `NA`.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> This is an internal error that was detected in the <span style="color: #0000BB;">tidyr</span> package.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span>   Please report it at <span style="color: #0000BB; font-style: italic;">&lt;https://github.com/tidyverse/tidyr/issues&gt;</span> with a reprex</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span>   (<span style="color: #0000BB; font-style: italic;">&lt;https://tidyverse.org/help/&gt;</span>) and the full backtrace.</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

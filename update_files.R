@@ -17,6 +17,7 @@ fs::dir_copy(
   "../harmonizR-documentation/docs",
   overwrite = TRUE)
 
+# switch to documentation
 source('template_script.R')
 
 # push to git

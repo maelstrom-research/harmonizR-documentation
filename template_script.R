@@ -4,6 +4,7 @@ library(tidyverse)
 library(fabR)
 library(madshapR)
 library(harmonizR)
+library(fs)
 
 #### data_proc_elem_template ####
 data_proc_elem_template <- 
@@ -95,12 +96,12 @@ write_excel_csv2(na = '',   harmonized_dataset_template,        paste0(path,"doc
 write_excel_csv2(na = '',   pooled_harmonized_dataset_template, paste0(path,"docs/templates/pooled_harmonized_dataset - template.csv"))  
 
 
-dataschema_demo <- as_dataschema_mlstr(DEMO_files$`dataschema - final`)
+dataschema_demo <- as_dataschema_mlstr(DEMO_files_harmo$`dataschema - final`)
+data_proc_elem_demo <- as_data_proc_elem(DEMO_files_harmo$`data_processing_elements - final`)
 dd_MELBOURNE_1_demo <- as_data_dict_mlstr(DEMO_files$dd_MELBOURNE_1_format_maelstrom)
 dd_MELBOURNE_2_demo <- as_data_dict_mlstr(DEMO_files$dd_MELBOURNE_2_format_maelstrom)
 dd_PARIS_demo <- as_data_dict_mlstr(DEMO_files$dd_PARIS_format_maelstrom)
 dd_TOKYO_demo <- as_data_dict_mlstr(DEMO_files$dd_TOKYO_format_maelstrom_tagged)
-data_proc_elem_demo <- as_data_proc_elem(DEMO_files$`data_processing_elements - final`$dataProcessing)
 dataset_MELBOURNE_1_demo <- DEMO_files$dataset_MELBOURNE_1
 dataset_MELBOURNE_2_demo <- DEMO_files$dataset_MELBOURNE_2
 dataset_PARIS_demo <- DEMO_files$dataset_PARIS
